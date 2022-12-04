@@ -5,6 +5,7 @@ class User < ApplicationRecord
     validates :email, presence: true , uniqueness: true #todo: email regex,
     validates :first_name, presence: true
     validates :session_token, uniqueness: true
+    validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
