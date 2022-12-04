@@ -15,34 +15,23 @@ export const removeUser = () => ({
   // payload: userId,
 });
 
-let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-let initialState = {
-  current: null,
-};
-if (currentUser) {
-  initialState = {
-    current: currentUser,
-  };
-}
-
 export async function restoreCSRF() {
-  const response = await csrfFetch("/api/session");
-  storeCSRFToken(response);
-  return response;
+  const res = await csrfFetch("/api/session");
+  storeCSRFToken(res);
+  return res;
 }
 
 export const restoreSession = () => async (dispatch) => {
-  const response = await csrfFetch("/api/session");
-  storeCSRFToken(response);
-  const data = await response.json();
+  const res = await csrfFetch("/api/session");
+  storeCSRFToken(res);
+  const data = await res.json();
   storeCurrentUser(data.user);
-  if (data.user) {
-    dispatch(receiveUser(data.user));
-  }
+  dispatch(receiveUser(data.user));
+  return res;
 };
 
-function storeCSRFToken(response) {
-  const csrfToken = response.headers.get("X-CSRF-Token");
+function storeCSRFToken(res) {
+  const csrfToken = res.headers.get("X-CSRF-Token");
   if (csrfToken) {
     sessionStorage.setItem("X-CSRF-Token", csrfToken);
   }
@@ -58,31 +47,38 @@ function storeCurrentUser(user) {
 
 // THUNK ACTION CREATORS
 export const loginUser = (user) => async (dispatch) => {
-  let res = await csrfFetch("/api/session", {
+  const res = await csrfFetch("/api/session", {
     method: "POST",
     body: JSON.stringify(user),
   });
-  let data = await res.json();
-  sessionStorage.setItem("currentUser", JSON.stringify(data.user));
+  const data = await res.json();
+  storeCurrentUser(data.user);
   dispatch(receiveUser(data.user));
+  return res;
 };
 
 export const logoutUser = () => async (dispatch) => {
-  await csrfFetch("/api/session", {
+  const res = await csrfFetch("/api/session", {
     method: "DELETE",
   });
-  sessionStorage.setItem("currentUser", null);
+  storeCurrentUser(null);
   dispatch(removeUser());
+  return res;
 };
 
 export const createUser = (user) => async (dispatch) => {
-  let res = await csrfFetch("/api/users", {
+  const res = await csrfFetch("/api/users", {
     method: "POST",
     body: JSON.stringify(user),
   });
-  let data = await res.json();
-  sessionStorage.setItem("currentUser", JSON.stringify(data.user));
+  const data = await res.json();
+  storeCurrentUser(data.user);
   dispatch(receiveUser(data.user));
+  return res;
+};
+
+const initialState = {
+  current: JSON.parse(sessionStorage.getItem("currentUser")),
 };
 
 // REDUCER

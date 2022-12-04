@@ -4,8 +4,8 @@ import './modal.css';
 
 const ModalContext = React.createContext();
 
-export function ModalProvider({ children }) {
-  const modalRef = useRef();
+export function ModalProvider({ children }) { //children?
+  const modalRef = useRef(); //?
   const [value, setValue] = useState();
 
   useEffect(() => {
@@ -35,4 +35,4 @@ export function Modal({ onClose, children }) {
     </div>,
     modalNode
   );
-}
+} //next to app not include
