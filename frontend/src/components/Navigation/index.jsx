@@ -27,8 +27,8 @@ export default function Navigation() {
       {currentUser && (
         <button onClick={() => dispatch(logoutUser())}>Logout</button>
       )}
-      <Link to="/">
-        <div className="logo">Shoppy</div>
+      <Link to="/" className="logo">
+        <div >Shoppy</div>
         </Link>
         <form onSubmit={handleSubmit}>
           <input
@@ -45,7 +45,7 @@ export default function Navigation() {
      
 
       {!currentUser && (
-        <button onClick={() => setModalOpen(true)} className="signinButton">Sign In</button>
+        <button onClick={() => setModalOpen(true)} className="signinButton">Sign in</button>
       )}
       {modalOpen ? (
         <AuthModal

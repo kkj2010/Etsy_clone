@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { createUser } from "../../store/reducers/userReducer";
 import "./SignupForm.css";
 
-
 export default function SignupForm({ onSuccess }) {
   const dispatch = useDispatch();
   const [formValues, setFormValues] = useState({
@@ -32,40 +31,42 @@ export default function SignupForm({ onSuccess }) {
       <h2>Create Your account</h2>
       <h3>Registration is easy</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          Email address
+        <div>
+          <label>Email address</label>
           <input
             type="email"
             value={formValues.email}
             name="email"
             id="email"
             onChange={handleChange}
-          />
-        </label>
+          className="newEmail"/>
+        </div>
 
-        <label>
-          First name
+        <div>
+          <label>First name</label>
           <input
             type="text"
             value={formValues.firstname}
             name="firstname"
             id="firstname"
             onChange={handleChange}
-          />
-        </label>
+            className="firstName"/>
+        </div>
 
-        <label>
-          Password
+        <div>
+          <label>Password</label>
           <input
             type="password"
             value={formValues.password}
             name="password"
             id="password"
             onChange={handleChange}
-          />
-        </label>
+            className="newPassword"/>
+        </div>
 
-        <button type="submit" className="registerButton">Register</button>
+        <button type="submit" className="registerButton">
+          Register
+        </button>
       </form>
     </>
   );

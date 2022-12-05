@@ -39,9 +39,9 @@ export default function LoginForm({ onSuccess }) {
     // });
     const user = {
       email: "user@gmail.com",
-      password: "1234567"
+      password: "1234567",
     };
-    console.log(user)
+    console.log(user);
     dispatch(loginUser(user))
       .then((res) => {
         if (res.ok) {
@@ -58,33 +58,39 @@ export default function LoginForm({ onSuccess }) {
       {error && error}
       {/* if there is an error then show error no error then empty string */}
       <div className="loginForm">
-      <h1>Sign In</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email address
-          <input
-            type="email"
-            value={formValues.email}
-            name="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </label>
+        <h1>Sign In</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email">Email address</label>
+            <input
+              type="email"
+              value={formValues.email}
+              name="email"
+              id="email"
+              onChange={handleChange}
+            className="email"/>
+          </div>
 
-        <label>
-          Password
-          <input
-            type="password"
-            value={formValues.password}
-            name="password"
-            id="password"
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit" className="submitButton">Sign in</button>
-        <button onClick={handleDemoUser}>Demo User</button>
-      </form>
+          <div>
+          <label>
+            Password
+            </label>
+            <input
+              type="password"
+              value={formValues.password}
+              name="password"
+              id="password"
+              onChange={handleChange}
+            className="password"/>
+          
+          </div>
+      
+            <button type="submit" className="submitButton">
+            Sign in
+          </button>
+          
+          <button onClick={handleDemoUser} className="demoUser">Demo User</button>
+        </form>
       </div>
     </>
   );
