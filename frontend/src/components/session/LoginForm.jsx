@@ -41,7 +41,7 @@ export default function LoginForm({ onSuccess }) {
       email: "user@gmail.com",
       password: "1234567",
     };
-    console.log(user);
+    // console.log(user);
     dispatch(loginUser(user))
       .then((res) => {
         if (res.ok) {

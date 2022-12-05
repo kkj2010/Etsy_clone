@@ -52,7 +52,7 @@ export default function Navigation() {
         <AuthModal
           onSuccess={() => {
             setModalOpen(false);
-            console.log("logged in!");
+            // console.log("logged in!");
           }}
           onClose={() => setModalOpen(false)}
         />
