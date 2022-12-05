@@ -19,10 +19,6 @@ align-items: center;
     width:900px;
     height: 40px;
     border-radius:25px;
-    /* border-top-left-radius: 96px;
-    border-bottom-left-radius: 96px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0; */
     margin: 10px 10px;
     border: 2px solid black;
     padding-left: 20px;
@@ -43,10 +39,6 @@ align-items: center;
     background-color:transparent;
     border:none;
     font-size: 18px;
-    /* border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 96px;
-    border-bottom-right-radius: 96px; */
     height: 37px;
     position: relative;
     top:5px;
@@ -60,4 +52,65 @@ align-items: center;
     background-color: white;
     border:none;
     font-size:14px
+}
+
+.profileButton:hover {
+    /* background-color: grey; */
+    transform: scale(1.2);
+    transition: transform ease-in 150ms;
+    border-radius: 10px;
+    /* opacity: 0.3; */
+    /* display: block; */
+}
+
+.accountButton {
+    display: inline-block;
+    position: relative;
+}
+
+.accountButton:hover .dropdownContent{
+    display: block;
+}
+
+.profileButton{
+    background-color: transparent;
+    color:grey;
+    font-size: 30px;
+    border:none;
+    cursor: pointer;
+}
+
+.dropdownContent:hover {
+    display:block;
+}
+
+.dropdownContent{
+    display:none;
+    border: 1px solid white;
+    border-radius: 10px;
+    position: absolute;
+    top:42px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px  rgba(0,0,0,0.2);
+    min-width:200px;
+
+}
+
+.dropdownContent>li {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdownContent li:hover {
+    background-color: lightgray;
+}
+
+span {
+    padding-left: 10px;
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: black;
 }

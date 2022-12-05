@@ -68,28 +68,37 @@ export default function LoginForm({ onSuccess }) {
               name="email"
               id="email"
               onChange={handleChange}
-            className="email"/>
+              className="email"
+            />
           </div>
 
           <div>
-          <label>
-            Password
-            </label>
+            <label>Password</label>
             <input
               type="password"
               value={formValues.password}
               name="password"
               id="password"
               onChange={handleChange}
-            className="password"/>
-          
+              className="password"
+            />
           </div>
-      
-            <button type="submit" className="submitButton">
+
+          <button type="submit" className="submitButton">
             Sign in
           </button>
-          
-          <button onClick={handleDemoUser} className="demoUser">Demo User</button>
+
+          <button onClick={handleDemoUser} className="demoUser">
+            Demo User
+          </button>
+          <div className="privacyPolicy">
+            <p>
+              By clicking Sign in, you agree to Shoppy's Terms of Use and
+              Privacy Policy. Etsy may send you communications; you may change
+              your preferences in your account settings. We'll never post
+              without your permission.
+            </p>
+          </div>
         </form>
       </div>
     </>

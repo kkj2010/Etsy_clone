@@ -65,3 +65,13 @@ label {
     font-size: 15px;
     letter-spacing: 0.5px;
 }
+
+.privacyPolicy{
+    margin-top: 30px;
+    margin-left:20px;
+    margin-right: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+    color:grey;
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+}

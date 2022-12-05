@@ -1,0 +1,23 @@
+.displays{
+ display: flex;   
+ justify-content: space-between;
+ width:1000px;
+}
+
+.display1>img {
+    width:120px;
+    height:120px;
+    border-radius: 50%;
+}
+
+h1{
+    font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
+   text-align: center;
+   font-size: 30px;
+}
+
+.texContainer{
+    background-color: #FDEBD2 ;
+    height: 200px;
+
+}
