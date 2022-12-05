@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUser } from "../../store/reducers/userReducer";
+import "./SignupForm.css";
+
 
 export default function SignupForm({ onSuccess }) {
   const dispatch = useDispatch();
@@ -63,7 +65,7 @@ export default function SignupForm({ onSuccess }) {
           />
         </label>
 
-        <button type="submit">Register</button>
+        <button type="submit" className="registerButton">Register</button>
       </form>
     </>
   );

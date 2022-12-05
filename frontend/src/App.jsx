@@ -17,3 +17,8 @@ function App() {
 }
 
 export default App;
+
+//prpoducts- all products
+//products/new - new product
+// product/id- product detail
+// carts- my cart

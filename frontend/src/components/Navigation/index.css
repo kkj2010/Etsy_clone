@@ -1,0 +1,43 @@
+.navBar{
+display:flex;
+height: 40px;
+border-bottom: black;
+/* justify-content: space-between; */
+align-items: center;
+margin:10px
+}
+
+.logo{
+    font-size: 40px;
+    color: #D5641C;
+    margin: 10px;
+}
+.searchBar{
+    flex:1;
+    width:900px;
+    height: 32px;
+    border-radius:25px;
+    margin: 10px;
+    
+}
+
+.cartButton{
+    margin:10px;
+    background-color: white;
+    border:none;
+    font-size:18px
+}
+
+.searchBarButton{
+    margin: 10px;
+    background-color: white;
+    border: none;
+    font-size: 18px
+}
+
+.signinButton {
+    margin:10px;
+    background-color: white;
+    border:none;
+    font-size:14px
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../store/reducers/userReducer";
+import "./LoginForm.css";
 
 export default function LoginForm({ onSuccess }) {
   const dispatch = useDispatch();
@@ -31,15 +32,36 @@ export default function LoginForm({ onSuccess }) {
         setError("Invalid credentials, try again"); //change this to have both password and email error!!!!
       });
   };
+  const handleDemoUser = () => {
+    // setFormValues({
+    //   email: "user@gmail.com",
+    //   password: "1234567",
+    // });
+    const user = {
+      email: "user@gmail.com",
+      password: "1234567"
+    };
+    console.log(user)
+    dispatch(loginUser(user))
+      .then((res) => {
+        if (res.ok) {
+          onSuccess();
+        }
+      })
+      .catch((error) => {
+        setError("Invalid credentials, try again");
+      });
+  };
 
   return (
     <>
-      {error && error} 
+      {error && error}
       {/* if there is an error then show error no error then empty string */}
-      <h1>Log In</h1>
+      <div className="loginForm">
+      <h1>Sign In</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          email
+          Email address
           <input
             type="email"
             value={formValues.email}
@@ -50,7 +72,7 @@ export default function LoginForm({ onSuccess }) {
         </label>
 
         <label>
-          password
+          Password
           <input
             type="password"
             value={formValues.password}
@@ -60,8 +82,10 @@ export default function LoginForm({ onSuccess }) {
           />
         </label>
 
-        <button type="submit">Sign in</button>
+        <button type="submit" className="submitButton">Sign in</button>
+        <button onClick={handleDemoUser}>Demo User</button>
       </form>
+      </div>
     </>
   );
 }
