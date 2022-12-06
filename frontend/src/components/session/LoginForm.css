@@ -75,3 +75,9 @@ label {
     color:grey;
     font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
 }
+
+.error {
+    color:#A61A2E;
+   text-align: center;
+   margin-top:20px;
+}

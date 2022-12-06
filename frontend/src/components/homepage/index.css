@@ -1,23 +1,115 @@
-.displays{
- display: flex;   
- justify-content: space-between;
- width:1000px;
+.displays {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
 }
 
-.display1>img {
-    width:120px;
-    height:120px;
-    border-radius: 50%;
+.display1 > img,
+.display2 > img,
+.display3 > img,
+.display4 > img,
+.display5 > img,
+.display6 > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 20px;
+  display: block;
 }
 
-h1{
-    font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
-   text-align: center;
-   font-size: 30px;
+.displaysTitle {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
 }
 
-.texContainer{
-    background-color: #FDEBD2 ;
-    height: 200px;
+.textContainer {
+  background-color: #fdebd2;
+  /* box-sizing: content-box; */
+  /* width:100%; */
+  height: 160px;
+  margin: -10px;
+}
 
+.suggestionFirstrow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.suggestion1 {
+  /* display: block;
+  position: relative; */
+}
+.list1 > img,
+.list2 > img,
+.list3 > img,
+.list4 > img,
+.list5 > img,
+.list6 > img {
+  width: 230px;
+  height: 170px;
+  border-radius: 25px;
+  padding-top: 10px;
+  /* display: block; */
+}
+
+.priceBadge {
+  background-color: white;
+  display: inline-block;
+  margin-left: 10px;
+  border-radius: 25px;
+  height: 30px;
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.display1 > img:hover,
+.display2 > img:hover,
+.display3 > img:hover,
+.display4 > img:hover,
+.display5 > img:hover,
+.display6 > img:hover {
+  transform: scale(1.1);
+  transition: transform ease-in 200ms;
+  cursor: pointer;
+}
+
+.text1:hover,
+.text2:hover,
+.text3:hover,
+.text4:hover,
+.text5:hover,
+.text6:hover {
+  text-decoration: underline;
+}
+
+.text1 {
+  padding-left: 20px;
+}
+
+.text2,
+.text3 {
+  padding: 30px;
+}
+
+.text4,
+.text5 {
+  padding: 50px;
+}
+
+.text6 {
+  padding: 60px;
+}
+
+.featureItems {
+  padding-top: 120px;
+}
+
+.itemsTitle {
+  font-size: 15px;
 }

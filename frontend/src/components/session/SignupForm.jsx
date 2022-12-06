@@ -5,12 +5,14 @@ import "./SignupForm.css";
 
 export default function SignupForm({ onSuccess }) {
   const dispatch = useDispatch();
+
   const [formValues, setFormValues] = useState({
     email: "",
     firstname: "",
     password: "",
   });
 
+const [error, setError] = useState("");
   const handleChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -22,8 +24,27 @@ export default function SignupForm({ onSuccess }) {
       password: formValues.password,
       first_name: formValues.firstname,
     };
-    dispatch(createUser(user));
-    onSuccess();
+    // dispatch(createUser(user));
+    // onSuccess();
+    dispatch(createUser(user))
+    .then((res) => {
+      if (res.ok) {
+        onSuccess();
+      }
+    })
+    .catch((error) => {
+     
+      if(user.password.length<6)
+      {setError("Password must be longer than 6 characters")}
+      if(user.password==="")
+      {setError("Password can't be blank")}
+      if(user.email==="")
+      {setError("Email can't be blank")}
+      if(user.first_name==="")
+      {setError("Firstname can't be blank")}
+
+    });
+
   };
 
   return (
@@ -67,6 +88,7 @@ export default function SignupForm({ onSuccess }) {
         <button type="submit" className="registerButton">
           Register
         </button>
+        {error && <div className="error">{error}</div>}
       </form>
     </>
   );

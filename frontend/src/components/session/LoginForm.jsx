@@ -5,6 +5,7 @@ import "./LoginForm.css";
 
 export default function LoginForm({ onSuccess }) {
   const dispatch = useDispatch();
+
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
@@ -22,6 +23,15 @@ export default function LoginForm({ onSuccess }) {
       email: formValues.email,
       password: formValues.password,
     };
+    if (user.email === "") {
+      setError("Email can't be blank");
+      return;
+    }
+    if (user.password === "") {
+      setError("Password can't be blank");
+      return;
+    }
+
     dispatch(loginUser(user))
       .then((res) => {
         if (res.ok) {
@@ -29,7 +39,7 @@ export default function LoginForm({ onSuccess }) {
         }
       })
       .catch((error) => {
-        setError("Invalid credentials, try again"); //change this to have both password and email error!!!!
+        setError("Invalid credentials");
       });
   };
   const handleDemoUser = () => {
@@ -41,7 +51,7 @@ export default function LoginForm({ onSuccess }) {
       email: "user@gmail.com",
       password: "1234567",
     };
-    // console.log(user);
+
     dispatch(loginUser(user))
       .then((res) => {
         if (res.ok) {
@@ -55,7 +65,6 @@ export default function LoginForm({ onSuccess }) {
 
   return (
     <>
-      {error && error}
       {/* if there is an error then show error no error then empty string */}
       <div className="loginForm">
         <h1>Sign In</h1>
@@ -91,6 +100,7 @@ export default function LoginForm({ onSuccess }) {
           <button onClick={handleDemoUser} className="demoUser">
             Demo User
           </button>
+          {error && <div className="error">{error}</div>}
           <div className="privacyPolicy">
             <p>
               By clicking Sign in, you agree to Shoppy's Terms of Use and
