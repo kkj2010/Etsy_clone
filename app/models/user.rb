@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  first_name      :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email          (email) UNIQUE
+#  index_users_on_session_token  (session_token) UNIQUE
+#
 class User < ApplicationRecord
     has_secure_password
     before_validation :ensure_session_token
@@ -6,6 +23,12 @@ class User < ApplicationRecord
     validates :first_name, presence: true
     validates :session_token, uniqueness: true
     validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}
+
+    has_many :products, 
+    primary_key: :id,
+    foreign_key: :seller_id,
+    class_name: :Product
+
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

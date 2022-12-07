@@ -12,7 +12,7 @@ export default function SignupForm({ onSuccess }) {
     password: "",
   });
 
-const [error, setError] = useState("");
+  const [errors, setErrors] = useState(null);
   const handleChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -26,25 +26,17 @@ const [error, setError] = useState("");
     };
     // dispatch(createUser(user));
     // onSuccess();
+    setErrors(null);
     dispatch(createUser(user))
-    .then((res) => {
-      if (res.ok) {
-        onSuccess();
-      }
-    })
-    .catch((error) => {
-     
-      if(user.password.length<6)
-      {setError("Password must be longer than 6 characters")}
-      if(user.password==="")
-      {setError("Password can't be blank")}
-      if(user.email==="")
-      {setError("Email can't be blank")}
-      if(user.first_name==="")
-      {setError("Firstname can't be blank")}
-
-    });
-
+      .then((res) => {
+        if (res.ok) {
+          onSuccess();
+        }
+      })
+      .catch(async (res) => {
+        const errors = await res.json();
+        setErrors(errors);
+      });
   };
 
   return (
@@ -60,7 +52,9 @@ const [error, setError] = useState("");
             name="email"
             id="email"
             onChange={handleChange}
-          className="newEmail"/>
+            className="newEmail"
+          />
+          {!!errors?.email.length && <p className="error">Email {errors?.email[0]}</p>}
         </div>
 
         <div>
@@ -71,7 +65,11 @@ const [error, setError] = useState("");
             name="firstname"
             id="firstname"
             onChange={handleChange}
-            className="firstName"/>
+            className="firstName"
+          />
+          {!!errors?.first_name.length && (
+            <p className="error">First name {errors.first_name[0]}</p>
+          )}
         </div>
 
         <div>
@@ -82,13 +80,14 @@ const [error, setError] = useState("");
             name="password"
             id="password"
             onChange={handleChange}
-            className="newPassword"/>
+            className="newPassword"
+          />
+          {!!errors?.password.length && <p className="error">Password {errors.password[0]}</p>}
         </div>
 
         <button type="submit" className="registerButton">
           Register
         </button>
-        {error && <div className="error">{error}</div>}
       </form>
     </>
   );

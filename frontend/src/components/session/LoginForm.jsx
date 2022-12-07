@@ -11,8 +11,7 @@ export default function LoginForm({ onSuccess }) {
     password: "",
   });
 
-  const [error, setError] = useState("");
-
+  const [errors, setErrors] = useState(null);
   const handleChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -24,23 +23,17 @@ export default function LoginForm({ onSuccess }) {
       email: formValues.email,
       password: formValues.password,
     };
-    if (user.email === "") {
-      setError("Email can't be blank");
-      return;
-    }
-    if (user.password === "") {
-      setError("Password can't be blank");
-      return;
-    }
-
+   
+    setErrors(null)
     dispatch(loginUser(user))
       .then((res) => {
         if (res.ok) {
           onSuccess();
         }
       })
-      .catch((error) => {
-        setError("Invalid credentials");
+      .catch(async(res) => {
+        const errors= await res.json();
+        setErrors("Invalid credentials");
       });
   };
   const handleDemoUser = () => {
@@ -48,7 +41,7 @@ export default function LoginForm({ onSuccess }) {
     //   email: "user@gmail.com",
     //   password: "1234567",
     // });
-    setError("");
+    setErrors("");
     const user = {
       email: "user@gmail.com",
       password: "1234567",
@@ -60,8 +53,9 @@ export default function LoginForm({ onSuccess }) {
           onSuccess();
         }
       })
-      .catch((error) => {
-        setError("Invalid credentials, try again");
+      .catch(async(res) => {
+        const errors= await res.json();
+        setErrors(errors);
       });
   };
 
@@ -81,6 +75,7 @@ export default function LoginForm({ onSuccess }) {
               onChange={handleChange}
               className="email"
             />
+            
           </div>
 
           <div>
@@ -102,7 +97,7 @@ export default function LoginForm({ onSuccess }) {
           <button onClick={handleDemoUser} className="demoUser" type="button">
             Demo User
           </button>
-          {error && <div className="error">{error}</div>}
+          {errors && <div className="errorLogin">{errors}</div>}
           <div className="privacyPolicy">
             <p>
               By clicking Sign in, you agree to Shoppy's Terms of Use and
