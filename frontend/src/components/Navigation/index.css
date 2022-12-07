@@ -1,116 +1,138 @@
-.navBar{
-display:flex;
-/* height: 60px; */
-border-bottom: 2px solid lightgrey;
-padding-bottom: 15px;
-padding-top: 5px;
-justify-content:  center;
-align-items: center;
+:root {
+  --primary-orange: #f56400;
 }
 
-.logo{
-    font-size: 45px;
-    color: #D5641C;
-    margin: 15px;
-    text-decoration: none;
-}
-.searchBar{
-    flex:1;
-    width:900px;
-    height: 40px;
-    border-radius:25px;
-    margin: 10px 10px;
-    border: 2px solid black;
-    padding-left: 20px;
+.navBar {
+  display: flex;
+  /* height: 60px; */
+  padding-bottom: 7px;
+  justify-content: center;
+  align-items: center;
 }
 
-.cartButton{
-    margin:10px;
-    background-color: white;
-    border:none;
-    font-size:23px
+.logo {
+  font-size: 45px;
+  color: var(--primary-orange);
+  margin: 15px;
+  text-decoration: none;
 }
 
-::placeholder{
- margin-right: 10px
+.logo > a:visited {
+  color: var(--primary-orange);
 }
 
-.searchBarButton{
-    background-color:transparent;
-    border:none;
-    font-size: 18px;
-    height: 37px;
-    position: relative;
-    top:5px;
-    right:50px;
-    z-index: 1;
+.searchBar {
+  flex: 1;
+  width: 900px;
+  height: 40px;
+  border-radius: 25px;
+  margin: 10px 10px;
+  border: 2px solid black;
+  padding-left: 20px;
+}
+
+.cartButton {
+  margin: 10px;
+  background-color: white;
+  border: none;
+  font-size: 23px;
+}
+
+::placeholder {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.searchBarButton {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  height: 37px;
+  position: relative;
+  top: 5px;
+  right: 50px;
+  z-index: 1;
 }
 
 .signinButton {
-    margin:10px;
-    margin-left: -10px;
-    background-color: white;
-    border:none;
-    font-size:14px
+  margin: 10px;
+  margin-left: -10px;
+  background-color: white;
+  border: none;
+  font-size: 14px;
 }
 
 .profileButton:hover {
-    /* background-color: grey; */
-    transform: scale(1.2);
-    transition: transform ease-in 150ms;
-    border-radius: 10px;
-    /* opacity: 0.3; */
-    /* display: block; */
+  /* background-color: grey; */
+  transform: scale(1.2);
+  transition: transform ease-in 150ms;
+  border-radius: 10px;
+  /* opacity: 0.3; */
+  /* display: block; */
 }
 
 .accountButton {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
 }
 
-.accountButton:hover .dropdownContent{
-    display: block;
+.accountButton:hover .dropdownContent {
+  display: block;
 }
 
-.profileButton{
-    background-color: transparent;
-    color:grey;
-    font-size: 30px;
-    border:none;
-    cursor: pointer;
+.profileButton {
+  background-color: transparent;
+  color: grey;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
 }
 
 .dropdownContent:hover {
-    display:block;
+  display: block;
 }
 
-.dropdownContent{
-    display:none;
-    border: 1px solid white;
-    border-radius: 10px;
-    position: absolute;
-    top:42px;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px  rgba(0,0,0,0.2);
-    min-width:200px;
-
+.dropdownContent {
+  display: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  position: absolute;
+  top: 42px;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
 }
 
-.dropdownContent>li {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: black;
+.dropdownContent > li {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: black;
 }
 
 .dropdownContent li:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 span {
-    padding-left: 10px;
-    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    color: black;
+  padding-left: 10px;
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
+    Arial, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: black;
+}
+
+.displayTable{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  font-family: "Yantramanav", sans-serif;
+  color: grey;
+  font-size: 13px;
+}
+
+.displayBar{
+  width:1200px;
+  margin:0 auto
 }

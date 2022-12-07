@@ -4,7 +4,7 @@
   
 }
 
-h1 {
+.loginTitle {
     font-size: 25px;
     font-weight: 500;
     margin-bottom:10px;
@@ -74,4 +74,10 @@ label {
     line-height: 1.5;
     color:grey;
     font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+}
+
+.errorLogin {
+    color:#A61A2E;
+    text-align: center;
+    padding-top: 20px;
 }
