@@ -19,6 +19,7 @@ export default function LoginForm({ onSuccess }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const user = {
       email: formValues.email,
       password: formValues.password,
@@ -47,6 +48,7 @@ export default function LoginForm({ onSuccess }) {
     //   email: "user@gmail.com",
     //   password: "1234567",
     // });
+    setError("");
     const user = {
       email: "user@gmail.com",
       password: "1234567",
@@ -67,7 +69,7 @@ export default function LoginForm({ onSuccess }) {
     <>
       {/* if there is an error then show error no error then empty string */}
       <div className="loginForm">
-        <h1>Sign In</h1>
+        <h1 className="loginTitle">Sign In</h1>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">Email address</label>
@@ -97,7 +99,7 @@ export default function LoginForm({ onSuccess }) {
             Sign in
           </button>
 
-          <button onClick={handleDemoUser} className="demoUser">
+          <button onClick={handleDemoUser} className="demoUser" type="button">
             Demo User
           </button>
           {error && <div className="error">{error}</div>}

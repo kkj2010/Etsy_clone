@@ -26,28 +26,78 @@ export default function Navigation() {
   useEffect(() => setText(keyword || ""), [keyword]);
 
   return (
-    <div className="navBar">
-      <Link to="/" className="logo">
-        <div>Shoppy</div>
-      </Link>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search for anything"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          className="searchBar"
-        />
-        <button type="submit" className="searchBarButton">
-          <IoSearch />
-        </button>
-      </form>
+    <>
+      <div className="navBar">
+        <div className="logo">
+          <Link to="/">Shoppy</Link>
+        </div>
 
-      {!currentUser && (
-        <button onClick={() => setModalOpen(true)} className="signinButton">
-          Sign in
-        </button>
-      )}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Search for anything"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            className="searchBar"
+          />
+          <button type="submit" className="searchBarButton">
+            <IoSearch />
+          </button>
+        </form>
+
+        {!currentUser && (
+          <button onClick={() => setModalOpen(true)} className="signinButton">
+            Sign in
+          </button>
+        )}
+
+        <div className="accountButton">
+          {currentUser && (
+            <button className="profileButton">
+              <CgProfile />
+              <MdArrowDropDown />
+            </button>
+          )}
+          <ul className="dropdownContent">
+            <li>
+              <CgProfile />
+              <Link>
+                <span>View your profile</span>
+              </Link>
+            </li>
+            <li>
+              <GiFamilyHouse />
+              <Link>
+                <span>Sell on Shoppy</span>
+              </Link>
+            </li>
+            <li onClick={() => dispatch(logoutUser())}>
+              <RiLogoutBoxLine />
+              <Link>
+                <span>Sign out</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <button className="cartButton">
+            <BsCart4 />
+          </button>
+        </div>
+      </div>
+      
+      <div className="displayBar">
+        <ul className="displayTable">
+            <li>Holiday Shop</li>
+            <li> Jewelry & Accessories</li>
+            <li> Clothing & Shoes</li>
+            <li> Home & Living</li>
+            <li> Wedding & Party</li>
+            <li> Toys</li>
+            <li> Art & Collectibles</li>
+        </ul>
+      </div>
       {modalOpen ? (
         <AuthModal
           onSuccess={() => {
@@ -57,43 +107,6 @@ export default function Navigation() {
           onClose={() => setModalOpen(false)}
         />
       ) : null}
-
-      <div className="accountButton">
-        {currentUser && (
-          <button className="profileButton">
-            <CgProfile />
-            <MdArrowDropDown />
-          </button>
-        )}
-        <ul className="dropdownContent">
-          <li>
-            <CgProfile />
-            <Link>
-              <span>View your profile</span>
-            </Link>
-          </li>
-          <li>
-            <GiFamilyHouse />
-            <Link>
-              <span>Sell on Shoppy</span>
-            </Link>
-          </li>
-          <li onClick={() => dispatch(logoutUser())}>
-            <RiLogoutBoxLine />
-            <Link>
-              <span>Sign out</span>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
-      {/* {currentUser && (
-        <button onClick={() => dispatch(logoutUser())}>Sign out</button>
-      )} */}
-
-      <button className="cartButton">
-        <BsCart4 />
-      </button>
-    </div>
+    </>
   );
 }

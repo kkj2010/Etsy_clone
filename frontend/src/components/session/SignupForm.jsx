@@ -49,8 +49,8 @@ const [error, setError] = useState("");
 
   return (
     <>
-      <h2>Create Your account</h2>
-      <h3>Registration is easy</h3>
+      <h2 className="SignupTitle">Create Your account</h2>
+      <h3 className="SignupDes">Registration is easy</h3>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email address</label>

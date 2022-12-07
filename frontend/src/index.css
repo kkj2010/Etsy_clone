@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Yantramanav&display=swap');
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -96,6 +96,10 @@ video {
 }
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+button{
+  cursor: pointer;
 }
 li {
   list-style-type: none;
@@ -135,4 +139,11 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
 }
