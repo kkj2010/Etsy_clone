@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AiOutlineStar } from "react-icons/ai";
 import ProductCard from "./ProductCard";
-import  {
-  fetchProducts,
-} from "../../store/reducers/productReducer";
+import { fetchProducts } from "../../store/reducers/productReducer";
 import "./Allproducts.css";
 
 export default function AllProducts() {
@@ -72,30 +70,6 @@ export default function AllProducts() {
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-          {/* <li className="productImage">
-            <img src="/img/necklace.png" />
-            <div className="productDescription">
-              Christmas Stocking,Personalized Chrsitams Stocking
-            </div>
-            <div className="productRating">
-              <AiOutlineStar />
-              <AiOutlineStar />
-              <AiOutlineStar />
-              <AiOutlineStar />
-              <AiOutlineStar />
-            </div>
-            <div className="productPrice">$54.99</div>
-            <div className="productSeller">Ad by first Name</div>
-          </li> */}
-          {/* <li className="productImage">
-            <img src="/img/necklace.png" />
-          </li>
-          <li className="productImage">
-            <img src="/img/necklace.png" />
-          </li>
-          <li className="productImage">
-            <img src="/img/necklace.png" />
-          </li> */}
         </ul>
       </div>
     </div>

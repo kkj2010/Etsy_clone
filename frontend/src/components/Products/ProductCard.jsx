@@ -1,5 +1,5 @@
 import { AiOutlineStar } from "react-icons/ai";
-// import "./Allproducts.css";
+
 
 export default function ProductCard({ product }) {
   return (

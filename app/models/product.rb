@@ -40,4 +40,6 @@ class Product < ApplicationRecord
     primary_key: :id,
     class_name: :Category
 
+    has_one_attached :photo
+
 end
