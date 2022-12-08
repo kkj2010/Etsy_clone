@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Yantramanav&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Nunito+Sans&family=Playfair+Display&family=Poppins:wght@300&family=Yantramanav:wght@100;300;400&display=swap" rel="stylesheet');
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -98,7 +97,10 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-button{
+a:visited {
+  color:grey;
+}
+button {
   cursor: pointer;
 }
 li {

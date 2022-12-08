@@ -8,6 +8,7 @@
   padding-bottom: 7px;
   justify-content: center;
   align-items: center;
+  
 }
 
 .logo {
@@ -134,5 +135,10 @@ span {
 
 .displayBar{
   width:1200px;
-  margin:0 auto
+  margin:0 auto;
+  
+}
+
+.line{
+  border-bottom: 2px solid lightgrey;
 }

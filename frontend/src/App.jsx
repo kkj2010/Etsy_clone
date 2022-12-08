@@ -1,6 +1,7 @@
 import HomePage from "./components/homepage";
 import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import AllProducts from "./components/Products/Allproducts";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <Switch>
         <Route exact path={"/"}>
           <HomePage />
+        </Route>
+        <Route exact path={"/products/:category"}>
+          <AllProducts/>
         </Route>
       </Switch>
     </div>

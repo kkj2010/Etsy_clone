@@ -1,0 +1,60 @@
+.lovedItemsContainer {
+  width: 1200px;
+  margin: 0 auto;
+  cursor: pointer;
+  /* border-bottom: 2px solid lightgrey; */
+}
+.lovedList > img {
+  width: 188px;
+  height: 170px;
+  border-radius: 5px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+/* display: block; */
+
+
+.lovedItemsImages{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  padding-bottom: 4px;
+  justify-content: center;
+}
+
+.loveditemTitle {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: "Yantramanav", sans-serif;
+  font-weight: bold;
+  display: block;
+  padding-top: 27px;
+
+}
+
+.underLine{
+  border-bottom: 1px solid lightgrey;
+  padding-top: 10px;
+}
+
+.lovedItemsProductName{
+  width:186px;
+  height:20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-family: "Yantramanav", sans-serif;
+}
+
+.lovedItemsUser{
+  width:186px;
+  height:20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color:#595959;
+  font-family: "Yantramanav", sans-serif;
+
+}

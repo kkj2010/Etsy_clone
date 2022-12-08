@@ -223,7 +223,7 @@ export default function HomePage() {
           </h1>
           <div className="tabContainer">
             <ul className="tabLists">
-              <li onClick={() => setPanelId("farmhouse")}>Modern farmhouse</li>
+              <li onClick={() => setPanelId("farmhouse")}>Modern Farmhouse</li>
               <li onClick={() => setPanelId("eclectic")}>Eclectic Decor</li>
               <li onClick={() => setPanelId("minimal")}>Minimalist</li>
               <li onClick={() => setPanelId("holiday")}>Holiday Decor</li>

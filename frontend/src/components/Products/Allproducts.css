@@ -1,0 +1,184 @@
+.productHeaderContainer {
+  background-color: #f8ebe6;
+  height: 200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  padding-top: 13px;
+}
+
+.headerImages > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 20px;
+  display: block;
+}
+
+.headerTitle {
+  padding-top: 22px;
+  padding-bottom: 12px;
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+}
+
+.headerText {
+  width: 300px;
+  padding-top: 25px;
+}
+
+.headerDescription {
+  font-family: "Yantramanav", sans-serif;
+  font-weight:300;
+  color: grey;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  width: 280px;
+}
+
+.headerText1:hover,
+.headerText2:hover,
+.headerText3:hover,
+.headerText4:hover,
+.headerText5:hover,
+.headerText6:hover {
+  text-decoration: underline;
+}
+
+.headerText1,
+.headerText2,
+.headerText3,
+.headerText4,
+.headerText5,
+.headerText6 {
+  font-family: "Yantramanav", sans-serif;
+}
+
+.headerText1,
+.headerText4 {
+  padding-left: 46px;
+}
+
+.headerText2 {
+  padding: 41px;
+}
+.headerText3 {
+  padding: 55px;
+}
+
+.headerText5 {
+  padding: 30px;
+}
+
+.headerText6 {
+  padding: 38px;
+}
+
+.itemDisplayContainer {
+  padding-top: 20px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.displayLogoTitle {
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  font-family: "Playfair Display", serif;
+  margin-left: 10px;
+}
+
+.arrivalButton {
+  border-radius: 25px;
+  background-color: white;
+  border: 2px solid black;
+  width: 150px;
+  height: 33px;
+  color: black;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.filterButton {
+  border-radius: 25px;
+  background-color: white;
+  border: 2px solid black;
+  width: 100px;
+  height: 33px;
+  color: black;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-top: 15px;
+  margin-left: 8px;
+}
+
+.arrivalButton:hover,
+.filterButton:hover {
+  transform: scale(1.05);
+  transition: transform ease-in 200ms;
+}
+
+.productImage > img {
+  width: 300px;
+  height: 210px;
+  display: block;
+padding-left: 10px;
+border-radius: 3px;
+}
+
+.productLists {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  /* justify-content: center; */
+  padding-top: 10px;
+}
+
+.headerImages> span{
+  font-size: 12px;
+}
+
+.productName {
+  width: 300px;
+  height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Yantramanav", sans-serif;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.productRating {
+  padding-left: 10px;
+}
+
+.productPrice {
+  font-size: 17px;
+  font-family: "Yantramanav", sans-serif;
+
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.productSeller {
+  width: 186px;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 300;
+  color: #595959;
+  font-family: "Yantramanav", sans-serif;
+  padding-left: 10px;
+  padding-top: 3px;
+  margin-bottom: 7px;
+}

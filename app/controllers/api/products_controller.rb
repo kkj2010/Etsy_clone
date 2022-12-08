@@ -1,4 +1,9 @@
 class Api::ProductsController < ApplicationController
+    def index
+        @products= Product.all
+        render "api/products/index"
+
+    end
 
     def show
         @product= Product.find_by(id:params[:id])
@@ -6,11 +11,6 @@ class Api::ProductsController < ApplicationController
     end
 
 
-    def index
-        @products= Product.all
-        render "api/products/index"
-
-    end
 
 
     def create
@@ -22,10 +22,16 @@ class Api::ProductsController < ApplicationController
         end
     end
 
+    def destroy
+        @product= Product.find_by(id:params[:id])
+        @product.destroy
+        head :no_content
+    end
+
 
     private
     def product_params
-        params.require(:product).permit(:description, :product_name, :price)
+        params.require(:product).permit(:description, :name, :price)
     end
 
 end
