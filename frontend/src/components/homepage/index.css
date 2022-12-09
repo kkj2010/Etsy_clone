@@ -25,9 +25,10 @@
   text-align: center;
   padding-top: 25px;
   padding-bottom: 12px;
-  font-size: 30px;
+  font-size: 32px;
   letter-spacing: 1px;
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif; */
+  font-family: 'Cormorant', serif;
 }
 
 .suggestionFirstrow,
@@ -49,7 +50,6 @@
   border-radius: 25px;
   padding-top: 10px;
   cursor: pointer;
-  /* display: block; */
 }
 
 .priceBadge {
@@ -120,7 +120,6 @@
   font-family: "Yantramanav", sans-serif;
   font-weight: bold;
   display: block;
-  /* margin-left: 288px; */
 }
 
 .discoverItemsTitle > h1 {
@@ -232,7 +231,6 @@
 }
 
 .tabPanel2 {
-  /* display: none; */
   padding-top: 20px;
   width: 1200px;
   margin: 0 auto;
@@ -271,7 +269,6 @@
 }
 
 .tabPanel1 {
-  /* display: none; */
   padding-top: 20px;
   width: 1200px;
   margin: 0 auto;
@@ -310,7 +307,6 @@
 }
 
 .tabPanel3 {
-  /* display: none; */
   padding-top: 20px;
   width: 1200px;
   margin: 0 auto;

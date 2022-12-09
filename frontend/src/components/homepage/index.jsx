@@ -217,10 +217,7 @@ export default function HomePage() {
 
       <div className="discoverItemsContainer">
         <div className="discoverItemsTitle">
-          <h1>
-            Discover unique hand-picked items
-            {/* <BiRightArrowAlt /> */}
-          </h1>
+          <h1>Discover unique hand-picked items</h1>
           <div className="tabContainer">
             <ul className="tabLists">
               <li onClick={() => setPanelId("farmhouse")}>Modern Farmhouse</li>

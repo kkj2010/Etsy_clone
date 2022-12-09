@@ -37,10 +37,6 @@ export default function LoginForm({ onSuccess }) {
       });
   };
   const handleDemoUser = () => {
-    // setFormValues({
-    //   email: "user@gmail.com",
-    //   password: "1234567",
-    // });
     setErrors("");
     const user = {
       email: "user@gmail.com",

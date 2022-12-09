@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { AiOutlineStar } from "react-icons/ai";
 import ProductCard from "./ProductCard";
 import { fetchProducts } from "../../store/reducers/productReducer";
 import "./Allproducts.css";

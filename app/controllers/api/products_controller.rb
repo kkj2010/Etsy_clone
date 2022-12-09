@@ -1,13 +1,18 @@
 class Api::ProductsController < ApplicationController
     def index
-        @products= Product.all
+        @products = Product.all
         render "api/products/index"
 
     end
 
     def show
-        @product= Product.find_by(id:params[:id])
-        render "api/products/show"
+        @product = Product.find_by(id: params[:id])
+        if @product
+            render "api/products/show"
+        else
+            render json: { message: 'Product not found' }, status: :not_found
+        end
+        
     end
 
 

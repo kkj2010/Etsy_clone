@@ -1,2 +1,9 @@
-json.extract! @product, :id, :name, :price, :seller_id, :description
-json.partial! "api/users/user", user: @product.seller
+json.extract! @product, :id, :name, :price, :description
+json.seller do
+    json.partial! "api/users/user", user: @product.seller
+end
+json.category do
+    json.extract! @product.category, :id, :name, :label
+end
+    
+
