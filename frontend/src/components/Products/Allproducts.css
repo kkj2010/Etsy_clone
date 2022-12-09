@@ -24,7 +24,7 @@
   font-size: 28px;
   letter-spacing: 1px;
   /* font-family: "Playfair Display", serif; */
-  font-family: 'Cormorant', serif;
+  font-family: "Cormorant", serif;
 }
 
 .headerText {
@@ -34,7 +34,7 @@
 
 .headerDescription {
   font-family: "Yantramanav", sans-serif;
-  font-weight:300;
+  font-weight: 300;
   color: grey;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -88,7 +88,7 @@
 .displayLogoTitle {
   font-size: 25px;
   letter-spacing: 0.5px;
-  font-family: 'Cormorant', serif;
+  font-family: "Cormorant", serif;
   /* font-family: "Playfair Display", serif; */
   margin-left: 10px;
 }
@@ -129,8 +129,8 @@
   width: 300px;
   height: 210px;
   display: block;
-padding-left: 10px;
-border-radius: 3px;
+  padding-left: 10px;
+  border-radius: 3px;
 }
 
 .productLists {
@@ -141,7 +141,7 @@ border-radius: 3px;
   padding-top: 10px;
 }
 
-.headerImages> span{
+.headerImages > span {
   font-size: 12px;
 }
 
@@ -183,5 +183,19 @@ border-radius: 3px;
   padding-left: 10px;
   padding-top: 3px;
   margin-bottom: 7px;
-  
+}
+
+.productLink:visited .productName,
+.productRating,
+.productPrice {
+  color: black;
+}
+
+.productLink:visited .productSeller {
+  color: #595959;
+}
+
+.productLink{
+  text-decoration: none;
+  color:black
 }

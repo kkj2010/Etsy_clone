@@ -6,7 +6,7 @@
             json.partial! "api/users/user", user: product.seller
         end
 
-        json.producst do
+        json.category do
             json.partial! "api/category/category" , category: product.category
         end
     end

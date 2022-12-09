@@ -141,16 +141,16 @@ export default function ProductShow() {
               </div>
 
               {showShipping && (
-                <>
+                <div className="returnContainer">
                   <div className="returnStatus">
                     <p className="returnText">Returns & exchanges</p>
-                    <p className="returnText">Accepted</p>
+                    <p className="returnText2">Accepted</p>
                   </div>
                   <div className="returnDuration">
                     <p className="returnText">Returns & exchnages window</p>
-                    <p className="returnText" >30 days</p>
+                    <p className="returnText2" >30 days</p>
                   </div>
-                </>
+                </div>
               )}
             </div>
           </div>
