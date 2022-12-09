@@ -4,11 +4,9 @@
 
 .navBar {
   display: flex;
-  /* height: 60px; */
   padding-bottom: 7px;
   justify-content: center;
   align-items: center;
-  
 }
 
 .logo {
@@ -64,12 +62,9 @@
 }
 
 .profileButton:hover {
-  /* background-color: grey; */
   transform: scale(1.2);
   transition: transform ease-in 150ms;
   border-radius: 10px;
-  /* opacity: 0.3; */
-  /* display: block; */
 }
 
 .accountButton {
@@ -124,7 +119,7 @@ span {
   color: black;
 }
 
-.displayTable{
+.displayTable {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -133,12 +128,11 @@ span {
   font-size: 13px;
 }
 
-.displayBar{
-  width:1200px;
-  margin:0 auto;
-  
+.displayBar {
+  width: 1200px;
+  margin: 0 auto;
 }
 
-.line{
+.line {
   border-bottom: 2px solid lightgrey;
 }
