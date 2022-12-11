@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import AllProducts from "./components/Products/Allproducts";
 import ProductShow from "./components/Products/ProductShow";
 import ProductForm from "./components/Products/ProductForm";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
         <Route exact path={"/products/:category/:productId"}>
           <ProductShow />
         </Route>
-        
+        <Route exact path={"/products/cart"}>
+          <Cart />
+        </Route>
       </Switch>
     </div>
   );

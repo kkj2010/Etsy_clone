@@ -67,7 +67,7 @@ export default function Navigation() {
             </li>
             <li>
               <GiFamilyHouse />
-              <Link>
+              <Link to={"/products/new"}>
                 <span>Sell on Shoppy</span>
               </Link>
             </li>
