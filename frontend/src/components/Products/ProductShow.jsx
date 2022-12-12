@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import "./ProductShow.css";
 import {
   IoIosArrowBack,
@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../../store/reducers/productReducer";
 import Footer from "../Footer/Footer";
+import { addItemToCart } from "../../store/reducers/cartReducer";
+import { csrfFetch } from "../../store/csrf";
 
 function formatPrice(price) {
   return (price / 100).toLocaleString("en-US", {
@@ -19,10 +21,18 @@ function formatPrice(price) {
 
 export default function ProductShow() {
   const dispatch = useDispatch();
+  const history = useHistory();
+  const [count, setCount] = useState(1);
   const { category, productId } = useParams();
-  // const product = useSelector((state) => state.products[productId]);
+  const userId = useSelector((state) => state.user.current);
   const [showDescription, setShowDescription] = useState(false);
   const [showShipping, setShowShipping] = useState(false);
+
+  useEffect(() => {
+    csrfFetch("/api/cart")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
 
   useEffect(() => {
     if (productId) {
@@ -52,13 +62,17 @@ export default function ProductShow() {
       "/img/necklace6.png",
     ],
   };
-  // console.log(product);
 
   const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const [selected, setSelected] = useState(options && options[0]);
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {
-    //move to cart
+    if (userId) {
+      dispatch(addItemToCart(userId, productId, 1));
+    } else {
+      history.push("/");
+    }
+    setCount(1);
   };
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -181,7 +195,7 @@ export default function ProductShow() {
             <div>
               <button
                 className="AddCartButton"
-                type="submit"
+                // type="submit"
                 onClick={handleClick}
               >
                 Add to Cart

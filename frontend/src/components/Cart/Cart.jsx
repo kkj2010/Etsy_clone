@@ -5,7 +5,7 @@ import { FaEquals } from "react-icons/fa";
 import PriceCard from "./PriceCard";
 import { Link } from "react-router-dom";
 import { deleteProduct } from "../../store/reducers/productReducer";
-import {useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const SHIPPING = 10.0;
@@ -18,24 +18,20 @@ function formatPrice(price) {
 }
 
 export default function Cart() {
-  const dispatch= useDispatch();
-  // const userId= useSelector((state)=> state.session.user?.id); 
- 
-
-  const calculateSubtotal= ()=>{
-
-
-  }
-
+  const dispatch = useDispatch();
+  // const userId= useSelector((state)=> state.session.user?.id);
+  const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  const [selected, setSelected] = useState(options && options[0]);
+  const handleSelect = (e) => setSelected(e.target.value);
+  const calculateSubtotal = () => {};
 
   const handleClick = (e) => {
     // dispatch(deleteProduct(userId)); // userId어디서?
-   
   };
 
   const product = {
     id: 1,
-    name: "Sleek Steel Bench",
+    name: "Desire to have children Fertility Bracelet Rock Crystal Rose Quartz Moonstone Harmony Conception Pregnancy Birth 6 mm",
     price: 10000,
     description:
       "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too.",
@@ -108,36 +104,52 @@ export default function Cart() {
         </div>
         <div className="cartContainer">
           <section className="cartItemsContainer">
+            <li className="cartItemImage">
+              <img src="/img/necklace2.png" />
+            </li>
             <ul className="cartItemDetails">
-              <li className="cartItemImage">
-                <img src="/img/necklace2.png" />
+              <li className="cartProductName">
+                <span>{product.name}</span>
+                <span className="removeCart">Remove</span>
               </li>
-              <li>{product.name}</li>
-              <li>Quantity: 1</li>
-              <li>{formatPrice(product.price)}</li>
+              <li className="chooseQty">
+                <select
+                  className="cartOptionBar"
+                  onChange={handleSelect}
+                  value={selected}
+                >
+                  {options &&
+                    options.map((option, index) => (
+                      <option key={index}>{option}</option>
+                    ))}
+                </select>
+              </li>
+              <li className="cartPrice">{formatPrice(product.price)}</li>
             </ul>
           </section>
           <section className="checkOutContainer">
-            <ul className="">
-              <li>
-                <span>Item(s) Total</span>
-                <span>$300.00</span>
+            <ul className="checkoutDetails">
+              <li className="shoppingDetail">
+                <span className="detailText">Item(s) Total</span>
+                <span className="detailText2">$300.00</span>
               </li>
-              <li>
-                <span>Subtotal</span>
-                <span>$300.00</span>
+              <li className="shoppingDetail1">
+                <span className="detailText">Subtotal</span>
+                <span className="detailText2">$300.00</span>
               </li>
-              <li>
-                <span>Shipping</span>
-                <span>${SHIPPING}</span>
+              <li className="shoppingDetail">
+                <span className="detailText2">Shipping</span>
+                <span className="detailText2">${SHIPPING.toFixed(2)}</span>
               </li>
-              <li>
-                <span>Total</span>
-                <span>$600</span>
+              <li className="shoppingDetail">
+                <span className="detailText">Total</span>
+                <span className="detailText">$310.00</span>
               </li>
             </ul>
             <button onClick={handleClick} className="checkout" type="button">
-              <Link  style={{ color: "white" }}to ="/cart/checkout">Proceed to checkout</Link>
+              <Link style={{ color: "white" }} to="/cart/checkout">
+                Proceed to checkout
+              </Link>
             </button>
           </section>
         </div>

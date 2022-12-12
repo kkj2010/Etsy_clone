@@ -2,7 +2,7 @@ import { AiOutlineStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
-  console.log(product);
+  // console.log(product);
   return (
     <Link
       to={`/products/${product.category.name}/${product.id}`}

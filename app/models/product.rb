@@ -40,6 +40,11 @@ class Product < ApplicationRecord
     primary_key: :id,
     class_name: :Category
 
+    has_many :cart,
+    foreign_key: :product_id,
+    primary_key: :id,
+    class_name: :Cart
+
     has_one_attached :photo
 
 end
