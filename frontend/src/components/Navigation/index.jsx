@@ -67,7 +67,7 @@ export default function Navigation() {
             </li>
             <li>
               <GiFamilyHouse />
-              <Link>
+              <Link to={"/products/new"}>
                 <span>Sell on Shoppy</span>
               </Link>
             </li>
@@ -82,22 +82,30 @@ export default function Navigation() {
 
         <div>
           <button className="cartButton">
-            <BsCart4 />
+            <Link style={{color:"black"}} to={"/cart"}>
+              <BsCart4 />
+            </Link>
           </button>
         </div>
       </div>
-      
+
       <div className="displayBar">
         <ul className="displayTable">
-            <li>Holiday Shop</li>
-            <li> Jewelry & Accessories</li>
-            <li> Clothing & Shoes</li>
-            <li> Home & Living</li>
-            <li> Wedding & Party</li>
-            <li> Toys</li>
-            <li> Art & Collectibles</li>
+          <li>Holiday Shop</li>
+          <li>
+            <Link style={{ color: "grey" }} to={"/products/jewelry"}>
+              Jewelry & Accessories
+            </Link>
+          </li>
+          <li> Clothing & Shoes</li>
+          <li> Home & Living</li>
+          <li> Wedding & Party</li>
+          <li> Toys</li>
+          <li> Art & Collectibles</li>
         </ul>
       </div>
+
+      <div className="line"></div>
       {modalOpen ? (
         <AuthModal
           onSuccess={() => {

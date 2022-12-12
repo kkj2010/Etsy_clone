@@ -24,8 +24,6 @@ export default function SignupForm({ onSuccess }) {
       password: formValues.password,
       first_name: formValues.firstname,
     };
-    // dispatch(createUser(user));
-    // onSuccess();
     setErrors(null);
     dispatch(createUser(user))
       .then((res) => {
@@ -54,7 +52,9 @@ export default function SignupForm({ onSuccess }) {
             onChange={handleChange}
             className="newEmail"
           />
-          {!!errors?.email.length && <p className="error">Email {errors?.email[0]}</p>}
+          {!!errors?.email.length && (
+            <p className="error">Email {errors?.email[0]}</p>
+          )}
         </div>
 
         <div>
@@ -82,7 +82,9 @@ export default function SignupForm({ onSuccess }) {
             onChange={handleChange}
             className="newPassword"
           />
-          {!!errors?.password.length && <p className="error">Password {errors.password[0]}</p>}
+          {!!errors?.password.length && (
+            <p className="error">Password {errors.password[0]}</p>
+          )}
         </div>
 
         <button type="submit" className="registerButton">

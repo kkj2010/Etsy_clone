@@ -1,0 +1,118 @@
+.formContainer {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.formTitle {
+  font-size: 25px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: "Yantramanav", sans-serif;
+  /* font-family: "Cormorant", serif; */
+  letter-spacing: 0.5px;
+}
+
+.productRegisterImage {
+  width: 300px;
+  height: 300px;
+  margin-left: 10px;
+  margin-right:10px;
+  margin-bottom: 20px
+}
+
+.productRegisterForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productFormInput {
+  outline: none;
+  height: 40px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  padding-left: 20px;
+  border:1px solid rgba(34, 34, 34, 0.15);
+  justify-content: center;
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  font-family: "Yantramanav", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+.selectProductFormInput {
+  outline: none;
+  height: 43px;
+  width: 426px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  padding-left: 17px;
+  border:1px solid rgba(34, 34, 34, 0.15);
+  justify-content: center;
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  font-family: "Yantramanav", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 15px;
+  color:grey
+}
+
+.fileInput{
+  outline: none;
+  height: 100%px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  padding-left: 20px;
+  border:1px solid rgba(34, 34, 34, 0.15);
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  font-family: "Yantramanav", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 15px;
+  vertical-align: middle; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color:grey
+ 
+}
+
+
+
+
+.productFormButton {
+  height: 50px;
+  width: 250px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  font-family: "Yantramanav", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: none;
+}
+
+.descriptionInput{
+  outline: none;
+  height: 200px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  padding-left: 20px;
+  border:1px solid rgba(34, 34, 34, 0.15);
+  /* justify-content: center; */
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  font-family: "Yantramanav", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  resize: none;
+  padding-top: 10px;
+  font-size: 15px;
+}
+

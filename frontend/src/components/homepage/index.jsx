@@ -2,6 +2,7 @@ import "./index.css";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
+import Footer from "../Footer/Footer"
 
 export default function HomePage() {
   const [panelId, setPanelId] = useState("farmhouse");
@@ -217,13 +218,10 @@ export default function HomePage() {
 
       <div className="discoverItemsContainer">
         <div className="discoverItemsTitle">
-          <h1>
-            Discover unique hand-picked items
-            {/* <BiRightArrowAlt /> */}
-          </h1>
+          <h1>Discover unique hand-picked items</h1>
           <div className="tabContainer">
             <ul className="tabLists">
-              <li onClick={() => setPanelId("farmhouse")}>Modern farmhouse</li>
+              <li onClick={() => setPanelId("farmhouse")}>Modern Farmhouse</li>
               <li onClick={() => setPanelId("eclectic")}>Eclectic Decor</li>
               <li onClick={() => setPanelId("minimal")}>Minimalist</li>
               <li onClick={() => setPanelId("holiday")}>Holiday Decor</li>
@@ -232,7 +230,8 @@ export default function HomePage() {
           {generatePanel(panelId)}
         </div>
       </div>
-      <div className="footer">
+      <Footer/>
+      {/* <div className="footer">
         <ul className="leftFooter">
           <li className="flag">
             <img src="/img/usaFlag.png" />
@@ -252,7 +251,7 @@ export default function HomePage() {
             <FaLinkedin />
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

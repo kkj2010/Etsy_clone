@@ -1,15 +1,36 @@
-import HomePage from "./components/homepage";
+import HomePage from "./components/Homepage";
 import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import AllProducts from "./components/Products/Allproducts";
+import ProductShow from "./components/Products/ProductShow";
+import ProductForm from "./components/Products/ProductForm";
+import Cart from "./components/Cart/Cart";
+import ChekcOutPage from "./components/Checkout/CheckOutPage";
+
 
 function App() {
   return (
     <div className="App">
       <Navigation />
-      {/* before swtich no change */}
+
       <Switch>
         <Route exact path={"/"}>
           <HomePage />
+        </Route>
+        <Route exact path={"/products/new"}>
+          <ProductForm />
+        </Route>
+        <Route exact path={"/products/:category"}>
+          <AllProducts />
+        </Route>
+        <Route exact path={"/products/:category/:productId"}>
+          <ProductShow />
+        </Route>
+        <Route exact path={"/cart"}>
+          <Cart />
+        </Route>
+        <Route exact path={"/cart/checkout"}>
+          <ChekcOutPage/>
         </Route>
       </Switch>
     </div>
@@ -17,8 +38,3 @@ function App() {
 }
 
 export default App;
-
-//prpoducts- all products
-//products/new - new product
-// product/id- product detail
-// carts- my cart
