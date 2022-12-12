@@ -8,6 +8,7 @@ import {
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../../store/reducers/productReducer";
+import Footer from "../Footer/Footer";
 
 function formatPrice(price) {
   return (price / 100).toLocaleString("en-US", {
@@ -51,7 +52,7 @@ export default function ProductShow() {
       "/img/necklace6.png",
     ],
   };
-  console.log(product);
+  // console.log(product);
 
   const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const [selected, setSelected] = useState(options && options[0]);
@@ -234,6 +235,7 @@ export default function ProductShow() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { fetchProducts } from "../../store/reducers/productReducer";
 import "./Allproducts.css";
+import Footer from "../Footer/Footer";
 
 export default function AllProducts() {
   const { category } = useParams();
@@ -71,6 +72,7 @@ export default function AllProducts() {
           ))}
         </ul>
       </div>
+      <Footer/>
     </div>
   );
 }

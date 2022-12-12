@@ -82,7 +82,9 @@ export default function Navigation() {
 
         <div>
           <button className="cartButton">
-            <BsCart4 />
+            <Link style={{color:"black"}} to={"/cart"}>
+              <BsCart4 />
+            </Link>
           </button>
         </div>
       </div>

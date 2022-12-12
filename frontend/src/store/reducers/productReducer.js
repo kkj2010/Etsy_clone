@@ -2,6 +2,12 @@ import { csrfFetch } from "../csrf";
 const RECEIVE_PRODUCTS = "products/RECEIVE_PRODUCTS";
 const RECEIVE_PRODUCT = "products/RECEIVE_PRODUCT";
 const REMOVE_PRODUCT = "products/REMOVE_PRODUCT";
+// const CREATE_PRODUCT = "products/CREATE_PRODUCT";
+
+// export const createProduct = (product) => ({
+//   type: CREATE_PRODUCT,
+//   product,
+// });
 
 export const receiveProducts = (products) => ({
   type: RECEIVE_PRODUCTS,
@@ -18,6 +24,16 @@ export const removeProduct = (productId) => ({
   productId,
 });
 
+export const createNewProduct = (product) => async (dispatch) => {
+  const res = await csrfFetch("/api/products", {
+    method: "POST",
+    body: JSON.stringify(product),
+  });
+  const data = await res.json();
+  dispatch(receiveProduct(data));
+  return res;
+};
+
 export const fetchProducts = () => async (dispatch) => {
   const res = await csrfFetch("/api/products");
   const data = await res.json();
@@ -32,10 +48,9 @@ export const fetchProduct = (productId) => async (dispatch) => {
   return res;
 };
 
-
 export const deleteProduct = (productId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/products/${productId}`,{
-    method: "DELETE"
+  const res = await csrfFetch(`/api/products/${productId}`, {
+    method: "DELETE",
   });
   dispatch(removeProduct(productId));
   return res;

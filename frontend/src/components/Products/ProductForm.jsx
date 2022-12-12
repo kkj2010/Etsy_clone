@@ -1,30 +1,41 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./ProductForm.css";
+import Footer from "../Footer/Footer";
+import { createNewProduct } from "../../store/reducers/productReducer";
+import { useHistory } from "react-router-dom";
 
 export default function ProductForm() {
+  const dispatch = useDispatch();
   const [product, setProduct] = useState({});
-  const [file, setFile] = useState();
-  const [success, setSuccess] = useState();
+  const [files, setFiles] = useState([]);
   const [isUploading, setIsUploading] = useState();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "file") {
-      setFile(files && files[0]);
-      return;
+      setFiles(Array.from(files));
+    } else {
+      setProduct((product) => ({ ...product, [name]: value }));
     }
-    setProduct((product) => ({ ...product, [name]: value }));
   };
+
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //upload image where?
+    const newProduct = {
+      ...product,
+      price: parseInt(product.price) * 100,
+      category_id: parseInt(product.categoryId),
+      files,
+    };
+    console.log(newProduct);
     setIsUploading(true);
-    setSuccess("Successfully Updated");
-    setTimeout(() => {
-      setSuccess(null);
-    }, 4000);
+    dispatch(createNewProduct(newProduct)).then(async (res) => {
+      setIsUploading(false);
+      history.push("/products/jewelry");
+    });
   };
 
   return (
@@ -34,29 +45,35 @@ export default function ProductForm() {
           <div className="formTitle">
             Please Fill Out The Following Fields:{" "}
           </div>
-          {success && <p className="updateMessage">{success}</p>}
-          {file && (
-            <img
-              className="productRegisterImage"
-              src={URL.createObjectURL(file)}
-              alt="local file"
-            />
-          )}
+
+          {!!files.length &&
+            files.map((file, index) => (
+              <img
+                className="productRegisterImage"
+                src={URL.createObjectURL(file)}
+                alt="local file"
+                key={index}
+              />
+            ))}
+
           <form className="productRegisterForm" onSubmit={handleSubmit}>
             <input
-              className="productFormInput"
+              className="fileInput"
               type="file"
               accept="image/*"
               name="file"
+              multiple={true}
               required
               onChange={handleChange}
+              id="file"
             />
+
             <input
               className="productFormInput"
               type="text"
               name="name"
-              value={product.name ?? " "}
-              placeholder="Product Name"
+              value={product.name ?? ""}
+              placeholder="Product name"
               required
               onChange={handleChange}
             />
@@ -64,21 +81,23 @@ export default function ProductForm() {
               className="productFormInput"
               type="number"
               name="price"
-              value={product.price ?? " "}
+              value={product.price ?? ""}
               placeholder="Price"
               required
               onChange={handleChange}
             />
-            <input
-              className="productFormInput"
-              type="text"
-              name="category"
-              value={product.category ?? ""}
-              placeholder="Category"
-              required
+
+            <select
+              className="selectProductFormInput"
+              name="categoryId"
+              value={product.categoryId}
               onChange={handleChange}
-            />
-            <input
+            >
+              <option value="">Please select category</option>
+              <option value={2}>Jewelry & Accessories</option>
+            </select>
+
+            <textarea
               className="descriptionInput"
               type="text"
               name="description"
@@ -90,14 +109,14 @@ export default function ProductForm() {
             <button
               className="productFormButton"
               type="submit"
-              text={isUploading ? "Uploading..." : "Create Product"}
               disabled={isUploading}
             >
-              Create Product
+              {isUploading ? "Uploading..." : "Create Product"}
             </button>
           </form>
         </section>
       </div>
+      <Footer />
     </>
   );
 }

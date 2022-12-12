@@ -15,13 +15,13 @@ class Api::ProductsController < ApplicationController
         
     end
 
-
-
-
     def create
-        @product= Product.create(product_params)
+        @product= Product.new(product_params)
+        @product.seller= current_user
+        @product.category_id= product_params[:category_id].to_i
+
         if @product.save
-            render 'api/products/index'
+            render 'api/products/show'
         else
             render json: @product.errors.full_messages, status: 422
         end
@@ -36,7 +36,7 @@ class Api::ProductsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:description, :name, :price)
+        params.require(:product).permit(:description, :name, :price, :category_id)
     end
 
 end

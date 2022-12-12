@@ -28,7 +28,7 @@
   font-size: 32px;
   letter-spacing: 1px;
   /* font-family: "Playfair Display", serif; */
-  font-family: 'Cormorant', serif;
+  font-family: "Cormorant", serif;
 }
 
 .suggestionFirstrow,
@@ -65,18 +65,10 @@
   z-index: 1;
 }
 
-.display > img:hover {
+.display:hover {
   transform: scale(1.1);
   transition: transform ease-in 200ms;
   cursor: pointer;
-}
-
-.text1:hover,
-.text2:hover,
-.text3:hover,
-.text4:hover,
-.text5:hover,
-.text6:hover {
   text-decoration: underline;
 }
 
@@ -137,6 +129,7 @@
   padding-top: 20px;
   width: 1200px;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .tabLists {
@@ -192,7 +185,7 @@
   grid-row-start: 1;
   grid-row-end: 3;
 }
-
+/* 
 .footer {
   background-color: #2f466c;
   height: 80px;
@@ -217,18 +210,18 @@
   justify-content: flex-start;
   justify-content: space-evenly;
   padding-right: 13px;
-}
+} */
 
-.gitHub,
+/* .gitHub,
 .linkedin {
   font-size: 22px;
-}
+} */
 
-.flag > img {
+/* .flag > img {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-}
+} */
 
 .tabPanel2 {
   padding-top: 20px;

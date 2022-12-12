@@ -1,7 +1,13 @@
+
+
 .productIndexContainer {
   width: 1200px;
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: 50px;
+}
+.formContainerSection{
+  margin-bottom: 50px;
 }
 
 .listingPageContainer {
@@ -207,3 +213,4 @@
   display: flex;
   justify-content: space-between;
 }
+

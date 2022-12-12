@@ -1,0 +1,37 @@
+
+.footer {
+  background-color: #2f466c;
+  height: 80px;
+  color: white;
+  font-family: "Yantramanav", sans-serif;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftFooter {
+  min-width: 350px;
+  display: flex;
+  padding-left: 33px;
+  justify-content: space-evenly;
+}
+
+.rightFooter {
+  min-width: 350px;
+  display: flex;
+  justify-content: flex-start;
+  justify-content: space-evenly;
+  padding-right: 13px;
+}
+
+.gitHub,
+.linkedin {
+  font-size: 22px;
+}
+
+.flag > img {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+}

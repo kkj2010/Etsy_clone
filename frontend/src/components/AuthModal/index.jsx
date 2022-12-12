@@ -1,5 +1,5 @@
-import LoginForm from "../session/LoginForm";
-import SignupForm from "../session/SignupForm";
+import LoginForm from "../Session/LoginForm";
+import SignupForm from "../Session/SignupForm";
 import { Modal } from "../../context/modal";
 import { useState } from "react";
 import "./index.css";
