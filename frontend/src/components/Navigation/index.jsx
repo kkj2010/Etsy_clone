@@ -10,6 +10,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { RiLogoutBoxLine } from "react-icons/ri";
 import { GiFamilyHouse } from "react-icons/gi";
 import "./index.css";
+import CartStatus from "../Cart/CartStatus";
 
 export default function Navigation() {
   const history = useHistory();
@@ -84,6 +85,7 @@ export default function Navigation() {
           <button className="cartButton">
             <Link style={{color:"black"}} to={"/cart"}>
               <BsCart4 />
+              {/* <CartStatus/> */}
             </Link>
           </button>
         </div>

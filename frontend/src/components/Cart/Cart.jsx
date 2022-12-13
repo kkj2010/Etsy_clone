@@ -51,10 +51,10 @@ export default function Cart() {
       "/img/necklace6.png",
     ],
   };
-  // const hasProducts = products && products.length > 0;
+  // const hasProducts = product && product.length > 0;
   // const totalPrice =
-  //   products &&
-  //   products.reduce(
+  //   product &&
+  //   product.reduce(
   //     (prev, current) => prev + parseInt(current.price) * current.quantity,
   //     0
   //   );
@@ -104,8 +104,23 @@ export default function Cart() {
         </div>
         <div className="cartContainer">
           <section className="cartItemsContainer">
+            
             <li className="cartItemImage">
               <img src="/img/necklace2.png" />
+
+              <div className='order-options'>
+            <div className="giftCheckboxText">
+            <input className="giftCheckbox" type="checkbox"/>
+              This order is a gift
+            </div>
+            <div className='giftTextarea'>
+              <textarea name='message to seller'
+              placeholder="Add a note to seller (optional)" >
+              </textarea>
+              </div>
+              </div>
+
+
             </li>
             <ul className="cartItemDetails">
               <li className="cartProductName">
@@ -126,16 +141,20 @@ export default function Cart() {
               </li>
               <li className="cartPrice">{formatPrice(product.price)}</li>
             </ul>
+        
+       
           </section>
+
+          
           <section className="checkOutContainer">
             <ul className="checkoutDetails">
               <li className="shoppingDetail">
                 <span className="detailText">Item(s) Total</span>
-                <span className="detailText2">$300.00</span>
+                <span className="detailText2">$100.00</span>
               </li>
               <li className="shoppingDetail1">
                 <span className="detailText">Subtotal</span>
-                <span className="detailText2">$300.00</span>
+                <span className="detailText2">$100.00</span>
               </li>
               <li className="shoppingDetail">
                 <span className="detailText2">Shipping</span>
@@ -143,7 +162,7 @@ export default function Cart() {
               </li>
               <li className="shoppingDetail">
                 <span className="detailText">Total</span>
-                <span className="detailText">$310.00</span>
+                <span className="detailText">$110.00</span>
               </li>
             </ul>
             <button onClick={handleClick} className="checkout" type="button">

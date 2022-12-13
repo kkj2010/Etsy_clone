@@ -34,6 +34,11 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Cart
 
+    has_many :cart_items,
+    through: :cart, 
+    source: :cart_items
+   
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         if user&.authenticate(password) 
