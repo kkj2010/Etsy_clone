@@ -5,15 +5,19 @@ class Api::CartItemsController < ApplicationController
 
     def update
         @cart = current_user.cart
-        cart_item= CartItem.find(params[:id])
-        if cart_item.cart_id===current_user.cart_id
-            cart_item.update(quantity: cart_item[:quantity])
-            render 'api/carts/show'
+        cart_item = CartItem.find(params[:id])
+        if cart_item.cart_id == @cart.id
+            cart_item.update(quantity: params[:quantity])
+            # render 'api/carts/show'
+            render json: {
+                id: cart_item.id,
+                quantity: cart_item.quantity,
+                product: cart_item.product,
+                category: cart_item.product.category,
+            }
         else
             render json: {errors: cart_item.errors.full_messages}, status:  :unprocessable_entity
         end
-
-    
     end
 
     def destroy

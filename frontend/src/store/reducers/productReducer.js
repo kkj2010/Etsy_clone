@@ -27,7 +27,6 @@ export const removeProduct = (productId) => ({
 export const createNewProduct = (product) => async (dispatch) => {
   const res = await csrfFetch("/api/products", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
     body: product,
   });
   const data = await res.json();

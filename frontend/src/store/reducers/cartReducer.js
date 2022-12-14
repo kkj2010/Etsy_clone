@@ -3,6 +3,7 @@ import { csrfFetch } from "../csrf";
 export const RECEIVE_CART = "cart/RECEIVE_CART";
 export const ADD_ITEM = "cart/ADD_ITEM";
 export const REMOVE_ITEM = "cart/REMOVE_ITEM";
+// export const UPDATE_ITEM = "cart/UPDATE_ITEM";
 
 export const receiveCart = (cart) => ({
   type: RECEIVE_CART,
@@ -19,34 +20,39 @@ export const removeItem = (cartItemId) => ({
   cartItemId,
 });
 
+// export const updateQuantity = (item) => ({
+//   type: UPDATE_ITEM,
+//   item,
+// });
+
 export const fetchCart = () => async (dispatch) => {
   const res = await fetch(`/api/cart`);
   const data = await res.json();
   dispatch(receiveCart(data));
 };
 
-export const addItemToCart =
-  (product_id, quantity) => async (dispatch) => {
-    const res = await csrfFetch("/api/cart", {
-      method: "POST",
-      body: JSON.stringify({ product: product_id, quantity }),
-      // body: JSON.stringify({ cart: { cart_id, product_id, quantity } }),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-    if (res.ok) {
-      const data = await res.json();
-      dispatch(addItem(data));
-    }
-    return res;
-  };
+export const addItemToCart = (product_id, quantity) => async (dispatch) => {
+  const res = await csrfFetch("/api/cart", {
+    method: "POST",
+    body: JSON.stringify({ product: product_id, quantity }),
+    // body: JSON.stringify({ cart: { cart_id, product_id, quantity } }),
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(addItem(data));
+  }
+  return res;
+};
 
 export const updateCart =
-  (product_id, quantity) => async (dispatch) => {
-    const res = await csrfFetch("/api/cart/", {
+  ({ id, quantity }) =>
+  async (dispatch) => {
+    const res = await csrfFetch(`/api/cart_items/${id}`, {
       method: "PATCH",
-      body: JSON.stringify({ cart: { product_id, quantity } }),
+      body: JSON.stringify({ quantity }),
       headers: {
         "content-type": "application/json",
       },
@@ -68,7 +74,7 @@ const initialState = { items: null };
 // let x = {
 //   id: 1,
 //   name: 'kunju',
-//   adddress: { 
+//   adddress: {
 //     city: 'nyc',
 //     state: 'ny'
 //   }
@@ -111,4 +117,11 @@ export const selectSubTotalPrice = (state) => {
   );
 };
 
-
+export const selectTotalQuatity = (state) => {
+  const items = Object.values(state.cart?.items ?? {});
+  return items.reduce(
+    (acc, current) => acc + current.quantity,
+    // current.quantity,
+    0
+  );
+};

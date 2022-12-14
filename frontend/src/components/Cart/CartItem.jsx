@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {removeItemFromCart} from "../../store/reducers/cartReducer"
+import { removeItemFromCart } from "../../store/reducers/cartReducer";
+import { updateCart } from "../../store/reducers/cartReducer";
 
 function formatPrice(price) {
   return (price / 100).toLocaleString("en-US", {
@@ -11,14 +12,17 @@ function formatPrice(price) {
 }
 
 export default function CartItem({ item }) {
-  const dispatch= useDispatch()
+  const dispatch = useDispatch();
   const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const [selected, setSelected] = useState(item.quantity);
-  const handleSelect = (e) => setSelected(parseInt(e.target.value));
+  const handleSelect = (e) => {
+    setSelected(parseInt(e.target.value));
+    dispatch(updateCart({ id: item.id, quantity: parseInt(e.target.value) }));
+  };
 
-  const handleClick =(e)=> {
-      dispatch(removeItemFromCart(item.id))
-  }
+  const handleClick = (e) => {
+    dispatch(removeItemFromCart(item.id));
+  };
   return (
     <>
       {/* <div className="cartContainer"> */}
@@ -34,7 +38,9 @@ export default function CartItem({ item }) {
               <Link to={`/products/jewelry/${item.id}`}>
                 <span>{item.product.name}</span>
               </Link>
-              <span onClick={handleClick} className="removeCart">Remove</span>
+              <span onClick={handleClick} className="removeCart">
+                Remove
+              </span>
             </li>
             <li className="chooseQty">
               <select
@@ -48,12 +54,12 @@ export default function CartItem({ item }) {
                   ))}
               </select>
             </li>
-            <li className="cartPrice">{formatPrice(item.product.price * parseInt(selected))}</li>
-     
+            <li className="cartPrice">
+              {formatPrice(item.product.price * parseInt(selected))}
+            </li>
           </ul>
-
         </div>
-      
+
         <div className="order-options">
           <div className="giftCheckboxText">
             <input className="giftCheckbox" type="checkbox" />

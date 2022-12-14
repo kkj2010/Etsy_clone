@@ -12,6 +12,7 @@ import {
   fetchCart,
   removeItemFromCart,
   selectSubTotalPrice,
+  selectTotalQuatity,
 } from "../../store/reducers/cartReducer";
 
 const SHIPPING = 1000;
@@ -26,20 +27,16 @@ function formatPrice(price) {
 export default function Cart(item) {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.current); //current user
-  const [count, setCount] = useState(item.quantity);
 
-  const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-  const [selected, setSelected] = useState(options && options[0]);
-  const handleSelect = (e) => setSelected(e.target.value);
   const products = useSelector((state) =>
     Object.values(state.cart?.items ?? {})
   );
 
   const subtotalPrice = useSelector(selectSubTotalPrice);
+  // const subtotalPrice =
   const totalPrice = formatPrice(subtotalPrice + SHIPPING);
 
-  let total=0;
-  products.forEach(product=> total+= product.quantity)
+  const total = useSelector(selectTotalQuatity);
 
   useEffect(() => {
     if (userId) {
@@ -47,18 +44,13 @@ export default function Cart(item) {
     }
   }, [dispatch, userId]);
 
-  const handleClick = (e) => {};
-
-  //  if (!products.length)
+  const handleClick = (e) => {
+    products.forEach((product) => dispatch(removeItemFromCart(product.id)));
+  };
 
   const hasProducts = products && products.length > 0;
-  // const totalPrice =
-  //   products &&
-  //   products.reduce(
-  //     (prev, current) => prev + parseInt(current.price) * current.quantity,
-  //     0
-  //   );
-  if (!hasProducts) {
+
+  if (!hasProducts || !userId) {
     return (
       <div className="cartItems">
         <EmptyCart />
@@ -96,48 +88,6 @@ export default function Cart(item) {
                 </div>
               ))}
             </div>
-
-            {/* <section className="cartItemsContainer">
-            <div className="r">
-            <li className="cartItemImage">
-              <img src="/img/necklace2.png" />
-
-
-            </li>
-            <ul className="cartItemDetails">
-              <li className="cartProductName">
-                <span>{product.name}</span>
-                <span className="removeCart">Remove</span>
-              </li>
-              <li className="chooseQty">
-                <select
-                  className="cartOptionBar"
-                  onChange={handleSelect}
-                  value={selected}
-                >
-                  {options &&
-                    options.map((option, index) => (
-                      <option key={index}>{option}</option>
-                    ))}
-                </select>
-              </li>
-              <li className="cartPrice">{formatPrice(product.price)}</li>
-            </ul>
-            </div>
-       
-            <div className='order-options'>
-            <div className="giftCheckboxText">
-            <input className="giftCheckbox" type="checkbox"/>
-              This order is a gift
-            </div>
-            <div className='giftTextarea'>
-              <textarea name='message to seller'
-              placeholder="Add a note to seller (optional)" >
-              </textarea>
-              </div>
-              </div>
-
-          </section> */}
 
             <section className="checkOutContainer">
               <ul className="checkoutDetails">

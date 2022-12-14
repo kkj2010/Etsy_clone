@@ -130,7 +130,8 @@
   width: 300px;
   height: 210px;
   display: block;
-  padding-left: 10px;
+  padding-left: 8px;
+  padding-right:7px;
   border-radius: 3px;
 }
 
