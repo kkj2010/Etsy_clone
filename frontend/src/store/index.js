@@ -7,7 +7,6 @@ import cartReducer from "./reducers/cartReducer";
 // import { csrfFetch } from "./csrf";
 // import * as sessionActions from './reducers/userReducer'
 
-
 // if (process.env.NODE_ENV !== "production") {
 
 //   window.csrfFetch = csrfFetch;
@@ -18,7 +17,7 @@ import cartReducer from "./reducers/cartReducer";
 const rootReducer = combineReducers({
   user: userReducer,
   products: productReducer,
-  carts: cartReducer,
+  cart: cartReducer,
 });
 
 const configureStore = (preloadedState = {}) => {

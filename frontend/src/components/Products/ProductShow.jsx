@@ -27,6 +27,7 @@ export default function ProductShow() {
   const userId = useSelector((state) => state.user.current);
   const [showDescription, setShowDescription] = useState(false);
   const [showShipping, setShowShipping] = useState(false);
+  // const carts = useSelector((state) => Object.values(state.carts));
 
   useEffect(() => {
     csrfFetch("/api/cart")
@@ -68,7 +69,9 @@ export default function ProductShow() {
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {
     if (userId) {
-      dispatch(addItemToCart(userId, productId, 1));
+      dispatch(addItemToCart(32, productId, 1)).then(() => {
+        history.push("/cart");
+      });
     } else {
       history.push("/");
     }
@@ -228,6 +231,7 @@ export default function ProductShow() {
                     </span>
                     <span className="arrowDownButton">
                       <IoIosArrowDown />
+                      {/* <CartModal/> */}
                     </span>
                   </div>
                 </button>

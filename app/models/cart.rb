@@ -28,4 +28,12 @@ class Cart < ApplicationRecord
     # class_name: :Product
 
     has_many :cart_items
+
+    def add_product(product)
+        cart_item = CartItem.new()
+        cart_item.product_id = product
+        cart_item.cart = self
+        cart_item.save!
+        cart_item
+    end
 end

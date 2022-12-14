@@ -24,15 +24,23 @@ export default function ProductForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newProduct = {
-      ...product,
-      price: parseInt(product.price) * 100,
-      category_id: parseInt(product.categoryId),
-      files,
-    };
-    console.log(newProduct);
+
+    // const newProduct = {
+    //   ...product,
+    //   price: parseInt(product.price) * 100,
+    //   category_id: parseInt(product.categoryId),
+    //   files,
+    // };
+
+    const formData = new FormData();
+    formData.set("name", product.name);
+    formData.set("description", product.description);
+    formData.set("price", parseInt(product.price));
+    formData.set("category_id", parseInt(product.categoryId)); 
+    formData.set("photo", files[0], files[0].name);
+
     setIsUploading(true);
-    dispatch(createNewProduct(newProduct)).then(async (res) => {
+    dispatch(createNewProduct(formData)).then(async (res) => {
       setIsUploading(false);
       history.push("/products/jewelry");
     });
@@ -53,6 +61,7 @@ export default function ProductForm() {
                 src={URL.createObjectURL(file)}
                 alt="local file"
                 key={index}
+                onLoad={() => URL.revokeObjectURL(file)}
               />
             ))}
 

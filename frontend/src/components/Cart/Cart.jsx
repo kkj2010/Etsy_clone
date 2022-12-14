@@ -7,8 +7,14 @@ import { Link } from "react-router-dom";
 import { deleteProduct } from "../../store/reducers/productReducer";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import EmptyCart from "./EmptyCart";
+import {
+  fetchCart,
+  removeItemFromCart,
+  selectSubTotalPrice,
+} from "../../store/reducers/cartReducer";
 
-const SHIPPING = 10.0;
+const SHIPPING = 1000;
 
 function formatPrice(price) {
   return (price / 100).toLocaleString("en-US", {
@@ -17,47 +23,45 @@ function formatPrice(price) {
   });
 }
 
-export default function Cart() {
+export default function Cart(item) {
   const dispatch = useDispatch();
-  // const userId= useSelector((state)=> state.session.user?.id);
+  const userId = useSelector((state) => state.user.current); //current user
+  const [count, setCount] = useState(item.quantity);
+
   const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const [selected, setSelected] = useState(options && options[0]);
   const handleSelect = (e) => setSelected(e.target.value);
-  const calculateSubtotal = () => {};
+  const products = useSelector((state) =>
+    Object.values(state.cart?.items ?? {})
+  );
 
-  const handleClick = (e) => {
-    // dispatch(deleteProduct(userId)); // userId어디서?
-  };
+  const subtotalPrice = useSelector(selectSubTotalPrice);
+  const totalPrice = formatPrice(subtotalPrice + SHIPPING);
 
-  const product = {
-    id: 1,
-    name: "Desire to have children Fertility Bracelet Rock Crystal Rose Quartz Moonstone Harmony Conception Pregnancy Birth 6 mm",
-    price: 10000,
-    description:
-      "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too.",
-    seller: {
-      id: 1,
-      email: "user@gmail.com",
-      firstName: "user",
-      createdAt: "2022-12-08T15:57:02.121Z",
-    },
-    category: { id: 3, name: "clothing_shoes", label: "Clothing \u0026 Shoes" },
-    images: [
-      "/img/necklace.png",
-      "/img/necklace2.png",
-      "/img/necklace3.png",
-      "/img/necklace4.png",
-      "/img/necklace5.png",
-      "/img/necklace6.png",
-    ],
-  };
-  // const hasProducts = product && product.length > 0;
+  useEffect(() => {
+    if (userId) {
+      dispatch(fetchCart());
+    }
+  }, [dispatch, userId]);
+
+  const handleClick = (e) => {};
+
+  //  if (!products.length)
+
+  const hasProducts = products && products.length > 0;
   // const totalPrice =
-  //   product &&
-  //   product.reduce(
+  //   products &&
+  //   products.reduce(
   //     (prev, current) => prev + parseInt(current.price) * current.quantity,
   //     0
   //   );
+  if (!hasProducts) {
+    return (
+      <div className="cartItems">
+        <EmptyCart />
+      </div>
+    );
+  }
   return (
     <>
       {/* <p>Cart</p>
@@ -102,23 +106,21 @@ export default function Cart() {
             order, we've got your back
           </span>
         </div>
-        <div className="cartContainer">
-          <section className="cartItemsContainer">
-            
+
+        {hasProducts && (
+          <div className="cartContainer">
+            <div>
+              {products.map((product) => (
+                <div key={product.id}>
+                  <CartItem item={product} />
+                </div>
+              ))}
+            </div>
+
+            {/* <section className="cartItemsContainer">
+            <div className="r">
             <li className="cartItemImage">
               <img src="/img/necklace2.png" />
-
-              <div className='order-options'>
-            <div className="giftCheckboxText">
-            <input className="giftCheckbox" type="checkbox"/>
-              This order is a gift
-            </div>
-            <div className='giftTextarea'>
-              <textarea name='message to seller'
-              placeholder="Add a note to seller (optional)" >
-              </textarea>
-              </div>
-              </div>
 
 
             </li>
@@ -141,37 +143,55 @@ export default function Cart() {
               </li>
               <li className="cartPrice">{formatPrice(product.price)}</li>
             </ul>
-        
+            </div>
        
-          </section>
+            <div className='order-options'>
+            <div className="giftCheckboxText">
+            <input className="giftCheckbox" type="checkbox"/>
+              This order is a gift
+            </div>
+            <div className='giftTextarea'>
+              <textarea name='message to seller'
+              placeholder="Add a note to seller (optional)" >
+              </textarea>
+              </div>
+              </div>
 
-          
-          <section className="checkOutContainer">
-            <ul className="checkoutDetails">
-              <li className="shoppingDetail">
-                <span className="detailText">Item(s) Total</span>
-                <span className="detailText2">$100.00</span>
-              </li>
-              <li className="shoppingDetail1">
-                <span className="detailText">Subtotal</span>
-                <span className="detailText2">$100.00</span>
-              </li>
-              <li className="shoppingDetail">
-                <span className="detailText2">Shipping</span>
-                <span className="detailText2">${SHIPPING.toFixed(2)}</span>
-              </li>
-              <li className="shoppingDetail">
-                <span className="detailText">Total</span>
-                <span className="detailText">$110.00</span>
-              </li>
-            </ul>
-            <button onClick={handleClick} className="checkout" type="button">
-              <Link style={{ color: "white" }} to="/cart/checkout">
-                Proceed to checkout
-              </Link>
-            </button>
-          </section>
-        </div>
+          </section> */}
+
+            <section className="checkOutContainer">
+              <ul className="checkoutDetails">
+                <li className="shoppingDetail">
+                  <span className="detailText">Item(s) Total</span>
+                  <span className="detailText2">
+                    ${(subtotalPrice / 100).toFixed(2)}
+                  </span>
+                </li>
+                <li className="shoppingDetail1">
+                  <span className="detailText">Subtotal</span>
+                  <span className="detailText2">
+                    ${(subtotalPrice / 100).toFixed(2)}
+                  </span>
+                </li>
+                <li className="shoppingDetail">
+                  <span className="detailText2">Shipping</span>
+                  <span className="detailText2">
+                    ${(SHIPPING / 100).toFixed(2)}
+                  </span>
+                </li>
+                <li className="shoppingDetail">
+                  <span className="detailText">Total</span>
+                  <span className="detailText">{totalPrice}</span>
+                </li>
+              </ul>
+              <button onClick={handleClick} className="checkout" type="button">
+                <Link style={{ color: "white" }} to="/cart/checkout">
+                  Proceed to checkout
+                </Link>
+              </button>
+            </section>
+          </div>
+        )}
       </div>
     </>
   );

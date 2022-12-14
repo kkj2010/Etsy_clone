@@ -1,0 +1,24 @@
+.emptyCart{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Yantramanav", sans-serif;
+}
+
+.emptyCart>p{
+  margin-top:60px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emptyCart>#link{
+  color: black;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.emptyCart>h1{
+  margin-top: 20px;
+  font-size: 30px;
+}

@@ -5,7 +5,7 @@ import AllProducts from "./components/Products/Allproducts";
 import ProductShow from "./components/Products/ProductShow";
 import ProductForm from "./components/Products/ProductForm";
 import Cart from "./components/Cart/Cart";
-import ChekcOutPage from "./components/Checkout/CheckOutPage";
+import CheckOutPage from "./components/Checkout/CheckOutPage";
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           <Cart />
         </Route>
         <Route exact path={"/cart/checkout"}>
-          <ChekcOutPage/>
+          <CheckOutPage/>
         </Route>
       </Switch>
     </div>

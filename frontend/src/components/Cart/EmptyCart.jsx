@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { FaEnvira } from "react-icons/fa";
-import { useSelector } from "react-redux";
-import "./CheckOutPage.css";
+import "./EmptyCart.css";
 
-export default function CheckOutPage() {
+export default function EmptyCart() {
   return (
     <>
       <div className="warning">
@@ -18,7 +17,7 @@ export default function CheckOutPage() {
       </div>
 
       <div className="emptyCart">
-        <h1 className="checkoutText1">Thank you for your order.</h1>
+        <h1 className="checkoutText1">Your cart is empty </h1>
         <Link id="link" to="/">
           Discover something unique to fill it up
         </Link>

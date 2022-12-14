@@ -9,7 +9,11 @@ export default function ProductCard({ product }) {
       className="productLink"
     >
       <li className="productImage">
-        <img src="/img/necklace.png" />
+        <img
+          src={product.photo ?? "/img/necklace.png"}
+          alt=""
+          // style={{ objectFit: "cover" }}
+        />
         <div className="productName">{product.name}</div>
         <div className="productRating">
           <AiOutlineStar />

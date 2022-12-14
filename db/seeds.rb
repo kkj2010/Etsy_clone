@@ -30,6 +30,7 @@ ApplicationRecord.transaction do
     Category.create!(name: "art", label: "Art & Collectibles")
 
 
+    puts 'Creaing products...'
 
     20.times do |n|
         product = Product.new(
