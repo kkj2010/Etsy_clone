@@ -13,8 +13,9 @@ function formatPrice(price) {
 export default function CartItem({ item }) {
   const dispatch= useDispatch()
   const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-  const [selected, setSelected] = useState(options && options[0]);
-  const handleSelect = (e) => setSelected(e.target.value);
+  const [selected, setSelected] = useState(item.quantity);
+  const handleSelect = (e) => setSelected(parseInt(e.target.value));
+
   const handleClick =(e)=> {
       dispatch(removeItemFromCart(item.id))
   }
@@ -47,10 +48,12 @@ export default function CartItem({ item }) {
                   ))}
               </select>
             </li>
-            <li className="cartPrice">{formatPrice(item.product.price)}</li>
+            <li className="cartPrice">{formatPrice(item.product.price * parseInt(selected))}</li>
+     
           </ul>
-        </div>
 
+        </div>
+      
         <div className="order-options">
           <div className="giftCheckboxText">
             <input className="giftCheckbox" type="checkbox" />

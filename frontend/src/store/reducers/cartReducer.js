@@ -26,10 +26,10 @@ export const fetchCart = () => async (dispatch) => {
 };
 
 export const addItemToCart =
-  (cart_id, product_id, quantity) => async (dispatch) => {
+  (product_id, quantity) => async (dispatch) => {
     const res = await csrfFetch("/api/cart", {
       method: "POST",
-      body: JSON.stringify({ product: product_id }),
+      body: JSON.stringify({ product: product_id, quantity }),
       // body: JSON.stringify({ cart: { cart_id, product_id, quantity } }),
       headers: {
         "content-type": "application/json",
@@ -43,10 +43,10 @@ export const addItemToCart =
   };
 
 export const updateCart =
-  (cart_id, product_id, quantity) => async (dispatch) => {
-    const res = await csrfFetch(`/api/cart/${cart_id}`, {
+  (product_id, quantity) => async (dispatch) => {
+    const res = await csrfFetch("/api/cart/", {
       method: "PATCH",
-      body: JSON.stringify({ cart: { cart_id, product_id, quantity } }),
+      body: JSON.stringify({ cart: { product_id, quantity } }),
       headers: {
         "content-type": "application/json",
       },
@@ -65,14 +65,14 @@ export const removeItemFromCart = (cartItemId) => async (dispatch) => {
 };
 
 const initialState = { items: null };
-let x = {
-  id: 1,
-  name: 'kunju',
-  adddress: { 
-    city: 'nyc',
-    state: 'ny'
-  }
-}
+// let x = {
+//   id: 1,
+//   name: 'kunju',
+//   adddress: { 
+//     city: 'nyc',
+//     state: 'ny'
+//   }
+// }
 
 const cartReducer = (state = initialState, action) => {
   Object.freeze(state);
@@ -105,8 +105,10 @@ export default cartReducer;
 export const selectSubTotalPrice = (state) => {
   const items = Object.values(state.cart?.items ?? {});
   return items.reduce(
-    (acc, current) => acc + parseInt(current.product.price) * 1,
+    (acc, current) => acc + parseInt(current.product.price) * current.quantity,
     // current.quantity,
     0
   );
 };
+
+

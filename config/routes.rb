@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :products, only:[:create, :index, :show] 
     resources :categories, only: [:index, :create, :show]
     resource :cart, only: [:create, :update, :show]
-    resources :cart_items, only: [:destroy]
+    resources :cart_items, only: [:destroy, :update]
   end
   get '*path', to: "static_pages#frontend_index"
   

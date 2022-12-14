@@ -15,8 +15,13 @@
 
 .listingPageImage {
   display: flex;
+  /* flex-direction: column; */
 }
 
+.imageAndreview{
+  display: flex;
+  flex-direction: column;
+}
 .innerContainer {
   display: flex;
   justify-content: center;

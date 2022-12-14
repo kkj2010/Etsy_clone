@@ -1,0 +1,66 @@
+.reviewHeader{
+  display: flex;
+}
+
+
+.reviewTitle{
+  font-size: 30px;
+  font-family: "Cormorant", serif;
+  padding-top: 60px;
+  color: black;
+  text-align: center;
+  padding-bottom: 10px;
+  line-height: 32px;
+  
+  letter-spacing: 1.2px;
+}
+
+.reviewLine, .reviewLine2{
+  border-bottom: 0.5px solid grey;
+ width: 350px;
+ margin-bottom: 23px;
+}
+
+.reviewTextArea{
+  resize: none;
+  width: 400px;
+  height: 200px;
+  font-family: "Yantramanav", sans-serif;
+  letter-spacing: 1px;
+  border:1px solid rgba(34, 34, 34, 0.15);
+  /* justify-content: center; */
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  border-radius: 6px;
+  padding-left:10px
+}
+
+.reviewForm{
+  display: flex;
+  margin-top: 20px;
+  font-family: "Yantramanav", sans-serif;
+}
+
+.reviewFormRight{
+  margin-left: 30px;
+  letter-spacing: 1px;
+}
+
+.reviewSubmitButton{
+  width: 200px;
+  height: 40px;
+  color: white;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 24px;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+}
+
+.askReviewTitle{
+  margin-bottom: 13px;
+}
+
+.rateItem{
+  margin-top: 13px;
+}

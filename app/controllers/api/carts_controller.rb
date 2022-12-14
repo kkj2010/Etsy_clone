@@ -4,8 +4,7 @@ class Api::CartsController < ApplicationController
     def show
         if current_user
             if current_user.cart.nil?
-                @cart = current_user.cart.new
-                @cart.save!
+                @cart = current_user.create_cart!
             else
                 @cart = current_user.cart
             end
@@ -35,7 +34,7 @@ class Api::CartsController < ApplicationController
 
     def create
         @cart = current_user.cart
-        cart_item =  @cart.add_product(params[:product])
+        cart_item =  @cart.add_product(params[:product], params[:quantity])
         
         render json: {
             id: cart_item.id,
@@ -46,14 +45,26 @@ class Api::CartsController < ApplicationController
     end
 
     # def update
-    #     @user = current_user
-    #     @cart = Cart.find_by(user_id: @user.id, product_id: cart_params[:product_id])
+    #     @cart= current_user.cart
+    #     @cart_item = Cart.find_by(user_id: @user.id, product_id: cart_params[:product_id])
     #     if @cart
     #         @cart = @cart.update(quantity: cart_params[:quantity])
     #     end
     #     render :show
     # end
 
+    # def update
+    #     if logged_in?
+    #         @cart= Cart.find_by(id:params[:id])
+    #         if @cart.update(cart_params)
+    #             @cart= Cart.all.select{|item| item.user_id==current_user.id}
+    #             render :show
+    #         end
+    #     else
+    #         render json: @cart.errors.full_messages, status: 404
+
+    #     end
+    # end
 
 
     def clear_cart
@@ -63,32 +74,6 @@ class Api::CartsController < ApplicationController
         render :show
     end
 
-
-
-    # def update
-    #     if logged_in?
-    #         @cart= Cart.find_by(id:params[:id])
-    #         if @cart.update(cart_params)
-    #             @cart= Cart.all.select{|item| item.user_id==current_user.id}
-    #             render 'api/carts/index'
-    #         end
-    #     else
-    #         render json: @cart.errors.full_messages, status: 404
-
-    #     end
-    # end
-
-    # def destroy
-    #     if logged_in?
-    #         @cart= Cart.find_by(id: params[:id])
-    #         if @cart.destroy
-    #             @cart= Cart.all.select{|item| item.user_id==current_user.id}
-    #             render 'api/cart/index'
-    #         end
-    #     else
-    #         render json: @cart.errors.full_messages, status: 404
-    #     end
-    # end
 
     private
     def cart_params

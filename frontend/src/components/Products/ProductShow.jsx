@@ -11,6 +11,8 @@ import { fetchProduct } from "../../store/reducers/productReducer";
 import Footer from "../Footer/Footer";
 import { addItemToCart } from "../../store/reducers/cartReducer";
 import { csrfFetch } from "../../store/csrf";
+import Review from "./Reviews";
+
 
 function formatPrice(price) {
   return (price / 100).toLocaleString("en-US", {
@@ -27,7 +29,7 @@ export default function ProductShow() {
   const userId = useSelector((state) => state.user.current);
   const [showDescription, setShowDescription] = useState(false);
   const [showShipping, setShowShipping] = useState(false);
-  // const carts = useSelector((state) => Object.values(state.carts));
+
 
   useEffect(() => {
     csrfFetch("/api/cart")
@@ -69,7 +71,7 @@ export default function ProductShow() {
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {
     if (userId) {
-      dispatch(addItemToCart(32, productId, 1)).then(() => {
+      dispatch(addItemToCart( productId, parseInt(selected))).then(() => {
         history.push("/cart");
       });
     } else {
@@ -112,6 +114,7 @@ export default function ProductShow() {
     <>
       <div className="productIndexContainer">
         <div className="listingPageContainer">
+          <div className="imageAndReview">
           <div className="listingPageImage">
             <div className="carouselItems">
               <ul className="carouselItemsList">
@@ -177,6 +180,9 @@ export default function ProductShow() {
                 </span>
               </button>
             </div>
+            
+          </div>
+          <Review/>
           </div>
 
           <div className="rightContainer">
@@ -201,7 +207,7 @@ export default function ProductShow() {
                 // type="submit"
                 onClick={handleClick}
               >
-                Add to Cart
+                Add to cart
               </button>
               <div>
                 <button

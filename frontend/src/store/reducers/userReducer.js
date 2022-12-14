@@ -49,6 +49,7 @@ function storeCurrentUser(user) {
 export const loginUser = (user) => async (dispatch) => {
   const res = await csrfFetch("/api/session", {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(user),
   });
   const data = await res.json();
@@ -69,7 +70,8 @@ export const logoutUser = () => async (dispatch) => {
 export const createUser = (user) => async (dispatch) => {
   const res = await csrfFetch("/api/users", {
     method: "POST",
-    body: JSON.stringify(user),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ user }),
   });
   const data = await res.json();
   storeCurrentUser(data.user);

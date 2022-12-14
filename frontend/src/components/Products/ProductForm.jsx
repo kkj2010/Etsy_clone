@@ -25,12 +25,6 @@ export default function ProductForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // const newProduct = {
-    //   ...product,
-    //   price: parseInt(product.price) * 100,
-    //   category_id: parseInt(product.categoryId),
-    //   files,
-    // };
 
     const formData = new FormData();
     formData.set("name", product.name);

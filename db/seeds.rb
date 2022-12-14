@@ -21,6 +21,8 @@ ApplicationRecord.transaction do
     puts 'Creating seed data ...'
 
     demo_user = User.create!(email:"user@gmail.com" ,first_name:"user", password:"1234567")
+    demo_user.create_cart!
+
     Category.create!(name:"holiday_shop", label: "Holiday Shop")
     Category.create!(name:"jewelry", label: "Jewelry & Accessories")
     Category.create!(name:"clothing_shoes", label: "Clothing & Shoes")

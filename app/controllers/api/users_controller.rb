@@ -7,6 +7,9 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             login(@user)
+            cart = Cart.new
+            cart.user = @user
+            cart.save!
             render :show, status: :created
         else
             # render json: @user.errors.full_messages, status: :unprocessable_entity

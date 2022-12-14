@@ -2,11 +2,11 @@ import "./Cart.css";
 import CartItem from "./CartItem";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { FaEquals } from "react-icons/fa";
-import PriceCard from "./PriceCard";
+
 import { Link } from "react-router-dom";
 import { deleteProduct } from "../../store/reducers/productReducer";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { createSelectorHook, useDispatch, useSelector } from "react-redux";
 import EmptyCart from "./EmptyCart";
 import {
   fetchCart,
@@ -38,6 +38,9 @@ export default function Cart(item) {
   const subtotalPrice = useSelector(selectSubTotalPrice);
   const totalPrice = formatPrice(subtotalPrice + SHIPPING);
 
+  let total=0;
+  products.forEach(product=> total+= product.quantity)
+
   useEffect(() => {
     if (userId) {
       dispatch(fetchCart());
@@ -64,32 +67,9 @@ export default function Cart(item) {
   }
   return (
     <>
-      {/* <p>Cart</p>
-      <div>Itmes in your cart</div>
-      <section>
-        {!hasProducts && <p>Your cart is empty</p>}
-        {hasProducts && (
-          <>
-            <ul>
-              {products &&
-                products.map((product) => (
-                  <CartItem key={product.id} product={product} />
-                ))}
-            </ul>
-            <div>
-              <PriceCard text="Items Total" price={totalPrice} />
-              <BsFillPlusCircleFill />
-              <PriceCard text="Shipping" price={SHIPPING} />
-              <FaEquals />
-              <PriceCard text="Total" price={totalPrice + SHIPPING} />
-            </div>
-          </>
-        )}
-      </section> */}
-
       <div className="cartItems">
         <div className="cartHeader">
-          <span className="header1">Items in your cart</span>
+          <span className="header1">{total} Items in your cart</span>
           <span className="header2">
             <Link style={{ color: "black" }} to="/">
               Keep Shopping

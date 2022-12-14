@@ -3,7 +3,7 @@
 # Table name: carts
 #
 #  id         :bigint           not null, primary key
-#  quantity   :integer          not null
+#  quantity   :integer          default(0), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer          not null
@@ -29,9 +29,10 @@ class Cart < ApplicationRecord
 
     has_many :cart_items
 
-    def add_product(product)
+    def add_product(product, quantity)
         cart_item = CartItem.new()
         cart_item.product_id = product
+        cart_item.quantity= quantity
         cart_item.cart = self
         cart_item.save!
         cart_item
