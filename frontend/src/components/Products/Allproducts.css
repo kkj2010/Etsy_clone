@@ -16,6 +16,7 @@
   border-radius: 50%;
   padding: 20px;
   display: block;
+  margin-right: 3px;
 }
 
 .headerTitle {
@@ -23,6 +24,7 @@
   padding-bottom: 12px;
   font-size: 28px;
   letter-spacing: 1px;
+  margin-left: 14px;
   /* font-family: "Playfair Display", serif; */
   font-family: "Cormorant", serif;
 }
@@ -37,6 +39,7 @@
   font-weight: 300;
   color: grey;
   font-size: 14px;
+  margin-left: 14px;
   letter-spacing: 0.5px;
   width: 280px;
 }

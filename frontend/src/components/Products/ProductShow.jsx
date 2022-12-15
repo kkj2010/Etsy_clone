@@ -98,48 +98,6 @@ export default function ProductShow() {
                       <img src={photo.url} />
                     </li>
                   ))}
-                  {/* <li
-                    className="carouselItem"
-                    role="button"
-                    onClick={() => handleSwitchImage(0)}
-                  >
-                    <img src="/img/necklace.png" />
-                  </li>
-                  <li
-                    className="carouselItem"
-                    role="button"
-                    onClick={() => handleSwitchImage(1)}
-                  >
-                    <img src="/img/necklace2.png" />
-                  </li>
-                  <li
-                    className="carouselItem"
-                    role="button"
-                    onClick={() => handleSwitchImage(2)}
-                  >
-                    <img src="/img/necklace3.png" />
-                  </li>
-                  <li
-                    className="carouselItem"
-                    role="button"
-                    onClick={() => handleSwitchImage(3)}
-                  >
-                    <img src="/img/necklace4.png" />
-                  </li>
-                  <li
-                    className="carouselItem"
-                    role="button"
-                    onClick={() => handleSwitchImage(4)}
-                  >
-                    <img src="/img/necklace5.png" />
-                  </li>
-                  <li
-                    className="carouselItem2"
-                    role="button"
-                    onClick={() => handleSwitchImage(5)}
-                  >
-                    <img src="/img/necklace6.png" />
-                  </li> */}
                 </ul>
               </div>
 
