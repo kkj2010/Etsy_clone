@@ -24,7 +24,7 @@ function formatPrice(price) {
   });
 }
 
-export default function Cart(item) {
+export default function Cart() {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.current); //current user
   const history = useHistory();
@@ -62,7 +62,18 @@ export default function Cart(item) {
     <>
       <div className="cartItems">
         <div className="cartHeader">
-          <span className="header1">{total} Items in your cart</span>
+          <span className="header1">
+            <span
+              style={{
+                fontSize: "inherit",
+                fontFamily: "inherit",
+                verticalAlign: "text-top",
+              }}
+            >
+              {total}
+            </span>{" "}
+            Items in your cart
+          </span>
           <span className="header2">
             <Link style={{ color: "black" }} to="/">
               Keep Shopping

@@ -24,6 +24,23 @@ export const removeProduct = (productId) => ({
   productId,
 });
 
+const ADD_REVIEW = "reviews/ADD_REVIEW";
+const REMOVE_REVIEW = "reviews/REMOVE_REVIEW";
+
+export const addReview = (review) => {
+  return {
+    type: ADD_REVIEW,
+    review,
+  };
+};
+
+export const removeReview = (review) => {
+  return {
+    type: REMOVE_REVIEW,
+    review,
+  };
+};
+
 export const createNewProduct = (product) => async (dispatch) => {
   const res = await csrfFetch("/api/products", {
     method: "POST",
@@ -56,12 +73,52 @@ export const deleteProduct = (productId) => async (dispatch) => {
   return res;
 };
 
+export const createReview = (productId, review) => async (dispatch) => {
+  const res = await csrfFetch(`/api/products/${productId}/reviews`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ review }),
+  });
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(addReview(data));
+  }
+};
+
+export const deleteReview = (review) => async (dispatch) => {
+  const res = await csrfFetch(`/api/reviews/${review.id}`, {
+    method: "DELETE",
+  });
+  if (res.ok) {
+    dispatch(removeReview(review));
+  }
+};
+
 const productReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_PRODUCTS:
       return { ...state, ...action.products };
     case RECEIVE_PRODUCT:
       return { ...state, [action.product.id]: action.product };
+    case ADD_REVIEW:
+      return {
+        ...state,
+        [action.review.productId]: {
+          ...state[action.review.productId],
+          reviews: [action.review, ...state[action.review.productId].reviews],
+        },
+      };
+    case REMOVE_REVIEW: {
+      return {
+        ...state,
+        [action.review.productId]: {
+          ...state[action.review.productId],
+          reviews: state[action.review.productId].reviews.filter(
+            (review) => review.id !== action.review.id
+          ),
+        },
+      };
+    }
     default:
       return state;
   }

@@ -10,6 +10,8 @@ class Api::CartsController < ApplicationController
             end
            
             render :show
+        else
+            head :no_content
         end
         
         
@@ -41,6 +43,9 @@ class Api::CartsController < ApplicationController
             quantity: cart_item.quantity,
             product: cart_item.product,
             category: cart_item.product.category,
+            photos: cart_item.product.photos.map do |photo|
+                { url: photo.url }
+            end
         }, status: :created
     end
 

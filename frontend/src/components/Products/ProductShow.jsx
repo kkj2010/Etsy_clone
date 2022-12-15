@@ -31,39 +31,10 @@ export default function ProductShow() {
   const product = useSelector((state) => state.products[productId]);
 
   useEffect(() => {
-    csrfFetch("/api/cart")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
-
-  useEffect(() => {
     if (productId) {
       dispatch(fetchProduct(productId));
     }
   }, [dispatch, productId]);
-
-  // const product = {
-  //   id: 1,
-  //   name: "Sleek Steel Bench",
-  //   price: 10000,
-  //   description:
-  //     "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too.",
-  //   seller: {
-  //     id: 1,
-  //     email: "user@gmail.com",
-  //     firstName: "user",
-  //     createdAt: "2022-12-08T15:57:02.121Z",
-  //   },
-  //   category: { id: 3, name: "clothing_shoes", label: "Clothing \u0026 Shoes" },
-  //   images: [
-  //     "/img/necklace.png",
-  //     "/img/necklace2.png",
-  //     "/img/necklace3.png",
-  //     "/img/necklace4.png",
-  //     "/img/necklace5.png",
-  //     "/img/necklace6.png",
-  //   ],
-  // };
 
   const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const [selected, setSelected] = useState(options && options[0]);
@@ -190,7 +161,7 @@ export default function ProductShow() {
                 </button>
               </div>
             </div>
-            {!!product?.reviews && <Reviews reviews={product?.reviews} />}
+            <Reviews reviews={product?.reviews || []} />
           </div>
 
           <div className="rightContainer">

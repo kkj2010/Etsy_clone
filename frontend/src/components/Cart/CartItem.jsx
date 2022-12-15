@@ -19,7 +19,7 @@ export default function CartItem({ item }) {
     setSelected(parseInt(e.target.value));
     dispatch(updateCart({ id: item.id, quantity: parseInt(e.target.value) }));
   };
-
+ console.log({photos: item.photos})
   const handleClick = (e) => {
     dispatch(removeItemFromCart(item.id));
   };
@@ -30,13 +30,13 @@ export default function CartItem({ item }) {
         <div className="r">
           <Link to={`/products/${item.category.name}/${item.id}`}>
             <li className="cartItemImage">
-              <img src="/img/necklace2.png" />
+              <img src={item.photos[0].url} />
             </li>
           </Link>
           <ul className="cartItemDetails">
             <li className="cartProductName">
               <Link to={`/products/jewelry/${item.id}`}>
-                <span>{item.product.name}</span>
+                <span className="pdName">{item.product.name}</span>
               </Link>
               <span onClick={handleClick} className="removeCart">
                 Remove

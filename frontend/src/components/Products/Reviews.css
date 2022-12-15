@@ -96,11 +96,45 @@
 
 .reviewByUser{
   color:gray;
-  margin-top:5px;
+  padding-top:10px;
 }
 
 .reviewStarRating{
-  font-size:20px;
   margin-top: 40px;
 }
 
+.starIcon{
+font-size: 20px;
+padding-left: 0;
+padding-right: 8px;
+}
+
+/* .reviewSectionTitle{
+  display: flex;
+} */
+
+.writer{
+  display: flex;
+}
+
+.reviewDate{
+  margin-right: 6px;
+  margin-top: 4px;
+}
+
+.reviewUser{
+  margin-top: 4px
+}
+
+.deleteReview{
+  background: black;
+  color:white;
+  border: none;
+  border-radius: 25px;
+  margin-left: 25px;
+
+}
+
+.userAndDelete{
+  display: flex;
+}

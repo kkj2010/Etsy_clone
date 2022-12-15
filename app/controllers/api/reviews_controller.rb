@@ -12,7 +12,7 @@ class Api::ReviewsController < ApplicationController
         @review.user= @current_user
         @review.product= @product
         @review.save!
-        render "api/review/show"
+        render "api/reviews/show"
     
         
        else
@@ -22,7 +22,9 @@ class Api::ReviewsController < ApplicationController
 
 
     def destroy
-        
+        @review= Review.find_by(id: params[:id])
+        @review.destroy
+        head :no_content
     end
 
 

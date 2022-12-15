@@ -31,7 +31,7 @@ export default function ProductForm() {
     formData.set("description", product.description);
     formData.set("price", parseInt(product.price));
     formData.set("category_id", parseInt(product.categoryId)); 
-    formData.set("photo", files[0], files[0].name);
+    formData.set("photos", files[0], files[0].name);
 
     setIsUploading(true);
     dispatch(createNewProduct(formData)).then(async (res) => {

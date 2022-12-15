@@ -61,9 +61,7 @@ export default function Navigation() {
           <ul className="dropdownContent">
             <li>
               <CgProfile />
-              <Link>
-                <span>View your profile</span>
-              </Link>
+              <span>View your profile</span>
             </li>
             <li>
               <GiFamilyHouse />

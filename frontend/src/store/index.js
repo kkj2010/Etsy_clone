@@ -4,14 +4,11 @@ import { composeWithDevToolsDevelopmentOnly } from "@redux-devtools/extension";
 import userReducer from "./reducers/userReducer";
 import productReducer from "./reducers/productReducer";
 import cartReducer from "./reducers/cartReducer";
-import reviewReducer from "./reducers/reviewReducer";
-
 
 const rootReducer = combineReducers({
   user: userReducer,
   products: productReducer,
   cart: cartReducer,
-  reviews: reviewReducer
 });
 
 const configureStore = (preloadedState = {}) => {

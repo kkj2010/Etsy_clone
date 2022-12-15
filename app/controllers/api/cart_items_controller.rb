@@ -14,6 +14,10 @@ class Api::CartItemsController < ApplicationController
                 quantity: cart_item.quantity,
                 product: cart_item.product,
                 category: cart_item.product.category,
+                photos: cart_item.product.photos.map do |photo|
+                    {url: photo.url}
+
+                end
             }
         else
             render json: {errors: cart_item.errors.full_messages}, status:  :unprocessable_entity
