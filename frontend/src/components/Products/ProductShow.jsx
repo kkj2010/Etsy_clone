@@ -88,7 +88,7 @@ export default function ProductShow() {
   const handlePrev = () => {
     let index;
     if (currentImageIndex === 0) {
-      index = product.images.length - 1;
+      index = product.photos.length - 1;
     } else {
       index = currentImageIndex - 1;
     }
@@ -96,7 +96,7 @@ export default function ProductShow() {
   };
   const handleNext = () => {
     let index;
-    if (currentImageIndex === product.images.length - 1) {
+    if (currentImageIndex === product.photos.length - 1) {
       index = 0;
     } else {
       index = currentImageIndex + 1;

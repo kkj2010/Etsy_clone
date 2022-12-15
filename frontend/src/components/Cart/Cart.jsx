@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { FaEquals } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { deleteProduct } from "../../store/reducers/productReducer";
 import { useEffect, useState } from "react";
 import { createSelectorHook, useDispatch, useSelector } from "react-redux";
@@ -27,7 +27,7 @@ function formatPrice(price) {
 export default function Cart(item) {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.current); //current user
-
+  const history = useHistory();
   const products = useSelector((state) =>
     Object.values(state.cart?.items ?? {})
   );
@@ -46,6 +46,7 @@ export default function Cart(item) {
 
   const handleClick = (e) => {
     products.forEach((product) => dispatch(removeItemFromCart(product.id)));
+    history.replace("/cart/checkout");
   };
 
   const hasProducts = products && products.length > 0;
@@ -115,9 +116,7 @@ export default function Cart(item) {
                 </li>
               </ul>
               <button onClick={handleClick} className="checkout" type="button">
-                <Link style={{ color: "white" }} to="/cart/checkout">
-                  Proceed to checkout
-                </Link>
+                Proceed to checkout
               </button>
             </section>
           </div>
@@ -126,3 +125,7 @@ export default function Cart(item) {
     </>
   );
 }
+
+// <Link style={{ color: "white" }} to="/cart/checkout">
+
+//                  </Link>

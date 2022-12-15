@@ -40,7 +40,7 @@ export default function Reviews({ reviews }) {
           />
         </div>
         <div className="reviewFormRight">
-          <p className="askReviewTitle">Ratings and Reviews! </p>
+          <p className="askReviewTitle">Rate features </p>
           <ul>
             <li className="suggestedReview">The quality of item</li>
             <li className="suggestedReview">
@@ -49,7 +49,7 @@ export default function Reviews({ reviews }) {
             <li className="suggestedReview">
               If the item met your expectations
             </li>
-            <li className="rateItem">Rate this item</li>
+            <li className="rateItem">Overall rating</li>
             <li className="starRating">
               <AiOutlineStar />
               <AiOutlineStar />
@@ -71,21 +71,24 @@ export default function Reviews({ reviews }) {
         </div>
       </form>
       <div className="reviewSection">
+        
         <ul>
           {reviews.map((review) => (
-            <>
+            <div className="df">
               <li className="reviewStarRating" key={review.id}>
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
+                <span className="reviewDate">7 days ago </span>
               </li>
               <li className="reviewByUser">{review.body}</li>
-            </>
+            </div>
           ))}
         </ul>
-      </div>
+        </div>
+    
     </>
   );
 }

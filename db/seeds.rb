@@ -51,28 +51,31 @@ ApplicationRecord.transaction do
         jewelry1.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry1/jewelry1-#{n+1}.png"), filename: "jewelry1-#{n+1}.png")
     end
 
+    jewelry1.save!
   
 
 
-    # jewelry2= Product.create!(
-    #     description: "*This listing is for one Zodiac constellation necklace only. Other necklaces shown layered on the model are available separately in my shop.
-    #     Perfectly minimal and Dainty, this necklace is made with a 14k gold filled chain and a gold plated zodiac constellation pendant, set with miniature cubic zirconia diamonds.
-    #     Please select SIGN and LENGTH from the drop down menus.
-    #     The length includes the pendant.
-    #     The blonde model is wearing an 18inch necklace.
-    #     The dark-hair model is wearing a 16inch necklace.
+    jewelry2= Product.new(
+        description: "*This listing is for one Zodiac constellation necklace only. Other necklaces shown layered on the model are available separately in my shop.
+        Perfectly minimal and Dainty, this necklace is made with a 14k gold filled chain and a gold plated zodiac constellation pendant, set with miniature cubic zirconia diamonds.
+        Please select SIGN and LENGTH from the drop down menus.
+        The length includes the pendant.
+        The blonde model is wearing an 18inch necklace.
+        The dark-hair model is wearing a 16inch necklace.
         
-    #     C O M P O N E N T S:
-    #     Chain - 14k gold filled.
-    #     Constellations - size varies between 16x11mm to 19x20mm, gold plated with cubic zirconia diamonds.
+        C O M P O N E N T S:
+        Chain - 14k gold filled.
+        Constellations - size varies between 16x11mm to 19x20mm, gold plated with cubic zirconia diamonds.
         
-    #     Your item will arrive in an embossed jewelry box - Ready for Gift Giving!",
-    #     price: 3950,
-    #     name: "Celestial Constellation Necklace, Cubic zirconia diamonds, 14k gold filled, cz layering Zodiac necklace,dainty personalized,bridesmaids gift",
-    #     seller: demo_user,
-    #     category: Category.all.sample
-    # )
-
+        Your item will arrive in an embossed jewelry box - Ready for Gift Giving!",
+        price: 3950,
+        name: "Celestial Constellation Necklace, Cubic zirconia diamonds, 14k gold filled, cz layering Zodiac necklace,dainty personalized,bridesmaids gift",
+        seller: demo_user,
+        category: Category.all.sample
+    )
+    6.times do |n|
+        jewelry2.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry2/jewelry2-#{n+1}.png"), filename: "jewelry2-#{n+1}.png")
+    end
     # jewelry3= Product.create!(
     #     description: "These dainty stacking rings are perfect for personalizing with your children's names, dates, or a meaningful word of your choice. If you like tiny and small minimalist jewelry these rings are a great choice!",
     #     price: 2800,
@@ -80,21 +83,25 @@ ApplicationRecord.transaction do
     #     seller: demo_user,
     #     category: Category.all.sample
     # )
+    jewelry2.save!
 
+    jewelry4= Product.new(
+        description: "A birthstone is a gemstone that represents a person's period of birth that is usually the month or zodiac sign. Birthstones are typically worn as jewelry to celebrate these special events, and many people use them to wish the wearer luck, love and good health during their life. Personalized birthstones for yourself, mom, grandma or anyone special in your life.
 
-    # jewelry4= Product.create!(
-    #     description: "A birthstone is a gemstone that represents a person's period of birth that is usually the month or zodiac sign. Birthstones are typically worn as jewelry to celebrate these special events, and many people use them to wish the wearer luck, love and good health during their life. Personalized birthstones for yourself, mom, grandma or anyone special in your life.
-
-    #     You can create your family birthsyone bracelet by picking up to 12 birthstones . This Family Birthstones Necklace makes perfect personalized gift
+        You can create your family birthsyone bracelet by picking up to 12 birthstones . This Family Birthstones Necklace makes perfect personalized gift
         
-    #     We beautifully package every item in a handmade wooden jewelry gift box .",
-    #     price: 2000,
-    #     name: "3 Rows Gold Disk Birthstone Bracelet, Initial Minimalist Birthstone, Family Birthstone Bracelet, Personalized Gifts for Mom and Grandma",
-    #     seller: demo_user,
-    #     category: Category.all.sample
-    # )
+        We beautifully package every item in a handmade wooden jewelry gift box .",
+        price: 2000,
+        name: "3 Rows Gold Disk Birthstone Bracelet, Initial Minimalist Birthstone, Family Birthstone Bracelet, Personalized Gifts for Mom and Grandma",
+        seller: demo_user,
+        category: Category.all.sample
+    )
+    6.times do |n|
+        jewelry4.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry4/jewelry4-#{n+1}.png"), filename: "jewelry4-#{n+1}.png")
+    end
 
-    # jewelry5= Product.create!(
+    jewelry4.save!
+    # jewelry5= Product.new(
     #     description: "These dainty stacking rings are perfect for personalizing with your children's names, dates, or a meaningful word of your choice. If you like tiny and small minimalist jewelry these rings are a great choice!",
     #     price: 2800,
     #     name: "Stackable Name Ring, dainty name ring, personalized ring with your word choice, gift for mom ring, stacking ring",
@@ -103,7 +110,7 @@ ApplicationRecord.transaction do
     # )
 
 
-    # jewelry6= Product.create!(
+    # jewelry6= Product.new(
     #     description: "Simple minimalistic silver 925 ring with gold of 14 carats, that is melted into the silver, not painted.
     #     Perfect for everyday use and layering other rings.
     #     Great for everyday use or any special occasion. A perfect gift for your friend or a loved one. Piece to have and enjoy for years.
@@ -115,7 +122,7 @@ ApplicationRecord.transaction do
     #     category: Category.all.sample
     # )
 
-    # jewelry7= Product.create!(
+    # jewelry7= Product.new(
     #     description: "A thin dainty wire wrap ring is the perfect minimalistic beauty to enhance the elegance of your fingers. It can be worn as a statement piece or it can be stacked with our other beautiful pieces.
 
     #     DETAILS:
@@ -131,7 +138,7 @@ ApplicationRecord.transaction do
     #     category: Category.all.sample
     # )
 
-    # jewelry8= Product.create!(
+    # jewelry8= Product.new(
     #     description: "Minimalist & Dainty Gold Stacking Ring Set
 
     #     ***this ring set comes in a variety of sizes between a US size 4 - 7.5 so that the rings can be worn on multiple fingers
@@ -150,10 +157,48 @@ ApplicationRecord.transaction do
     #     category: Category.all.sample
     # )
 
+# 
+jewelry9= Product.new(
+    description: "Gold Name Necklace, Script Name Necklace, Personalized Gift, Handmade Name Necklace, Mother's Day Gift, Bridesmaid Gift, Gift For Her
+
+    This is a Personalized Name necklace. You can also choose it for your friends, family and yourself on some special days.
+    
+    
+    MATERIAL: High Quality Solid 925 Sterling Silver (Safe for sensitive skin)
+    
+    FINISH: Sterling Silver - Gold Plated - Rose Gold Plated
+    
+    Made of 100% 925 sterling silver",
+    price: 1950,
+    name: "Gold Name Necklace, Script Name Necklace, Personalized Gift, Handmade Name Necklace, Mother's Day Gift, Bridesmaid Gift, Gift For Her",
+    seller: demo_user,
+    category: Category.all.sample
+)
+6.times do |n|
+    jewelry9.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry9/jewelry9-#{n+1}.png"), filename: "jewelry9-#{n+1}.png")
+end
+
+jewelry9.save!
+
+jewelry10= Product.new(
+    description: "A romantic and timeless locket in a modern, dainty silhouette. The functional heart locket hangs upon a delicately twisted chain. Versatile enough to simply be worn solo or layered as the perfect compliment to your favorite necklaces. Adjustable between 18-21 inches.
+
+    Our materials make for an amazing, high quality, seamless, jewelry piece with longevity. Our necklaces are plated with 18k gold, 18k rose gold, or rhodium and finished with a protective coating. A little secret we’ll keep between us: it looks way more than it costs.",
+    price: 2800,
+    name: "Heart Locket Minimalist, Delicate Jewelry Gold, Rose Gold, or Silver by HONEYCAT",
+    seller: demo_user,
+    category: Category.all.sample
+)
+6.times do |n|
+    jewelry10.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry10/jewelry10-#{n+1}.png"), filename: "jewelry10-#{n+1}.png")
+end
+
+jewelry10.save!
 
 
 
-    10.times do
+
+    3.times do
         review = Review.new(body: Faker::Quote.matz)
         review.user = User.first
         review.rating = 4

@@ -11,7 +11,6 @@ import { RiLogoutBoxLine } from "react-icons/ri";
 import { GiFamilyHouse } from "react-icons/gi";
 import "./index.css";
 
-
 export default function Navigation() {
   const history = useHistory();
   const { keyword } = useParams();
@@ -74,16 +73,15 @@ export default function Navigation() {
             </li>
             <li onClick={() => dispatch(logoutUser())}>
               <RiLogoutBoxLine />
-              <Link>
-                <span>Sign out</span>
-              </Link>
+
+              <span>Sign out</span>
             </li>
           </ul>
         </div>
 
         <div>
           <button className="cartButton">
-            <Link style={{color:"black"}} to={"/cart"}>
+            <Link style={{ color: "black" }} to={"/cart"}>
               <BsCart4 />
               {/* <CartStatus/> */}
             </Link>
