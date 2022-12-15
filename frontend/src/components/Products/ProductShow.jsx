@@ -11,8 +11,7 @@ import { fetchProduct } from "../../store/reducers/productReducer";
 import Footer from "../Footer/Footer";
 import { addItemToCart } from "../../store/reducers/cartReducer";
 import { csrfFetch } from "../../store/csrf";
-import Review from "./Reviews";
-
+import Reviews from "./Reviews";
 
 function formatPrice(price) {
   return (price / 100).toLocaleString("en-US", {
@@ -29,7 +28,7 @@ export default function ProductShow() {
   const userId = useSelector((state) => state.user.current);
   const [showDescription, setShowDescription] = useState(false);
   const [showShipping, setShowShipping] = useState(false);
-
+  const product = useSelector((state) => state.products[productId]);
 
   useEffect(() => {
     csrfFetch("/api/cart")
@@ -43,35 +42,35 @@ export default function ProductShow() {
     }
   }, [dispatch, productId]);
 
-  const product = {
-    id: 1,
-    name: "Sleek Steel Bench",
-    price: 10000,
-    description:
-      "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too.",
-    seller: {
-      id: 1,
-      email: "user@gmail.com",
-      firstName: "user",
-      createdAt: "2022-12-08T15:57:02.121Z",
-    },
-    category: { id: 3, name: "clothing_shoes", label: "Clothing \u0026 Shoes" },
-    images: [
-      "/img/necklace.png",
-      "/img/necklace2.png",
-      "/img/necklace3.png",
-      "/img/necklace4.png",
-      "/img/necklace5.png",
-      "/img/necklace6.png",
-    ],
-  };
+  // const product = {
+  //   id: 1,
+  //   name: "Sleek Steel Bench",
+  //   price: 10000,
+  //   description:
+  //     "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too.",
+  //   seller: {
+  //     id: 1,
+  //     email: "user@gmail.com",
+  //     firstName: "user",
+  //     createdAt: "2022-12-08T15:57:02.121Z",
+  //   },
+  //   category: { id: 3, name: "clothing_shoes", label: "Clothing \u0026 Shoes" },
+  //   images: [
+  //     "/img/necklace.png",
+  //     "/img/necklace2.png",
+  //     "/img/necklace3.png",
+  //     "/img/necklace4.png",
+  //     "/img/necklace5.png",
+  //     "/img/necklace6.png",
+  //   ],
+  // };
 
   const options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const [selected, setSelected] = useState(options && options[0]);
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {
     if (userId) {
-      dispatch(addItemToCart( productId, parseInt(selected))).then(() => {
+      dispatch(addItemToCart(productId, parseInt(selected))).then(() => {
         history.push("/cart");
       });
     } else {
@@ -115,74 +114,83 @@ export default function ProductShow() {
       <div className="productIndexContainer">
         <div className="listingPageContainer">
           <div className="imageAndReview">
-          <div className="listingPageImage">
-            <div className="carouselItems">
-              <ul className="carouselItemsList">
-                <li
-                  className="carouselItem1"
-                  role="button"
-                  onClick={() => handleSwitchImage(0)}
-                >
-                  <img src="/img/necklace.png" />
-                </li>
-                <li
-                  className="carouselItem"
-                  role="button"
-                  onClick={() => handleSwitchImage(1)}
-                >
-                  <img src="/img/necklace2.png" />
-                </li>
-                <li
-                  className="carouselItem"
-                  role="button"
-                  onClick={() => handleSwitchImage(2)}
-                >
-                  <img src="/img/necklace3.png" />
-                </li>
-                <li
-                  className="carouselItem"
-                  role="button"
-                  onClick={() => handleSwitchImage(3)}
-                >
-                  <img src="/img/necklace4.png" />
-                </li>
-                <li
-                  className="carouselItem"
-                  role="button"
-                  onClick={() => handleSwitchImage(4)}
-                >
-                  <img src="/img/necklace5.png" />
-                </li>
-                <li
-                  className="carouselItem2"
-                  role="button"
-                  onClick={() => handleSwitchImage(5)}
-                >
-                  <img src="/img/necklace6.png" />
-                </li>
-              </ul>
-            </div>
-
-            <div className="innerContainer">
-              <button className="arrowButton" onClick={handlePrev}>
-                <span className="navArrow">
-                  <IoIosArrowBack />
-                </span>
-              </button>
-
-              <div className="imagesContainer">
-                <img src={product.images[currentImageIndex]} />
+            <div className="listingPageImage">
+              <div className="carouselItems">
+                <ul className="carouselItemsList">
+                  {product.photos.map((photo, index) => (
+                    <li
+                      key={index}
+                      className="carouselItem"
+                      role="button"
+                      onClick={() => handleSwitchImage(index)}
+                    >
+                      <img src={photo.url} />
+                    </li>
+                  ))}
+                  {/* <li
+                    className="carouselItem"
+                    role="button"
+                    onClick={() => handleSwitchImage(0)}
+                  >
+                    <img src="/img/necklace.png" />
+                  </li>
+                  <li
+                    className="carouselItem"
+                    role="button"
+                    onClick={() => handleSwitchImage(1)}
+                  >
+                    <img src="/img/necklace2.png" />
+                  </li>
+                  <li
+                    className="carouselItem"
+                    role="button"
+                    onClick={() => handleSwitchImage(2)}
+                  >
+                    <img src="/img/necklace3.png" />
+                  </li>
+                  <li
+                    className="carouselItem"
+                    role="button"
+                    onClick={() => handleSwitchImage(3)}
+                  >
+                    <img src="/img/necklace4.png" />
+                  </li>
+                  <li
+                    className="carouselItem"
+                    role="button"
+                    onClick={() => handleSwitchImage(4)}
+                  >
+                    <img src="/img/necklace5.png" />
+                  </li>
+                  <li
+                    className="carouselItem2"
+                    role="button"
+                    onClick={() => handleSwitchImage(5)}
+                  >
+                    <img src="/img/necklace6.png" />
+                  </li> */}
+                </ul>
               </div>
 
-              <button className="arrowButton" onClick={handleNext}>
-                <span className="navArrow">
-                  <IoIosArrowForward />
-                </span>
-              </button>
+              <div className="innerContainer">
+                <button className="arrowButton" onClick={handlePrev}>
+                  <span className="navArrow">
+                    <IoIosArrowBack />
+                  </span>
+                </button>
+
+                <div className="imagesContainer">
+                  <img src={product.photos[currentImageIndex].url} />
+                </div>
+
+                <button className="arrowButton" onClick={handleNext}>
+                  <span className="navArrow">
+                    <IoIosArrowForward />
+                  </span>
+                </button>
+              </div>
             </div>
-            
-          </div>
-          <Review/>
+            {!!product?.reviews && <Reviews reviews={product?.reviews} />}
           </div>
 
           <div className="rightContainer">

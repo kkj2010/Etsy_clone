@@ -45,6 +45,9 @@ class Product < ApplicationRecord
     primary_key: :id,
     class_name: :Cart
 
-    has_one_attached :photo
+    has_many_attached :photos
+
+    has_many :reviews
+
 
 end

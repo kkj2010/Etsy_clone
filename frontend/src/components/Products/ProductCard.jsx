@@ -2,7 +2,7 @@ import { AiOutlineStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
-
+console.log(product)
   return (
     <Link
       to={`/products/${product.category.name}/${product.id}`}
@@ -10,7 +10,7 @@ export default function ProductCard({ product }) {
     >
       <li className="productImage">
         <img
-          src={product.photo ?? "/img/necklace.png"}
+          src={product.photos[0].url ?? "/img/necklace.png"}
           alt=""
           // style={{ objectFit: "cover" }}
         />
@@ -22,7 +22,7 @@ export default function ProductCard({ product }) {
           <AiOutlineStar />
           <AiOutlineStar />
         </div>
-        <div className="productPrice">${product.price / 100}</div>
+        <div className="productPrice">${(product.price / 100).toFixed(2)}</div>
         <div className="productSeller">{product.seller.firstName}</div>
       </li>
     </Link>

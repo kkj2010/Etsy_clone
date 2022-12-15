@@ -35,83 +35,142 @@ ApplicationRecord.transaction do
     puts 'Creating products...'
 
 
-    jewelry1= Product.create!{
+    jewelry1= Product.new(
         description: "Beautiful threader earrings with a minimalist vibe. Sleek, subtle and very cool.
         Earrings are Gold plated over 925 sterling silver
         Perfect for sensitive ears.
         Size is around 2 3/4 inch long, when pulled all the way down. Size of the bar 1/2 inch
-        Those earrings are very easy to use, just pull thru ears and set at the desired length."
+        Those earrings are very easy to use, just pull thru ears and set at the desired length.",
         price: 3000,
-        name: "Ear threader earrings, Gold ear threader, Sterling silver threader earrings, Chain earrings, Long chain ear threader"
-    }
+        name: "Ear threader earrings, Gold ear threader, Sterling silver threader earrings, Chain earrings, Long chain ear threader",
+        seller: demo_user,
+        category: Category.all.sample
+    )
 
-    jewelry2= Product.create!{
-        description: "*This listing is for one Zodiac constellation necklace only. Other necklaces shown layered on the model are available separately in my shop.
-
-        Perfectly minimal and Dainty, this necklace is made with a 14k gold filled chain and a gold plated zodiac constellation pendant, set with miniature cubic zirconia diamonds.
-        
-        Please select SIGN and LENGTH from the drop down menus.
-        The length includes the pendant.
-        The blonde model is wearing an 18inch necklace.
-        The dark-hair model is wearing a 16inch necklace.
-        
-        
-        C O M P O N E N T S:
-        Chain - 14k gold filled.
-        Constellations - size varies between 16x11mm to 19x20mm, gold plated with cubic zirconia diamonds.
-        
-        Your item will arrive in an embossed jewelry box - Ready for Gift Giving!"
-        price: 3950,
-        name: "Celestial Constellation Necklace, Cubic zirconia diamonds, 14k gold filled, cz layering Zodiac necklace,dainty personalized,bridesmaids gift"
-    }
-
-    jewelry3= Product.create!{
-        description: "These dainty stacking rings are perfect for personalizing with your children's names, dates, or a meaningful word of your choice. If you like tiny and small minimalist jewelry these rings are a great choice!"
-        price: 2800,
-        name: "Stackable Name Ring, dainty name ring, personalized ring with your word choice, gift for mom ring, stacking ring"
-    }
-
-
-    jewelry4= Product.create!{
-        description: "A birthstone is a gemstone that represents a person's period of birth that is usually the month or zodiac sign. Birthstones are typically worn as jewelry to celebrate these special events, and many people use them to wish the wearer luck, love and good health during their life. Personalized birthstones for yourself, mom, grandma or anyone special in your life.
-
-        You can create your family birthsyone bracelet by picking up to 12 birthstones . This Family Birthstones Necklace makes perfect personalized gift
-        
-        We beautifully package every item in a handmade wooden jewelry gift box ."
-        price: 2000,
-        name: "3 Rows Gold Disk Birthstone Bracelet, Initial Minimalist Birthstone, Family Birthstone Bracelet, Personalized Gifts for Mom and Grandma"
-    }
-
-    jewelry5= Product.create!{
-        description: "These dainty stacking rings are perfect for personalizing with your children's names, dates, or a meaningful word of your choice. If you like tiny and small minimalist jewelry these rings are a great choice!"
-        price: 2800,
-        name: "Stackable Name Ring, dainty name ring, personalized ring with your word choice, gift for mom ring, stacking ring"
-    }
-
-
-    jewelry6= Product.create!{
-        description: "Simple minimalistic silver 925 ring with gold of 14 carats, that is melted into the silver, not painted.
-        Perfect for everyday use and layering other rings.
-        Great for everyday use or any special occasion. A perfect gift for your friend or a loved one. Piece to have and enjoy for years.
-        We have different finishes available (striped, by hammer, etc..) and also different sizes. All our rings are made with a lot of love and heart.
-        We hope you enjoy our art."
-        price: 5448,
-        name: "Minimalistic handmade silver ring with gold. Modern birthday gift Wedding ring for proposal unique style Vaidus jewelry"
-    }
-
-
-
-
-    20.times do |n|
-        product = Product.new(
-            description: Faker::Quote.matz,
-            price: 10000,
-            name: Faker::Commerce.product_name
-        )
-        product.seller = demo_user
-        product.category = Category.all.sample
-        product.save!
+    6.times do |n|
+        jewelry1.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry1/jewelry1-#{n+1}.png"), filename: "jewelry1-#{n+1}.png")
     end
+
+  
+
+
+    # jewelry2= Product.create!(
+    #     description: "*This listing is for one Zodiac constellation necklace only. Other necklaces shown layered on the model are available separately in my shop.
+    #     Perfectly minimal and Dainty, this necklace is made with a 14k gold filled chain and a gold plated zodiac constellation pendant, set with miniature cubic zirconia diamonds.
+    #     Please select SIGN and LENGTH from the drop down menus.
+    #     The length includes the pendant.
+    #     The blonde model is wearing an 18inch necklace.
+    #     The dark-hair model is wearing a 16inch necklace.
+        
+    #     C O M P O N E N T S:
+    #     Chain - 14k gold filled.
+    #     Constellations - size varies between 16x11mm to 19x20mm, gold plated with cubic zirconia diamonds.
+        
+    #     Your item will arrive in an embossed jewelry box - Ready for Gift Giving!",
+    #     price: 3950,
+    #     name: "Celestial Constellation Necklace, Cubic zirconia diamonds, 14k gold filled, cz layering Zodiac necklace,dainty personalized,bridesmaids gift",
+    #     seller: demo_user,
+    #     category: Category.all.sample
+    # )
+
+    # jewelry3= Product.create!(
+    #     description: "These dainty stacking rings are perfect for personalizing with your children's names, dates, or a meaningful word of your choice. If you like tiny and small minimalist jewelry these rings are a great choice!",
+    #     price: 2800,
+    #     name: "Stackable Name Ring, dainty name ring, personalized ring with your word choice, gift for mom ring, stacking ring",
+    #     seller: demo_user,
+    #     category: Category.all.sample
+    # )
+
+
+    # jewelry4= Product.create!(
+    #     description: "A birthstone is a gemstone that represents a person's period of birth that is usually the month or zodiac sign. Birthstones are typically worn as jewelry to celebrate these special events, and many people use them to wish the wearer luck, love and good health during their life. Personalized birthstones for yourself, mom, grandma or anyone special in your life.
+
+    #     You can create your family birthsyone bracelet by picking up to 12 birthstones . This Family Birthstones Necklace makes perfect personalized gift
+        
+    #     We beautifully package every item in a handmade wooden jewelry gift box .",
+    #     price: 2000,
+    #     name: "3 Rows Gold Disk Birthstone Bracelet, Initial Minimalist Birthstone, Family Birthstone Bracelet, Personalized Gifts for Mom and Grandma",
+    #     seller: demo_user,
+    #     category: Category.all.sample
+    # )
+
+    # jewelry5= Product.create!(
+    #     description: "These dainty stacking rings are perfect for personalizing with your children's names, dates, or a meaningful word of your choice. If you like tiny and small minimalist jewelry these rings are a great choice!",
+    #     price: 2800,
+    #     name: "Stackable Name Ring, dainty name ring, personalized ring with your word choice, gift for mom ring, stacking ring",
+    #     seller: demo_user,
+    #     category: Category.all.sample
+    # )
+
+
+    # jewelry6= Product.create!(
+    #     description: "Simple minimalistic silver 925 ring with gold of 14 carats, that is melted into the silver, not painted.
+    #     Perfect for everyday use and layering other rings.
+    #     Great for everyday use or any special occasion. A perfect gift for your friend or a loved one. Piece to have and enjoy for years.
+    #     We have different finishes available (striped, by hammer, etc..) and also different sizes. All our rings are made with a lot of love and heart.
+    #     We hope you enjoy our art.",
+    #     price: 5448,
+    #     name: "Minimalistic handmade silver ring with gold. Modern birthday gift Wedding ring for proposal unique style Vaidus jewelry",
+    #     seller: demo_user,
+    #     category: Category.all.sample
+    # )
+
+    # jewelry7= Product.create!(
+    #     description: "A thin dainty wire wrap ring is the perfect minimalistic beauty to enhance the elegance of your fingers. It can be worn as a statement piece or it can be stacked with our other beautiful pieces.
+
+    #     DETAILS:
+        
+    #     - 18K Gold filled
+    #     - Waterproof ☔️ - will not tarnish or fade
+    #     - Free gift box and pouch
+        
+    #     They can be worn solo or stacked!",
+    #     price: 2449,
+    #     name: "18K GOLD FILLED Wrap Ring, Gold Stacking Rings, Dainty Ring, Rose Gold Ring, Stacking Ring, Wire Ring, Thin Ring, WATERPROOF/Sweatproof",
+    #     seller: demo_user,
+    #     category: Category.all.sample
+    # )
+
+    # jewelry8= Product.create!(
+    #     description: "Minimalist & Dainty Gold Stacking Ring Set
+
+    #     ***this ring set comes in a variety of sizes between a US size 4 - 7.5 so that the rings can be worn on multiple fingers
+        
+        
+    #     ***Gift wrapping services are available for all EstyjewelleryArt items! 🎁
+        
+    #     ***Need more then what is specified as available? Message me for custom large order quantities & special pricing!***
+        
+        
+    #     ***It is our one priority to ensure that our customers are satisfied with their one-of-a-kind pieces.
+    #     ",
+    #     price: 2365,
+    #     name: "12 piece Dainty Gold Stacking Ring Set, Minimalist Stacking Ring Set, minimalist Ring Stack, Stacking Ring Gift Set, Trendy Jewelry Gift",
+    #     seller: demo_user,
+    #     category: Category.all.sample
+    # )
+
+
+
+
+    10.times do
+        review = Review.new(body: Faker::Quote.matz)
+        review.user = User.first
+        review.rating = 4
+        review.product = jewelry1
+        review.save!
+    end
+
+    # 20.times do |n|
+    #     product = Product.new(
+    #         description: Faker::Quote.matz,
+    #         price: 10000,
+    #         name: Faker::Commerce.product_name
+    #     )
+    #     product.seller = demo_user
+    #     product.category = Category.all.sample
+    #     product.save!
+    # end
 
     puts 'done'
 

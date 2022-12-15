@@ -22,7 +22,7 @@ class Api::ProductsController < ApplicationController
         @product.description = params[:description]
         @product.seller = current_user
         @product.category_id = params[:category_id].to_i
-        @product.photo.attach(params[:photo]) if params[:photo]
+        @product.photos.attach(params[:photos]) if params[:photos]
 
         if @product.save
             render 'api/products/show', status: :created

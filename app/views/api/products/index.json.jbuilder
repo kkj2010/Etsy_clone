@@ -1,7 +1,7 @@
 @products.each do |product|
     json.set! product.id do 
         json.extract! product, :id, :description, :name, :price, :seller_id
-        json.photo product.photo.url
+        json.photos product.photos, :url
         json.seller do 
             json.partial! "api/users/user", user: product.seller
         end
