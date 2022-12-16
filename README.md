@@ -14,7 +14,6 @@
 * Render
 
 # Preview
-## Users
 ![](./images/shoppy.gif)
 
 # Code Snippets
