@@ -23,8 +23,10 @@ export default function AllProducts() {
             <div className="lovedList">
               <img src="/img/deco1.png" />
             </div>
-            <div className="lovedItemsProductName">Christmas Stocking,Personalized Chrsitams Stocking</div>
-            <div className="lovedItemsUser">CPDESIGNusa</div>         
+            <div className="lovedItemsProductName">
+              Christmas Stocking,Personalized Chrsitams Stocking
+            </div>
+            <div className="lovedItemsUser">CPDESIGNusa</div>
           </li>
           <li className="suggestion2">
             <div className="lovedList">
@@ -54,7 +56,7 @@ export default function AllProducts() {
         </ul>
         <div className="underLine"></div>
       </div>
-  
     </>
   );
 }
+

@@ -12,7 +12,6 @@ export default function ProductCard({ product }) {
         <img
           src={product.photos?.[0]?.url ?? "/img/necklace.png"}
           alt=""
-          // style={{ objectFit: "cover" }}
         />
         <div className="productName">{product.name}</div>
         <div className="productRating">

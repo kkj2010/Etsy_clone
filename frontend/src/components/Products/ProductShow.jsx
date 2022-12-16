@@ -141,7 +141,6 @@ export default function ProductShow() {
             <div>
               <button
                 className="AddCartButton"
-                // type="submit"
                 onClick={handleClick}
               >
                 Add to cart
