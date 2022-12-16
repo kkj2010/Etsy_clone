@@ -16,12 +16,12 @@ export default function Footer() {
         <li> $ (USD)</li>
       </ul>
       <ul className="rightFooter">
-        <li>&#169; 2022 Shoppy, Inc.</li>
+        <li className="shoppyInc">&#169; 2022 Shoppy, Inc.</li>
         <li className="gitHub">
-          <FaGithub />
+        <a className="gitHub" style={{color:"white"}} href="https://github.com/kkj2010/Etsy_clone.git"><FaGithub /></a>
         </li>
         <li className="linkedin">
-          <FaLinkedin />
+        <a className="linkedin" style={{color:"white"}} href="https://www.linkedin.com/in/kun-ju-kim-473374b4"><FaLinkedin /></a>
         </li>
       </ul>
     </div>

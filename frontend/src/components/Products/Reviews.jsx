@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import "./Reviews.css";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-
+import { formatDistanceToNow } from "date-fns";
 import { useParams } from "react-router-dom";
 import {
   createReview,
   deleteReview,
 } from "../../store/reducers/productReducer";
+
 
 export default function Reviews({ reviews }) {
   const dispatch = useDispatch();
@@ -100,24 +101,30 @@ export default function Reviews({ reviews }) {
         {reviews.map((review) => (
           <div className="df" key={review.id}>
             <ul className="reviewSectionTitle">
+            <div className="userAndDelete">
               <li className="reviewStarRating">
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
-              </li>
-              <div className="writer">
-                <li className="reviewDate">7 days ago </li>
-                <div className="userAndDelete">
-                  <li className="reviewUser">by {review.user.firstName}</li>
-                  <button
+                </li>
+                <button
                     onClick={() => handleClick(review)}
                     className="deleteReview"
                   >
                     Delete
                   </button>
-                </div>
+              
+              </div>
+              <div className="writer">
+                <li className="reviewDate">{formatDistanceToNow(new Date(review.createdAt), {
+                    addSuffix: true,
+                  })}</li>
+               
+                  <li className="reviewUser">by {review.user.firstName}</li>
+                 
+               
               </div>
             </ul>
 

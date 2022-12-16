@@ -95,6 +95,7 @@
   font-family: "Cormorant", serif;
   /* font-family: "Playfair Display", serif; */
   margin-left: 10px;
+  
 }
 
 .arrivalButton {
@@ -121,6 +122,7 @@
   letter-spacing: 0.5px;
   margin-top: 15px;
   margin-left: 8px;
+  margin-bottom: 10px;
 }
 
 .arrivalButton:hover,
@@ -187,7 +189,7 @@
   font-family: "Yantramanav", sans-serif;
   padding-left: 10px;
   padding-top: 3px;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 
 .productLink:visited .productName,

@@ -97,10 +97,12 @@
 .reviewByUser{
   color:gray;
   padding-top:10px;
+  line-height: 20px;
 }
 
 .reviewStarRating{
-  margin-top: 40px;
+ font-size: 15px;
+ padding-top: 2px;
 }
 
 .starIcon{
@@ -109,21 +111,20 @@ padding-left: 0;
 padding-right: 8px;
 }
 
-/* .reviewSectionTitle{
-  display: flex;
-} */
+
 
 .writer{
   display: flex;
 }
 
 .reviewDate{
-  margin-right: 6px;
+  margin-right: 5px;
   margin-top: 4px;
 }
 
 .reviewUser{
-  margin-top: 4px
+  margin-top: 4px;
+  
 }
 
 .deleteReview{
@@ -132,9 +133,18 @@ padding-right: 8px;
   border: none;
   border-radius: 25px;
   margin-left: 25px;
-
+  height: 20px;
+  font-size: 11px;
+ 
 }
 
 .userAndDelete{
   display: flex;
 }
+
+.df{
+  margin-bottom: 50px;
+  margin-left: 18px;
+  margin-right:18px
+}
+
