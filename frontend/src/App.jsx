@@ -1,4 +1,4 @@
-import HomePage from "./components/Homepage";
+import HomePage from "./components/HomePage";
 import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import AllProducts from "./components/Products/Allproducts";
@@ -6,7 +6,6 @@ import ProductShow from "./components/Products/ProductShow";
 import ProductForm from "./components/Products/ProductForm";
 import Cart from "./components/Cart/Cart";
 import CheckOutPage from "./components/Checkout/CheckOutPage";
-
 
 function App() {
   return (
@@ -30,7 +29,7 @@ function App() {
           <Cart />
         </Route>
         <Route exact path={"/cart/checkout"}>
-          <CheckOutPage/>
+          <CheckOutPage />
         </Route>
       </Switch>
     </div>
