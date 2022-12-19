@@ -23,16 +23,16 @@ export default function LoginForm({ onSuccess }) {
       email: formValues.email,
       password: formValues.password,
     };
-   
-    setErrors(null)
+
+    setErrors(null);
     dispatch(loginUser(user))
       .then((res) => {
         if (res.ok) {
           onSuccess();
         }
       })
-      .catch(async(res) => {
-        const errors= await res.json();
+      .catch(async (res) => {
+        const errors = await res.json();
         setErrors("Invalid credentials");
       });
   };
@@ -49,8 +49,8 @@ export default function LoginForm({ onSuccess }) {
           onSuccess();
         }
       })
-      .catch(async(res) => {
-        const errors= await res.json();
+      .catch(async (res) => {
+        const errors = await res.json();
         setErrors(errors);
       });
   };
@@ -71,7 +71,6 @@ export default function LoginForm({ onSuccess }) {
               onChange={handleChange}
               className="email"
             />
-            
           </div>
 
           <div>
