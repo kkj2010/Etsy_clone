@@ -6,6 +6,27 @@ import { fetchProducts } from "../../store/reducers/productReducer";
 import "./Allproducts.css";
 import Footer from "../Footer/Footer";
 
+function headerTitle(category) {
+  switch (category) {
+    case "jewelry":
+      return "Jewelry & Accessories";
+    case "holiday_shop":
+      return "Holiday Shop";
+    case "clothing_shoes":
+      return "Clothing & Shoes";
+    case "home_living":
+      return "Home Living";
+    case "wedding_party":
+      return "Wedding & Party";
+    case "toys":
+      return "Toys";
+    case "art":
+      return "Art & Collectibles";
+    default:
+      return;
+  }
+}
+
 export default function AllProducts() {
   const { category } = useParams();
   const dispatch = useDispatch();
@@ -33,7 +54,7 @@ export default function AllProducts() {
       <div className="productHeaderContainer">
         <ul className="header">
           <div className="headerText">
-            <h1 className="headerTitle">Jewelry & Accessories</h1>
+            <h1 className="headerTitle">{headerTitle(category)}</h1>
             <p className="headerDescription">
               Necklaces, bracelets, earrings, and rings to complete your look or
               wow them with a perfect gift
@@ -44,7 +65,7 @@ export default function AllProducts() {
             <img src="/img/earring.png" />
             <span className="headerText1">Earrings</span>
           </li>
-          <li className="headerImages"onClick={handleClick1}>
+          <li className="headerImages" onClick={handleClick1}>
             <img src="/img/necklace1.png" />
             <span className="headerText2">Necklaces</span>
           </li>
@@ -56,11 +77,11 @@ export default function AllProducts() {
             <img src="/img/bracelet.png" />
             <span className="headerText4">Bracelets</span>
           </li>
-          <li className="headerImages"onClick={handleClick1}>
+          <li className="headerImages" onClick={handleClick1}>
             <img src="/img/bag.png" />
             <span className="headerText5">Bags & Purses</span>
           </li>
-          <li className="headerImages"onClick={handleClick1}>
+          <li className="headerImages" onClick={handleClick1}>
             <img src="/img/acc.png" />
             <span className="headerText6">Accessories</span>
           </li>
