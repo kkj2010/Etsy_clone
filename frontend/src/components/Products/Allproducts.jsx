@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { fetchProducts } from "../../store/reducers/productReducer";
 import "./Allproducts.css";
@@ -9,7 +9,21 @@ import Footer from "../Footer/Footer";
 export default function AllProducts() {
   const { category } = useParams();
   const dispatch = useDispatch();
+  const history = useHistory();
   const products = useSelector((state) => Object.values(state.products));
+
+  const handleClick = () => {
+    history.push(`/products/jewelry/1`);
+  };
+
+  const handleClick1 = () => {
+    history.push(`/products/jewelry/3`);
+  };
+
+  const handleClick2 = () => {
+    history.push(`/products/jewelry/4`);
+  };
+
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
@@ -26,27 +40,27 @@ export default function AllProducts() {
             </p>
           </div>
 
-          <li className="headerImages">
+          <li className="headerImages" onClick={handleClick}>
             <img src="/img/earring.png" />
             <span className="headerText1">Earrings</span>
           </li>
-          <li className="headerImages">
+          <li className="headerImages"onClick={handleClick1}>
             <img src="/img/necklace1.png" />
             <span className="headerText2">Necklaces</span>
           </li>
-          <li className="headerImages">
+          <li className="headerImages" onClick={handleClick1}>
             <img src="/img/ring1.png" />
             <span className="headerText3">Rings</span>
           </li>
-          <li className="headerImages">
+          <li className="headerImages" onClick={handleClick2}>
             <img src="/img/bracelet.png" />
             <span className="headerText4">Bracelets</span>
           </li>
-          <li className="headerImages">
+          <li className="headerImages"onClick={handleClick1}>
             <img src="/img/bag.png" />
             <span className="headerText5">Bags & Purses</span>
           </li>
-          <li className="headerImages">
+          <li className="headerImages"onClick={handleClick1}>
             <img src="/img/acc.png" />
             <span className="headerText6">Accessories</span>
           </li>

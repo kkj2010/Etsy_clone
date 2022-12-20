@@ -1,7 +1,7 @@
 import "./index.css";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function HomePage() {
   const [panelId, setPanelId] = useState("farmhouse");
