@@ -89,17 +89,36 @@ export default function Navigation() {
 
       <div className="displayBar">
         <ul className="displayTable">
-          <li>Holiday Shop</li>
+          <li>
+            <Link style={{ color: "grey" }} to={"/products/jewelry"}>
+              Holiday Shop
+            </Link>
+          </li>
+
           <li>
             <Link style={{ color: "grey" }} to={"/products/jewelry"}>
               Jewelry & Accessories
             </Link>
           </li>
-          <li> Clothing & Shoes</li>
-          <li> Home & Living</li>
-          <li> Wedding & Party</li>
-          <li> Toys</li>
-          <li> Art & Collectibles</li>
+          <li>
+          <Link style={{ color: "grey" }} to={"/products/jewelry"}>
+             Clothing & Shoes
+          </Link>
+          </li>
+          <li>
+            <Link style={{ color: "grey" }} to={"/products/jewelry"}>
+              Home & Living
+            </Link>
+          </li>
+          <li> <Link style={{ color: "grey" }} to={"/products/jewelry"}>
+            Wedding & Party
+            </Link> </li>
+          <li><Link style={{ color: "grey" }} to={"/products/jewelry"}>
+             Toys
+             </Link></li>
+          <li> <Link style={{ color: "grey" }} to={"/products/jewelry"}>
+            Art & Collectibles
+            </Link></li>
         </ul>
       </div>
 
