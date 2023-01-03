@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Reviews.css";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow, set } from "date-fns";
 import { useParams } from "react-router-dom";
 import {
   createReview,
   deleteReview,
 } from "../../store/reducers/productReducer";
-
 
 export default function Reviews({ reviews }) {
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ export default function Reviews({ reviews }) {
 
   const [errMessage, setErrMessage] = useState("");
   const [content, setContent] = useState("");
-  const [rating, setRating] = useState(3);
+  const [rating, setRating] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +34,17 @@ export default function Reviews({ reviews }) {
 
   const handleClick = (review) => {
     dispatch(deleteReview(review));
+  };
+
+  const generateRating = (rating) => {
+    let stars = [];
+    for (let i = 0; i < rating; i++) {
+      stars.push(<AiFillStar key={i} />);
+    }
+    for (let i = rating; i < 5; i++) {
+      stars.push(<AiOutlineStar key={i} />);
+    }
+    return stars;
   };
 
   return (
@@ -58,7 +68,7 @@ export default function Reviews({ reviews }) {
           />
         </div>
         <div className="reviewFormRight">
-          <p className="askReviewTitle">Rate features </p>
+          <p className="askReviewTitle">Rate features</p>
           <ul>
             <li className="suggestedReview">The quality of item</li>
             <li className="suggestedReview">
@@ -69,29 +79,19 @@ export default function Reviews({ reviews }) {
             </li>
             <li className="rateItem">Overall rating</li>
             <li className="starRating">
-              <span className="starIcon">
-                <AiOutlineStar />
-              </span>
-              <span className="starIcon">
-                <AiOutlineStar />
-              </span>
-              <span className="starIcon">
-                <AiOutlineStar />
-              </span>
-              <span className="starIcon">
-                <AiOutlineStar />
-              </span>
-              <span className="starIcon">
-                <AiOutlineStar />
-              </span>
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  className="starIcon"
+                  key={star}
+                  onClick={() => setRating(star)}
+                >
+                  {star <= rating ? <AiFillStar /> : <AiOutlineStar />}
+                </span>
+              ))}
             </li>
           </ul>
           <div>
-            <button
-              className="reviewSubmitButton"
-              // onSubmit={handleSubmit}
-              type="submit"
-            >
+            <button className="reviewSubmitButton" type="submit">
               Submit my reveiw
             </button>
           </div>
@@ -101,30 +101,25 @@ export default function Reviews({ reviews }) {
         {reviews.map((review) => (
           <div className="df" key={review.id}>
             <ul className="reviewSectionTitle">
-            <div className="userAndDelete">
-              <li className="reviewStarRating">
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
+              <div className="userAndDelete">
+                <li className="reviewStarRating">
+                  {generateRating(review.rating)}
                 </li>
                 <button
-                    onClick={() => handleClick(review)}
-                    className="deleteReview"
-                  >
-                    Delete
-                  </button>
-              
+                  onClick={() => handleClick(review)}
+                  className="deleteReview"
+                >
+                  Delete
+                </button>
               </div>
               <div className="writer">
-                <li className="reviewDate">{formatDistanceToNow(new Date(review.createdAt), {
+                <li className="reviewDate">
+                  {formatDistanceToNow(new Date(review.createdAt), {
                     addSuffix: true,
-                  })}</li>
-               
-                  <li className="reviewUser">by {review.user.firstName}</li>
-                 
-               
+                  })}
+                </li>
+
+                <li className="reviewUser">by {review.user.firstName}</li>
               </div>
             </ul>
 
