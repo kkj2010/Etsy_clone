@@ -69,7 +69,10 @@ export default function Navigation() {
                 <span>Sell on Shoppy</span>
               </Link>
             </li>
-            <li onClick={() => dispatch(logoutUser())}>
+            <li onClick={() => {
+              dispatch(logoutUser());
+              history.replace("/")
+              }}>
               <RiLogoutBoxLine />
 
               <span>Sign out</span>

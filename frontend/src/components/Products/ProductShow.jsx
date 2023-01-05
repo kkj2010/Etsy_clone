@@ -76,6 +76,7 @@ export default function ProductShow() {
     setCurrentImageIndex(index);
   };
 
+  
   if (!product) {
     return <div>NOT FOUND!</div>;
   }
@@ -119,7 +120,9 @@ export default function ProductShow() {
                 </button>
               </div>
             </div>
-            <Reviews reviews={product?.reviews || []} />
+            {product?.reviews?.length ? (
+              <Reviews reviews={product?.reviews || []} />
+            ) : null}
           </div>
 
           <div className="rightContainer">
@@ -139,10 +142,7 @@ export default function ProductShow() {
             </select>
 
             <div>
-              <button
-                className="AddCartButton"
-                onClick={handleClick}
-              >
+              <button className="AddCartButton" onClick={handleClick}>
                 Add to cart
               </button>
               <div>

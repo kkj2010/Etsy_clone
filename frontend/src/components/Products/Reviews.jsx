@@ -47,6 +47,7 @@ export default function Reviews({ reviews }) {
     return stars;
   };
 
+  console.log(reviews);
   return (
     <>
       <div className="reviews" onSubmit={handleSubmit}>
@@ -105,12 +106,14 @@ export default function Reviews({ reviews }) {
                 <li className="reviewStarRating">
                   {generateRating(review.rating)}
                 </li>
-                <button
-                  onClick={() => handleClick(review)}
-                  className="deleteReview"
-                >
-                  Delete
-                </button>
+                {review.user.id === user?.id && (
+                  <button
+                    onClick={() => handleClick(review)}
+                    className="deleteReview"
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
               <div className="writer">
                 <li className="reviewDate">
