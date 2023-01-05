@@ -1,4 +1,4 @@
-json.extract! @product, :id, :name, :price, :description
+json.extract! @product, :id, :name, :price, :description, :rating
 json.photos @product.photos, :url
 json.seller do
     json.partial! "api/users/user", user: @product.seller
@@ -18,3 +18,13 @@ json.reviews @product.reviews.order(created_at: :desc) do |review|
         json.first_name review.user.first_name
     end
 end
+
+# {
+#     id: 1
+#     seller:{
+#         id:
+#     }
+#     reviews: [{id: 5, body: dlfkj, user:{
+#         id:4
+#     }}, {}, {}]
+# }

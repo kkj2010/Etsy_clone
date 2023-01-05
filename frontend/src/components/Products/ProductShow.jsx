@@ -119,10 +119,8 @@ export default function ProductShow() {
                   </span>
                 </button>
               </div>
-            </div>
-            {product?.reviews?.length ? (
+           </div>
               <Reviews reviews={product?.reviews || []} />
-            ) : null}
           </div>
 
           <div className="rightContainer">

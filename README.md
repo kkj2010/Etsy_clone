@@ -80,6 +80,6 @@ Below is a code snippet of the carousel of the product in product show page.
 
 ```
 # Future Plans
-* Finish reveiw - to be edited, only user can delete the reveiw & add rating
+* Finish reveiw - add edit function
 * Make search bar worked
 * Finish category

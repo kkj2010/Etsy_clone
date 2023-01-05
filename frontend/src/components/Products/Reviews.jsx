@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import "./Reviews.css";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { formatDistanceToNow, set } from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 import { useParams } from "react-router-dom";
 import {
   createReview,
   deleteReview,
 } from "../../store/reducers/productReducer";
+import Rating from "./Rating";
 
 export default function Reviews({ reviews }) {
   const dispatch = useDispatch();
@@ -36,18 +37,6 @@ export default function Reviews({ reviews }) {
     dispatch(deleteReview(review));
   };
 
-  const generateRating = (rating) => {
-    let stars = [];
-    for (let i = 0; i < rating; i++) {
-      stars.push(<AiFillStar key={i} />);
-    }
-    for (let i = rating; i < 5; i++) {
-      stars.push(<AiOutlineStar key={i} />);
-    }
-    return stars;
-  };
-
-  console.log(reviews);
   return (
     <>
       <div className="reviews" onSubmit={handleSubmit}>
@@ -104,7 +93,7 @@ export default function Reviews({ reviews }) {
             <ul className="reviewSectionTitle">
               <div className="userAndDelete">
                 <li className="reviewStarRating">
-                  {generateRating(review.rating)}
+                  <Rating rating={review.rating} />
                 </li>
                 {review.user.id === user?.id && (
                   <button

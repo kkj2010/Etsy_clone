@@ -49,5 +49,12 @@ class Product < ApplicationRecord
 
     has_many :reviews
 
-
+    def rating
+        ratings = self.reviews.map { |review| review.rating  }
+        if ratings.size.zero?
+            return 0
+        else
+            (ratings.sum / ratings.size).round
+        end
+    end
 end
