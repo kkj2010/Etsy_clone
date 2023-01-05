@@ -13,13 +13,18 @@
 }
 /* display: block; */
 
+.lovedRating, .lovedPrice{
+  color:black;
+}
 
 .lovedItemsImages{
   width: 100%;
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 14px;
+  /* gap:15px; */
   padding-bottom: 4px;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .loveditemTitle {

@@ -10,6 +10,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { RiLogoutBoxLine } from "react-icons/ri";
 import { GiFamilyHouse } from "react-icons/gi";
 import "./index.css";
+import AllProductsSearch from "../Products/AllproductsSearch";
 
 export default function Navigation() {
   const history = useHistory();
@@ -18,9 +19,14 @@ export default function Navigation() {
   const currentUser = useSelector((state) => state.user.current);
   const [modalOpen, setModalOpen] = useState(false);
   const [text, setText] = useState("");
+  const [loading, setLoading] = useState();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/products/${text}`); //
+    if(!text){
+      return; 
+    }
+    history.push(`/products/search/${text}`);
   };
 
   useEffect(() => setText(keyword || ""), [keyword]);
@@ -69,10 +75,12 @@ export default function Navigation() {
                 <span>Sell on Shoppy</span>
               </Link>
             </li>
-            <li onClick={() => {
-              dispatch(logoutUser());
-              history.replace("/")
-              }}>
+            <li
+              onClick={() => {
+                dispatch(logoutUser());
+                history.replace("/");
+              }}
+            >
               <RiLogoutBoxLine />
 
               <span>Sign out</span>
@@ -104,24 +112,32 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
-          <Link style={{ color: "grey" }} to={"/products/clothing_shoes"}>
-             Clothing & Shoes
-          </Link>
+            <Link style={{ color: "grey" }} to={"/products/clothing_shoes"}>
+              Clothing & Shoes
+            </Link>
           </li>
           <li>
             <Link style={{ color: "grey" }} to={"/products/home_living"}>
               Home & Living
             </Link>
           </li>
-          <li> <Link style={{ color: "grey" }} to={"/products/wedding_party"}>
-            Wedding & Party
-            </Link> </li>
-          <li><Link style={{ color: "grey" }} to={"/products/toys"}>
-             Toys
-             </Link></li>
-          <li> <Link style={{ color: "grey" }} to={"/products/art"}>
-            Art & Collectibles
-            </Link></li>
+          <li>
+            {" "}
+            <Link style={{ color: "grey" }} to={"/products/wedding_party"}>
+              Wedding & Party
+            </Link>{" "}
+          </li>
+          <li>
+            <Link style={{ color: "grey" }} to={"/products/toys"}>
+              Toys
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link style={{ color: "grey" }} to={"/products/art"}>
+              Art & Collectibles
+            </Link>
+          </li>
         </ul>
       </div>
 

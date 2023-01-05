@@ -5,6 +5,7 @@ import ProductCard from "./ProductCard";
 import { fetchProducts } from "../../store/reducers/productReducer";
 import "./Allproducts.css";
 import Footer from "../Footer/Footer";
+import ProductGrid from "./ProductGrid";
 
 function headerTitle(category) {
   switch (category) {
@@ -101,11 +102,12 @@ export default function AllProducts() {
           </button>
         </div>
 
-        <ul className="productLists">
+        {/* <ul className="productLists">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-        </ul>
+        </ul> */}
+        <ProductGrid products={products}/>
       </div>
       <Footer />
     </div>

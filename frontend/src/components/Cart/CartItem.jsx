@@ -3,13 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeItemFromCart } from "../../store/reducers/cartReducer";
 import { updateCart } from "../../store/reducers/cartReducer";
-
-function formatPrice(price) {
-  return (price / 100).toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-}
+import { formatPrice } from "../../utils/formatPrice";
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -19,7 +13,7 @@ export default function CartItem({ item }) {
     setSelected(parseInt(e.target.value));
     dispatch(updateCart({ id: item.id, quantity: parseInt(e.target.value) }));
   };
- console.log({photos: item.photos})
+
   const handleClick = (e) => {
     dispatch(removeItemFromCart(item.id));
   };

@@ -13,7 +13,6 @@ export default function ProductCard({ product }) {
         <div className="productName">{product.name}</div>
         <div className="productRating">
           <Rating rating={product.rating} />
-
         </div>
         <div className="productPrice">${(product.price / 100).toFixed(2)}</div>
         <div className="productSeller">{product.seller.firstName}</div>

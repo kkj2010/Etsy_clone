@@ -14,15 +14,9 @@ import {
   selectSubTotalPrice,
   selectTotalQuatity,
 } from "../../store/reducers/cartReducer";
+import { formatPrice } from "../../utils/formatPrice";
 
 const SHIPPING = 1000;
-
-function formatPrice(price) {
-  return (price / 100).toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-}
 
 export default function Cart() {
   const dispatch = useDispatch();

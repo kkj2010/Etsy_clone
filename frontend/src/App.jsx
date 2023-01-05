@@ -6,6 +6,7 @@ import ProductShow from "./components/Products/ProductShow";
 import ProductForm from "./components/Products/ProductForm";
 import Cart from "./components/Cart/Cart";
 import CheckOutPage from "./components/Checkout/CheckOutPage";
+import AllproductsSearch from "./components/Products/AllproductsSearch"
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route exact path={"/products/:category"}>
           <AllProducts />
+        </Route>
+        <Route exact path={"/products/search/:text"}>
+          <AllproductsSearch/>
         </Route>
         <Route exact path={"/products/:category/:productId"}>
           <ProductShow />

@@ -12,13 +12,7 @@ import Footer from "../Footer/Footer";
 import { addItemToCart } from "../../store/reducers/cartReducer";
 import { csrfFetch } from "../../store/csrf";
 import Reviews from "./Reviews";
-
-function formatPrice(price) {
-  return (price / 100).toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-}
+import { formatPrice } from "../../utils/formatPrice";
 
 export default function ProductShow() {
   const dispatch = useDispatch();
@@ -76,7 +70,6 @@ export default function ProductShow() {
     setCurrentImageIndex(index);
   };
 
-  
   if (!product) {
     return <div>NOT FOUND!</div>;
   }
@@ -119,8 +112,8 @@ export default function ProductShow() {
                   </span>
                 </button>
               </div>
-           </div>
-              <Reviews reviews={product?.reviews || []} />
+            </div>
+            <Reviews reviews={product?.reviews || []} />
           </div>
 
           <div className="rightContainer">
