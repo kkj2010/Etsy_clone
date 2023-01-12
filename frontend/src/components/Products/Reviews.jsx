@@ -96,12 +96,14 @@ export default function Reviews({ reviews }) {
                   <Rating rating={review.rating} />
                 </li>
                 {review.user.id === user?.id && (
-                  <button
+                  <><button
                     onClick={() => handleClick(review)}
                     className="deleteReview"
                   >
                     Delete
                   </button>
+                  <button className="editReview">Edit</button>
+                  </>
                 )}
               </div>
               <div className="writer">
@@ -116,6 +118,42 @@ export default function Reviews({ reviews }) {
             </ul>
 
             <li className="reviewByUser">{review.body}</li>
+     
+          </div>
+        ))}
+      </div>
+      <div className="editSection">
+        {reviews.map((review) => (
+          <div className="df" key={review.id}>
+            <ul className="reviewSectionTitle">
+              <div className="userAndDelete">
+                <li className="reviewStarRating">
+                  <Rating rating={review.rating} />
+                </li>
+                {review.user.id === user?.id && (
+                  <><button
+                    onClick={() => handleClick(review)}
+                    className="deleteReview"
+                  >
+                    Delete
+                  </button>
+                  <button className="editReview">Save</button>
+                  </>
+                )}
+              </div>
+              <div className="writer">
+                <li className="reviewDate">
+                  {formatDistanceToNow(new Date(review.createdAt), {
+                    addSuffix: true,
+                  })}
+                </li>
+
+                <li className="reviewUser">by {review.user.firstName}</li>
+              </div>
+            </ul>
+
+            <textarea className="editByUser">{review.body}</textarea>
+     
           </div>
         ))}
       </div>

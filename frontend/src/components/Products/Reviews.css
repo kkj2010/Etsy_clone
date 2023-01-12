@@ -25,6 +25,7 @@
   resize: none;
   width: 400px;
   height: 200px;
+  font-size: 15px;
   font-family: "Yantramanav", sans-serif;
   letter-spacing: 1px;
   border:1px solid rgba(34, 34, 34, 0.15);
@@ -89,7 +90,7 @@
 }
 
 
-.reviewSection{
+.reviewSection, .editSection{
   margin-top: 20px;
   font-family: "Yantramanav", sans-serif;
 }
@@ -99,6 +100,24 @@
   padding-top:10px;
   line-height: 20px;
 }
+
+.editByUser{
+  color:gray;
+  margin-top:5px;
+  padding:10px 5px 10px 5px ;
+  line-height: 20px;
+  font-size: 15px;
+  border:1px solid rgba(34, 34, 34, 0.15);
+  /* justify-content: center; */
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  resize: none;
+  width: 900px;
+  height: 100px;
+  font-family: "Yantramanav", sans-serif;
+  letter-spacing: 1px;
+}
+
+
 
 .reviewStarRating{
  font-size: 15px;
@@ -137,6 +156,18 @@ padding-right: 8px;
   font-size: 11px;
  
 }
+
+.editReview{
+  background:white;
+  color:black;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-left: 7px;
+  height: 20px;
+  font-size: 11px;
+ 
+}
+
 
 .userAndDelete{
   display: flex;

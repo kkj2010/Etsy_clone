@@ -46,40 +46,7 @@ export default function AllProducts() {
             </Link>
           ))}
 
-          {/* <li className="suggestion1">
-            <div className="lovedList">
-              <img src="/img/deco1.png" />
-            </div>
-            <div className="lovedItemsProductName">
-              Christmas Stocking,Personalized Chrsitams Stocking
-            </div>
-            <div className="lovedItemsUser">CPDESIGNusa</div>
-          </li>
-          <li className="suggestion2">
-            <div className="lovedList">
-              <img src="/img/deco3.png" />
-            </div>
-          </li>
-          <li className="suggestion3">
-            <div className="lovedList">
-              <img src="/img/deco4.png" />
-            </div>
-          </li>
-          <li className="suggestion4">
-            <div className="lovedList">
-              <img src="/img/deco5.png" />
-            </div>
-          </li>
-          <li className="suggestion5">
-            <div className="lovedList">
-              <img src="/img/deco6.png" />
-            </div>
-          </li>
-          <li className="suggestion5">
-            <div className="lovedList">
-              <img src="/img/deco6.png" />
-            </div>
-          </li> */}
+        
         </ul>
         <div className="underLine"></div>
         {/* <ProductGrid products={filteredProducts} /> */}
