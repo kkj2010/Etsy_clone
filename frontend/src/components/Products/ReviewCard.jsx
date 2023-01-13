@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteReview, editReview } from "../../store/reducers/productReducer";
 import { formatDistanceToNow } from "date-fns";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import UpdateRating from "./UpdateRating";
 
 export default function ReviewCard({ review }) {
   const dispatch = useDispatch();
@@ -31,7 +33,11 @@ export default function ReviewCard({ review }) {
       <ul className="reviewSectionTitle">
         <div className="userAndDelete">
           <li className="reviewStarRating">
-            <Rating rating={review.rating} />
+            {edit ? (
+              <UpdateRating rating={rating} onClick={setRating} />
+            ) : (
+              <Rating rating={review.rating} />
+            )}
           </li>
           {review.user.id === user?.id &&
             (edit ? (

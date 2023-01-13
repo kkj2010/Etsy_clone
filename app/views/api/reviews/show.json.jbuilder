@@ -1,5 +1,5 @@
 json.id @review.id
-json.created_at @review.created_at
+json.created_at @review.updated_at
 json.product_id @review.product_id
 json.body @review.body
 json.rating @review.rating

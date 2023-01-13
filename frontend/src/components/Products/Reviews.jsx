@@ -1,12 +1,12 @@
 import {  useState } from "react";
 import "./Reviews.css";
-import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
   createReview,
 } from "../../store/reducers/productReducer";
 import ReviewCard from "./ReviewCard";
+import UpdateRating from "./UpdateRating";
 
 export default function Reviews({ reviews }) {
   const dispatch = useDispatch();
@@ -62,15 +62,7 @@ export default function Reviews({ reviews }) {
             </li>
             <li className="rateItem">Overall rating</li>
             <li className="starRating">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <span
-                  className="starIcon"
-                  key={star}
-                  onClick={() => setRating(star)}
-                >
-                  {star <= rating ? <AiFillStar /> : <AiOutlineStar />}
-                </span>
-              ))}
+              <UpdateRating rating={rating} onClick={setRating}/>
             </li>
           </ul>
           <div>
