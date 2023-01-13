@@ -26,6 +26,7 @@ export const removeProduct = (productId) => ({
 
 const ADD_REVIEW = "reviews/ADD_REVIEW";
 const REMOVE_REVIEW = "reviews/REMOVE_REVIEW";
+const UPDATE_REVIEW = "reviews/UPDATE_REVIEW";
 
 export const addReview = (review) => {
   return {
@@ -37,6 +38,13 @@ export const addReview = (review) => {
 export const removeReview = (review) => {
   return {
     type: REMOVE_REVIEW,
+    review,
+  };
+};
+
+export const updateReview = (review) => {
+  return {
+    type: UPDATE_REVIEW,
     review,
   };
 };
@@ -85,16 +93,15 @@ export const createReview = (productId, review) => async (dispatch) => {
   }
 };
 
-export const editReview = (body, rating, review) => async (dispatch) => {
-  const res = await csrfFetch(`/api/review/${review.id}`, {
+export const editReview = (review) => async (dispatch) => {
+  const res = await csrfFetch(`/api/reviews/${review.id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ review:{rating,body}}),
+    body: JSON.stringify({ review }),
   });
-  if(res.ok){
-    const data= await res.json();
-    dispatch(addReview(data.review))
-  
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(updateReview(data));
   }
 };
 
@@ -121,6 +128,18 @@ const productReducer = (state = {}, action) => {
           reviews: [action.review, ...state[action.review.productId].reviews],
         },
       };
+    case UPDATE_REVIEW: {
+      return {
+        ...state,
+        [action.review.productId]: {
+          ...state[action.review.productId],
+          reviews: state[action.review.productId].reviews.map((review) =>
+            review.id === action.review.id ? action.review : review
+          ),
+        },
+      };
+    }
+
     case REMOVE_REVIEW: {
       return {
         ...state,

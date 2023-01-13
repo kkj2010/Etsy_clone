@@ -23,8 +23,8 @@ class Api::ReviewsController < ApplicationController
     def update
         @user= current_user
         @review= Review.find_by(id:params[:id])
-        if @review
-            review.update
+        if @review && @review.user_id==@user.id
+            @review.update(review_params)
         end
         render "api/reviews/show"
     end

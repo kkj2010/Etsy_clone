@@ -1,25 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import {  useState } from "react";
 import "./Reviews.css";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { formatDistanceToNow } from "date-fns";
 import { useParams } from "react-router-dom";
 import {
   createReview,
-  deleteReview,
 } from "../../store/reducers/productReducer";
-import Rating from "./Rating";
+import ReviewCard from "./ReviewCard";
 
 export default function Reviews({ reviews }) {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.current);
   const { productId } = useParams();
   const product = useSelector((state) => state.products[productId]);
-
   const [errMessage, setErrMessage] = useState("");
   const [content, setContent] = useState("");
   const [rating, setRating] = useState(0);
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,9 +29,6 @@ export default function Reviews({ reviews }) {
     }
   };
 
-  const handleClick = (review) => {
-    dispatch(deleteReview(review));
-  };
 
   return (
     <>
@@ -90,72 +82,7 @@ export default function Reviews({ reviews }) {
       </form>
       <div className="reviewSection">
         {reviews.map((review) => (
-          <div className="df" key={review.id}>
-            <ul className="reviewSectionTitle">
-              <div className="userAndDelete">
-                <li className="reviewStarRating">
-                  <Rating rating={review.rating} />
-                </li>
-                {review.user.id === user?.id && (
-                  <><button
-                    onClick={() => handleClick(review)}
-                    className="deleteReview"
-                  >
-                    Delete
-                  </button>
-                  <button className="editReview">Edit</button>
-                  </>
-                )}
-              </div>
-              <div className="writer">
-                <li className="reviewDate">
-                  {formatDistanceToNow(new Date(review.createdAt), {
-                    addSuffix: true,
-                  })}
-                </li>
-
-                <li className="reviewUser">by {review.user.firstName}</li>
-              </div>
-            </ul>
-
-            <li className="reviewByUser">{review.body}</li>
-     
-          </div>
-        ))}
-      </div>
-      <div className="editSection">
-        {reviews.map((review) => (
-          <div className="df" key={review.id}>
-            <ul className="reviewSectionTitle">
-              <div className="userAndDelete">
-                <li className="reviewStarRating">
-                  <Rating rating={review.rating} />
-                </li>
-                {review.user.id === user?.id && (
-                  <><button
-                    onClick={() => handleClick(review)}
-                    className="deleteReview"
-                  >
-                    Delete
-                  </button>
-                  <button className="editReview">Save</button>
-                  </>
-                )}
-              </div>
-              <div className="writer">
-                <li className="reviewDate">
-                  {formatDistanceToNow(new Date(review.createdAt), {
-                    addSuffix: true,
-                  })}
-                </li>
-
-                <li className="reviewUser">by {review.user.firstName}</li>
-              </div>
-            </ul>
-
-            <textarea className="editByUser">{review.body}</textarea>
-     
-          </div>
+          <ReviewCard review={review} key={review.id} />
         ))}
       </div>
     </>
