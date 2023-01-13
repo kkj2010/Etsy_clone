@@ -20,6 +20,15 @@ class Api::ReviewsController < ApplicationController
        end
     end
 
+    def update
+        @user= current_user
+        @review= Review.find_by(id:params[:id])
+        if @review
+            review.update
+        end
+        render "api/reviews/show"
+    end
+
 
     def destroy
         @review= Review.find_by(id: params[:id])
