@@ -16,7 +16,7 @@ export default function Footer() {
         <li> $ (USD)</li>
       </ul>
       <ul className="rightFooter">
-        <li className="shoppyInc">&#169; 2022 Shoppy, Inc.</li>
+        <li className="shoppyInc">&#169; 2023 Shoppy, Inc.</li>
         <li className="gitHub">
         <a className="gitHub" style={{color:"white"}} href="https://github.com/kkj2010/Etsy_clone.git"><FaGithub /></a>
         </li>
