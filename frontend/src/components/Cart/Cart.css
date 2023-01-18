@@ -81,6 +81,7 @@
 
 .giftCheckboxText {
   font-family: "Yantramanav", sans-serif;
+  margin-top: 10px;
 }
 
 .giftTextarea > textarea {
