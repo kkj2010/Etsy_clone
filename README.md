@@ -81,5 +81,3 @@ Below is a code snippet of the carousel of the product in product show page.
 ```
 # Future Plans
 * Add correct link in splash page
-* Finish reveiw - add edit function
-* Finish category
