@@ -24,6 +24,12 @@ export default function ProductShow() {
   const [showDescription, setShowDescription] = useState(false);
   const [showShipping, setShowShipping] = useState(false);
   const product = useSelector((state) => state.products[productId]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleToggleModal = (e) => {
+    e?.preventDefault();
+    setModalOpen((prev) => !prev);
+  };
+
 
   useEffect(() => {
     if (productId) {
@@ -40,7 +46,6 @@ export default function ProductShow() {
         history.push("/cart");
       });
     } else {
-    history.push(<AuthModal/>)
       // history.push("/");
     }
     setCount(1);
@@ -135,7 +140,7 @@ export default function ProductShow() {
             </select>
 
             <div>
-              <button className="AddCartButton" onClick={handleClick}>
+              <button className="AddCartButton" onClick={userId? handleClick: handleToggleModal}>
                 Add to cart
               </button>
               <div>
@@ -187,6 +192,9 @@ export default function ProductShow() {
             </div>
           </div>
         </div>
+        {modalOpen && (
+        <AuthModal onClose={handleToggleModal} onSuccess={handleToggleModal} />
+      )}
       </div>
       <Footer />
     </>

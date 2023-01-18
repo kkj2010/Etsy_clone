@@ -2,7 +2,6 @@ import "./Cart.css";
 import CartItem from "./CartItem";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { FaEquals } from "react-icons/fa";
-
 import { Link, useHistory } from "react-router-dom";
 import { deleteProduct } from "../../store/reducers/productReducer";
 import { useEffect, useState } from "react";
