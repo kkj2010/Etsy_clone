@@ -19,7 +19,7 @@
   }
   
   #modal-content {
-    position: absolute;
+    position: relative;
     background-color: white;
     border-radius: 25px;
     width: 350px;

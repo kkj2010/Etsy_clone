@@ -2,9 +2,9 @@
     background-color: transparent;
     color: white;
     border: none;
-    position: relative;
+    position: absolute;
     left:400px;
-    bottom:100px;
+    top:0px;
     font-size: 40px;
 }
 
