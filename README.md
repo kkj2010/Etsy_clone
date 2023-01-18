@@ -13,6 +13,9 @@
 * AWS S3
 * Render
 
+# Live
+Click [here](https://shoppy-1asz.onrender.com)
+
 # Preview
 ![](./images/shoppy.gif)
 
