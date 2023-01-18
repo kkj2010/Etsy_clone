@@ -32,6 +32,7 @@ export default function LoginForm({ onSuccess }) {
         }
       })
       .catch(async (res) => {
+        
         const errors = await res.json();
         setErrors("Invalid credentials");
       });
@@ -50,6 +51,7 @@ export default function LoginForm({ onSuccess }) {
         }
       })
       .catch(async (res) => {
+  
         const errors = await res.json();
         setErrors(errors);
       });
