@@ -124,8 +124,22 @@
   margin-bottom: 20px;
   cursor: pointer;
   box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
-  padding-left: 6px;
+  padding-left: 13px;
+  -moz-appearance: none; 
+  -webkit-appearance: none; 
+  appearance: none; 
+  background: url(./../../../public/img/down-caret.svg);
+  background-position: right center; 
+  background-size: 2.2em;
+  background-repeat: no-repeat;
+
+  /* padding-right: 2rem; */
+  /* background: url(/img/down-caret.svg); */
 }
+
+
+
+
 .AddCartButton {
   width: 350px;
   height: 40px;
