@@ -13,6 +13,7 @@ import { addItemToCart } from "../../store/reducers/cartReducer";
 import { csrfFetch } from "../../store/csrf";
 import Reviews from "./Reviews";
 import { formatPrice } from "../../utils/formatPrice";
+import { AuthModal } from "../AuthModal";
 
 export default function ProductShow() {
   const dispatch = useDispatch();
@@ -39,7 +40,8 @@ export default function ProductShow() {
         history.push("/cart");
       });
     } else {
-      history.push("/");
+    history.push(<AuthModal/>)
+      // history.push("/");
     }
     setCount(1);
   };
