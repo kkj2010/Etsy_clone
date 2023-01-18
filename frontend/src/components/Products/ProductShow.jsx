@@ -135,7 +135,7 @@ export default function ProductShow() {
             >
               {options &&
                 options.map((option, index) => (
-                  <option key={index}>{option}</option>
+                  <option key={index} className="op">{option}</option>
                 ))}
             </select>
 
