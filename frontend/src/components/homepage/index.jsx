@@ -9,11 +9,9 @@ export default function HomePage() {
   const handleClick = () => {
     history.push(`/products/jewelry/2`);
   };
-  const handleNavigate = (category,productId) => {
+  const handleNavigate = (category, productId) => {
     history.push(`/products/${category}/${productId}`);
   };
-
-
 
   const generatePanel = (panelId) => {
     let panel = null;
@@ -21,7 +19,7 @@ export default function HomePage() {
       case "farmhouse":
         panel = (
           <div className="tabPanel">
-            <div className="item1" onClick={handleClick}>
+            <div className="item1" onClick={() => handleNavigate("home_living", 48)}>
               <img src="/img/item1.png" />
             </div>
             <div className="item2" onClick={handleClick}>
@@ -126,27 +124,33 @@ export default function HomePage() {
           Holiday magic starts with these merry finds
         </h1>
         <ul className="displays">
-          <li className="display" onClick={()=> handleNavigate("holiday_shop", 30)}>
+          <li
+            className="display"
+            onClick={() => handleNavigate("holiday_shop", 30)}
+          >
             <img src="/img/stringlights.png" />
             <span className="text1">Seasonal Decor</span>
           </li>
-          <li className="display" onClick={()=> handleNavigate("art", 20)}>
+          <li className="display" onClick={() => handleNavigate("art", 20)}>
             <img src="/img/arts.png" />
             <span className="text2">Arts & Crafts</span>
           </li>
-          <li className="display" onClick={handleClick}>
+          <li className="display" onClick={() => handleNavigate("jewelry", 16)}>
             <img src="/img/jewelry.png" />
             <span className="text3">Jewelry Gifts</span>
           </li>
-          <li className="display" onClick={handleClick}>
+          <li
+            className="display"
+            onClick={() => handleNavigate("wedding_party", 42)}
+          >
             <img src="/img/sweets.png" />
             <span className="text4">Sweets</span>
           </li>
-          <li className="display" onClick={handleClick}>
+          <li className="display" onClick={() => handleNavigate("arts", 21)}>
             <img src="/img/candle.png" />
             <span className="text5">Candle</span>
           </li>
-          <li className="display" onClick={handleClick}>
+          <li className="display" onClick={() => handleNavigate("arts", 19)}>
             <img src="/img/love.png" />
             <span className="text6">Love</span>
           </li>
@@ -160,27 +164,27 @@ export default function HomePage() {
 
         <ul className="suggestionFirstrow">
           <li className="suggestion1">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("holiday_shop", 29)}>
               <img src="/img/deco1.png" />
             </div>
           </li>
           <li className="suggestion2">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("wedding_party", 45)}>
               <img src="/img/deco3.png" />
             </div>
           </li>
           <li className="suggestion3">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("wedding_party", 44)}>
               <img src="/img/deco4.png" />
             </div>
           </li>
           <li className="suggestion4">
-            <div className="list" onClick={handleClick}>
+            <div className="list"  onClick={() => handleNavigate("toys", 31)}>
               <img src="/img/deco5.png" />
             </div>
           </li>
           <li className="suggestion5">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("art", 18)}>
               <img src="/img/deco6.png" />
             </div>
           </li>
@@ -188,27 +192,27 @@ export default function HomePage() {
 
         <ul className="suggestionSecondrow">
           <li className="suggestion6">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("home_living", 55)}>
               <img src="/img/deco7.png" />
             </div>
           </li>
           <li className="suggestion7">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("jewelry", 15)}>
               <img src="/img/deco8.png" />
             </div>
           </li>
           <li className="suggestion8">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("holiday_shop", 23)}>
               <img src="/img/deco9.png" />
             </div>
           </li>
           <li className="suggestion9">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("art", 17)}>
               <img src="/img/deco10.png" />
             </div>
           </li>
           <li className="suggestion10">
-            <div className="list" onClick={handleClick}>
+            <div className="list" onClick={() => handleNavigate("home_living", 50)}>
               <img src="/img/deco11.png" />
             </div>
           </li>
