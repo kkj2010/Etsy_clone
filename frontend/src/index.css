@@ -146,7 +146,9 @@ table {
 
 #root {
   height: 100%;
+  /* position: relative; */
 }
 
 .App {
+
 }

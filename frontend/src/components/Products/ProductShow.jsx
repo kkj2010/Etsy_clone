@@ -196,7 +196,7 @@ export default function ProductShow() {
         <AuthModal onClose={handleToggleModal} onSuccess={handleToggleModal} />
       )}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

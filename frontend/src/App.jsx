@@ -7,7 +7,7 @@ import ProductForm from "./components/Products/ProductForm";
 import Cart from "./components/Cart/Cart";
 import CheckOutPage from "./components/Checkout/CheckOutPage";
 import AllproductsSearch from "./components/Products/AllproductsSearch"
-
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <div className="App">
@@ -36,6 +36,7 @@ function App() {
           <CheckOutPage />
         </Route>
       </Switch>
+      <Footer/>
     </div>
   );
 }

@@ -77,7 +77,7 @@ export default function Reviews({ reviews }) {
           <div>
             {/* {submitButton} */}
 
-            <button className="reviewSubmitButton" type="submit">
+            <button className="reviewSubmitButton" type="submit" >
               Submit my reveiw
             </button>
           </div>
