@@ -32,7 +32,11 @@ export default function AllProducts() {
   const { category } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
-  const products = useSelector((state) => Object.values(state.products));
+  const products = useSelector((state) =>
+    Object.values(state.products).filter(
+      (product) => product.category.name === category
+    )
+  );
 
   const handleClick = () => {
     history.push(`/products/jewelry/1`);
@@ -107,7 +111,7 @@ export default function AllProducts() {
             <ProductCard key={product.id} product={product} />
           ))}
         </ul> */}
-        <ProductGrid products={products}/>
+        <ProductGrid products={products} />
       </div>
       <Footer />
     </div>
