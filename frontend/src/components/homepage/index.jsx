@@ -9,6 +9,11 @@ export default function HomePage() {
   const handleClick = () => {
     history.push(`/products/jewelry/2`);
   };
+  const handleClick1 = () => {
+    history.push(`/products/holiday_shop/26`);
+  };
+
+
 
   const generatePanel = (panelId) => {
     let panel = null;
@@ -121,7 +126,7 @@ export default function HomePage() {
           Holiday magic starts with these merry finds
         </h1>
         <ul className="displays">
-          <li className="display" onClick={handleClick}>
+          <li className="display" onClick={handleClick1}>
             <img src="/img/stringlights.png" />
             <span className="text1">Seasonal Decor</span>
           </li>

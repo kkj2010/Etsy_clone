@@ -113,6 +113,206 @@ end
 
 jewelry4.save!
 
+jewelry17= Product.new(
+    description: "Handmade polished sterling silver ear cuff.
+    A crescent line on the front, and a circle on the back to hold the cuff securely in place.
+    
+    Dimensions: 38x20mm
+    
+    Width: 1mm
+    
+    Sold: Individually or as a pair
+    ",
+    price: 4697,
+    name: "Circle & Long Line - silver ear cuff - sterling silver curved ear cuff earring - minimalist ear cuff",
+    seller: demo_user,
+    category: jewelry
+)
+5.times do |n|
+    jewelry17.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry17/jewelry17-#{n+1}.png"), filename: "jewelry17-#{n+1}.png")
+end
+
+jewelry17.save!
+
+jewelry6= Product.new(
+    description: "Simple minimalistic silver 925 ring with gold of 14 carats, that is melted into the silver, not painted.
+    Perfect for everyday use and layering other rings.
+    Great for everyday use or any special occasion. A perfect gift for your friend or a loved one. Piece to have and enjoy for years.
+    We have different finishes available (striped, by hammer, etc..) and also different sizes. All our rings are made with a lot of love and heart.
+    We hope you enjoy our art.",
+    price: 5448,
+    name: "Minimalistic handmade silver ring with gold. Modern birthday gift Wedding ring for proposal unique style Vaidus jewelry",
+    seller: demo_user,
+    category: jewelry
+)
+3.times do |n|
+    jewelry6.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry6/jewelry6-#{n+1}.png"), filename: "jewelry6-#{n+1}.png")
+end
+
+jewelry6.save!
+
+
+jewelry12= Product.new(
+    description: "Every flower is a soul blossoming in nature. Make it your own special flower necklace.
+    Follow the minimalist lifestyle, it's dainty and simple to wear everyday!
+    A perfect gift for your beloved ones, especially Mom and Daughter.
+
+    
+    DETAILS:
+    
+    • Material: 925 Sterling Silver
+    • Color: 100% Silver, 18k Gold Filled, 18k Rosegold Filled
+    • Diameter: Big Oval (15mm), Little Oval (13mm)
+    
+    • Font F23 is by default if you do not specify any font.
+    
+    • Engraving option:
+    - 1 side: Engrave Birth Flower on 1 side
+    - 2 sides: Engrave Birth Flower on 1 side, and Words/Birth Flower on other side. Words could be by FONT or your handwriting.
+    - If you want to engrave any flower other than what we listed, please feel free to contact us.
+    
+    • This listing is for 1 necklace. If you want to buy more than 1 necklace, please add to cart for each necklace with each personalization.",
+    price: 3999,
+    name: "Personalized Mother Daughter Necklace | Birth Month Flower Necklace | Minimalist Flower Necklace | Gold Filled Necklace | Christmas Gift",
+    seller: demo_user,
+    category: jewelry
+)
+5.times do |n|
+    jewelry12.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry12/jewelry12-#{n+1}.png"), filename: "jewelry12-#{n+1}.png")
+end
+
+jewelry12.save!
+
+
+jewelry14= Product.new(
+    description: "Pearl by the yard necklace with natural freshwater pearls.
+
+    Sizing:
+    Length is measured from clasp to the very first ring, with one inch of 3mm rings for size adjustment. For example, a 16 inch necklace is adjustable between 16 and 17 inches.
+    ",
+    price: 3000,
+    name: "14k Gold Pearl Necklace, Dainty Freshwater Pearl Necklace, Tiny Pearl Necklace, Bridesmaid Gifts",
+    seller: demo_user,
+    category: jewelry
+)
+
+
+6.times do |n|
+    jewelry14.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry14/jewelry14-#{n+1}.png"), filename: "jewelry14-#{n+1}.png")
+end
+
+jewelry14.save!
+
+jewelry15= Product.new(
+    description: "• C H A R A C T E R I S T I C S
+    - 100% 14k Solid Gold earrings (doesn't cause allergies, even on sensitive skins)
+    - Length : 8 mm
+    - Delivered in our small, white and gold fabric jewelry pouch and Zoaje gift box!
+    ",
+    price: 7828,
+    name: "KENYA dainty 14k solid gold studs bar, Gold bar earrings, Gold studs",
+    seller: demo_user,
+    category: jewelry
+)
+
+
+6.times do |n|
+    jewelry15.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry15/jewelry15-#{n+1}.png"), filename: "jewelry15-#{n+1}.png")
+end
+
+jewelry15.save!
+
+jewelry9= Product.new(
+    description: "100% 14k Gold Filled, Sterling Silver, or Rose Gold Filled and 8k , 14k, 18k Solid gold
+    All raw materials are Italia sourced
+    The necklace can be personalized with NAME, NUMBER, WORD
+    Name size - lowercase letters are approximately 4 mm and uppercase letters are approximately 6 mm
+    ",
+    price: 1760,
+    name: "14k Solid Gold Name Necklace, Personalized Jewelry, Personalized Gift, Initial Name Necklace, Gold Name Necklace, Christmas Gift, Gift for",
+    seller: demo_user,
+    category: jewelry
+)
+
+6.times do |n|
+    jewelry9.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry9/jewelry9-#{n+1}.png"), filename: "jewelry9-#{n+1}.png")
+end
+
+
+
+jewelry9.save!
+
+
+jewelry18= Product.new(
+    description: "3d earrings from Tangram collection.
+    These unique earrings have been made of brushed finish raw brass and sterling silver bar and earnuts.
+    These are hand cut and handmade by me specially for your order. No two pairs are exactly equal.
+    
+    Size: 28 mm  aprox.
+    
+    Note: Since the pieces are handmade, and in some of my designs are used natural stones, size and color can be slightly varied from one another.
+    Items shown are not actual size as photos have been enlarged or enhanced to show detail. Actual color may vary slightly depending on the screen resolution and quality of monitor you are using.
+    ",
+    price: 5144,
+    name: "Gold stud earrings, Modern jewelry, Gold geometric earrings, moon stud earrings, geometric stud earrings, gift for her under 50",
+    seller: demo_user,
+    category: jewelry
+)
+
+
+3.times do |n|
+    jewelry18.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry18/jewelry18-#{n+1}.png"), filename: "jewelry18-#{n+1}.png")
+end
+
+jewelry18.save!
+
+
+jewelry19= Product.new(
+    description: "Strong and sturdy in thick gauge wire, this minimalist non-slip hair fork will hold even the heavies tresses in place all day long. Simply wrap your hair in a bun or a french twist, and weave in the fork to lock the style securely. Each one is forged and hammered by hand, and tumbled for hours for a beautiful shine.
+
+    METAL:
+    
+    -Brass / Copper / Rustic Copper / German Silver.
+    
+    *German silver is a non-tarnish copper alloy (60%) with zink (20%) and nickel (20%). It is absolutely lead free and contains no silver!
+    
+    ",
+    price: 2200,
+    name: "Raised hair fork copper hair slide minimalist hair comb metal hair pin simple hair accessories for women christmas gift for her bun fork",
+    seller: demo_user,
+    category: jewelry
+)
+
+
+6.times do |n|
+    jewelry19.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry19/jewelry19-#{n+1}.png"), filename: "jewelry19-#{n+1}.png")
+end
+
+jewelry19.save!
+
+jewelry20= Product.new(
+    description: "Minimal Earrings | Simple Studs | Silver Stud Earrings | Post earrings | Delicate Jewellery | Small Stud Earrings | Gift For Girl |
+
+    These earrings arrive in a pair and are made from hammered eco-friendly (recycled) sterling silver that catches the light beautifully.
+    
+    - They can be worn vertically (like in the photos) or horizontally to give an alternative look.
+    - They're approximately 5mm long and come with sterling silver butterfly backs.
+    - Sold as a pair
+    
+    ",
+    price: 2982,
+    name: "Minimal Earrings | Hammered | Simple Studs | Silver Earrings | Post earrings | Delicate Jewellery | Small Stud Earrings | Gift For Girl |",
+    seller: demo_user,
+    category: jewelry
+)
+
+6.times do |n|
+    jewelry20.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry20/jewelry20-#{n+1}.png"), filename: "jewelry20-#{n+1}.png")
+end
+
+jewelry20.save!
+
+
 
 
 
@@ -141,170 +341,61 @@ end
 jewelry16.save!
 
 
+jewelry21= Product.new(
+    description: "Personalized Jewelry Boxes | Bridesmaid Jewelry Box | Bridesmaid Gift | Personalized Gift for Women | Travel Jewelry Case Maid of Honor
 
-jewelry15= Product.new(
-    description: "• C H A R A C T E R I S T I C S
-    - 100% 14k Solid Gold earrings (doesn't cause allergies, even on sensitive skins)
-    - Length : 8 mm
-    - Delivered in our small, white and gold fabric jewelry pouch and Zoaje gift box!
+    Bridesmaid personalized jewelry boxes are the perfect item to ask your girls (or thank them!) for standing by your side on your wedding day! These travel jewelry boxes, available in 2 colors and 2 font colors hold the perfect amount of jewelry when traveling.
+    
+    - Details -
+    - This listing is for 1 personalized travel jewelry box. Contents in box are not included.
+    
+    - Personalization is permanent and cannot be removed.
+    
+    - Your choice of box and font color (colors may be seen in product images).
+    
+    - Box Dimensions are 4x4x2 (inches)
     ",
-    price: 7828,
-    name: "KENYA dainty 14k solid gold studs bar, Gold bar earrings, Gold studs",
-    seller: demo_user,
-    category: jewelry
-)
-
-
-6.times do |n|
-    jewelry15.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry15/jewelry15-#{n+1}.png"), filename: "jewelry15-#{n+1}.png")
-end
-
-jewelry15.save!
-
-
-
-jewelry14= Product.new(
-    description: "Pearl by the yard necklace with natural freshwater pearls.
-
-    Sizing:
-    Length is measured from clasp to the very first ring, with one inch of 3mm rings for size adjustment. For example, a 16 inch necklace is adjustable between 16 and 17 inches.
-    ",
-    price: 3000,
-    name: "14k Gold Pearl Necklace, Dainty Freshwater Pearl Necklace, Tiny Pearl Necklace, Bridesmaid Gifts",
-    seller: demo_user,
-    category: jewelry
-)
-
-
-6.times do |n|
-    jewelry14.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry14/jewelry14-#{n+1}.png"), filename: "jewelry14-#{n+1}.png")
-end
-
-jewelry14.save!
-
-
-
-jewelry9= Product.new(
-    description: "100% 14k Gold Filled, Sterling Silver, or Rose Gold Filled and 8k , 14k, 18k Solid gold
-    All raw materials are Italia sourced
-    The necklace can be personalized with NAME, NUMBER, WORD
-    Name size - lowercase letters are approximately 4 mm and uppercase letters are approximately 6 mm
-    ",
-    price: 1760,
-    name: "14k Solid Gold Name Necklace, Personalized Jewelry, Personalized Gift, Initial Name Necklace, Gold Name Necklace, Christmas Gift, Gift for",
+    price: 1101,
+    name: "Personalized Jewelry Boxes | Bridesmaid Jewelry Box | Bridesmaid Gift | Personalized Gift for Women | Travel Jewelry Case Bridal Party Gift",
     seller: demo_user,
     category: jewelry
 )
 
 6.times do |n|
-    jewelry9.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry9/jewelry9-#{n+1}.png"), filename: "jewelry9-#{n+1}.png")
+    jewelry21.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewerly21/jewelry21-#{n+1}.png"), filename: "jewelry21-#{n+1}.png")
 end
 
+jewelry21.save!
 
 
-jewelry9.save!
+jewelry5= Product.new(
+    description: "✶ AS SEEN ON ETSY’S TV COMMERCIAL ✶
 
-
-
-
-    jewelry12= Product.new(
-        description: "Every flower is a soul blossoming in nature. Make it your own special flower necklace.
-        Follow the minimalist lifestyle, it's dainty and simple to wear everyday!
-        A perfect gift for your beloved ones, especially Mom and Daughter.
+    *The current processing time for this item is 3-4 weeks*
     
-        
-        DETAILS:
-        
-        • Material: 925 Sterling Silver
-        • Color: 100% Silver, 18k Gold Filled, 18k Rosegold Filled
-        • Diameter: Big Oval (15mm), Little Oval (13mm)
-        
-        • Font F23 is by default if you do not specify any font.
-        
-        • Engraving option:
-        - 1 side: Engrave Birth Flower on 1 side
-        - 2 sides: Engrave Birth Flower on 1 side, and Words/Birth Flower on other side. Words could be by FONT or your handwriting.
-        - If you want to engrave any flower other than what we listed, please feel free to contact us.
-        
-        • This listing is for 1 necklace. If you want to buy more than 1 necklace, please add to cart for each necklace with each personalization.",
-        price: 3999,
-        name: "Personalized Mother Daughter Necklace | Birth Month Flower Necklace | Minimalist Flower Necklace | Gold Filled Necklace | Christmas Gift",
-        seller: demo_user,
-        category: jewelry
-    )
-    5.times do |n|
-        jewelry12.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry12/jewelry12-#{n+1}.png"), filename: "jewelry12-#{n+1}.png")
-    end
-
-    jewelry12.save!
-
-
-
-
-    jewelry18= Product.new(
-    description: "3d earrings from Tangram collection.
-    These unique earrings have been made of brushed finish raw brass and sterling silver bar and earnuts.
-    These are hand cut and handmade by me specially for your order. No two pairs are exactly equal.
+    Calypso Charm Necklace:
     
-    Size: 28 mm  aprox.
+    This charm necklace comes in two color schemes: Bright and Jewel Tone.
+    Necklaces are made from a variety of gemstone, czech, and pearl beads.
+    *Beads may vary slightly.
+    Chain is gold plated over brass.
+    Length of necklace is 16inches
     
-    Note: Since the pieces are handmade, and in some of my designs are used natural stones, size and color can be slightly varied from one another.
-    Items shown are not actual size as photos have been enlarged or enhanced to show detail. Actual color may vary slightly depending on the screen resolution and quality of monitor you are using.
     ",
-    price: 5144,
-    name: "Gold stud earrings, Modern jewelry, Gold geometric earrings, moon stud earrings, geometric stud earrings, gift for her under 50",
+    price: 4500,
+    name: "Charm Choker Statement Necklace, colorful drop necklace, statement jewelry, multicolored necklace, beaded jewelry, gift for her, Calypso",
     seller: demo_user,
     category: jewelry
 )
 
-
-3.times do |n|
-    jewelry18.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry18/jewelry18-#{n+1}.png"), filename: "jewelry18-#{n+1}.png")
+6.times do |n|
+    jewelry5.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry5/jewelry5-#{n+1}.png"), filename: "jewelry5-#{n+1}.png")
 end
 
-jewelry18.save!
+jewelry5.save!
 
 
 
-jewelry6= Product.new(
-    description: "Simple minimalistic silver 925 ring with gold of 14 carats, that is melted into the silver, not painted.
-    Perfect for everyday use and layering other rings.
-    Great for everyday use or any special occasion. A perfect gift for your friend or a loved one. Piece to have and enjoy for years.
-    We have different finishes available (striped, by hammer, etc..) and also different sizes. All our rings are made with a lot of love and heart.
-    We hope you enjoy our art.",
-    price: 5448,
-    name: "Minimalistic handmade silver ring with gold. Modern birthday gift Wedding ring for proposal unique style Vaidus jewelry",
-    seller: demo_user,
-    category: jewelry
-)
-3.times do |n|
-    jewelry6.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry6/jewelry6-#{n+1}.png"), filename: "jewelry6-#{n+1}.png")
-end
-
-jewelry6.save!
-
-
-
-jewelry17= Product.new(
-    description: "Handmade polished sterling silver ear cuff.
-    A crescent line on the front, and a circle on the back to hold the cuff securely in place.
-    
-    Dimensions: 38x20mm
-    
-    Width: 1mm
-    
-    Sold: Individually or as a pair
-    ",
-    price: 4697,
-    name: "Circle & Long Line - silver ear cuff - sterling silver curved ear cuff earring - minimalist ear cuff",
-    seller: demo_user,
-    category: jewelry
-)
-5.times do |n|
-    jewelry17.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/jewerly/jewelry17/jewelry17-#{n+1}.png"), filename: "jewelry17-#{n+1}.png")
-end
-
-jewelry17.save!
 
 
 art4= Product.new(
@@ -1033,6 +1124,311 @@ end
 party6.save!
 
 
+home5= Product.new(
+    description: "Ceramic chandelier, thanksful to his style fits into any modern interriors like: rustic, boho, farmhouse, etc. decors. This handmade suspension light fixture will be a perfect lamp for kitchen island light or modern home lighting really anywhere you want add a touch of style :))))
+    Each lamp is completely unique and has its own style and shape. We make all lamps using the same technique, and they get their bends shape during the last firing at a temperature of 1210 °C. So, all of our lamps can be more or less OVAL.
+    
+    *Length of the wire is easy to adjust when mounting the lamp.
+    ",
+    price: 18000,
+    name: "Kitchen island pendat lamp shade Rustic farmhouse chandelier suspension lighting Ceramic handmade boho hallway dinner hanging light fixture",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home5.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home5/home5-#{n+1}.png"), filename: "home5-#{n+1}.png")
+end
+
+home5.save!
+
+
+home10= Product.new(
+    description: "The Minimal Pasta Bowls are apart of our Minimal Dinnerware Collection. Perfect for serving everything from braised meats to creamy pastas to hearty soups. Each piece is handmade using our proprietary sand stoneware and finished in our signature ivory glaze. The glaze on the rim of each piece has been removed to allow the warmth of the sand clay to be highlighted.
+
+    This listing is for a single Pasta Bowl to be collected individually or for a Set of 2 with an automatically applied set savings of 10%
+    Product Dimensions:
+
+Pasta Bowl: 9.25 inches d x 2 inches h
+Piece subject to warping due to handmade process.
+
+Product Specifications:
+
+Capacity: 45 oz
+Material: Sand Stoneware
+Glaze: Ivory
+Use: Microwave safe, dishwasher safe, food safe; not tested for oven safety
+    ",
+    price: 3600,
+    name: "Minimal Pasta Bowl | Stoneware",
+    seller: demo_user,
+    category: home_living
+)
+5.times do |n|
+    home10.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home10/home10-#{n+1}.png"), filename: "home10-#{n+1}.png")
+end
+
+home10.save!
+
+home4= Product.new(
+    description: "Titled Lace Wings- this set of 21 3D porcelain wall art butterflies were inspired by the insects of the same name. They're easy to install on your wall using one flat headed nail or screw and the wings will cast shadows that change as the light changes through the day.
+
+    Each butterfly measures approx 2.5 inches (6cm) and because of the flexibility of the artwork, it can take up a space as large as you want it to.
+    
+    Every butterfly sculpture is unique and is hand crafted from white porcelain. The texture and pattern on the wings comes from pretty antique lace embroidery and crochet. Each one is finished with a stitch of your choice of gold coloured low tarnish brass, copper, pure sterling silver wire or a mixture of the three.
+    
+    They're easy and fun to hang and arrange in any way that suits your space. Because this set comprises twenty-one separate butterfly sculptures, it is super flexible! It can be arranged to enhance even tricky spaces. They're dreamy in a bedroom over a bed or dressing table, and create an elegant calming effect in living spaces and hallways. They won't mind if the room gets steamy, so they're great for bathrooms too.
+    ",
+    price: 5500,
+    name: "Large ceramic wall art set 3D butterfly Original artwork 21 handmade White porcelain & silver copper or gold brass butterflies home decor",
+    seller: demo_user,
+    category: home_living
+)
+5.times do |n|
+    home4.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home4/home4-#{n+1}.png"), filename: "home4-#{n+1}.png")
+end
+
+home4.save!
+
+
+home9= Product.new(
+    description: "FREE WORLDWIDE EXPRESS DELIVERY FOR ALL ORDERS OVER 100 EUR (except for remote areas and Australia)!
+    Free gift set of 2 tea towels for all orders over 250 EUR value!
+    
+    
+    Light Grey Linen Curtain / Gray Linen Window Drape
+    
+    Our natural linen curtains will enrapture you with simple forms, clear colors, extreme comfort, quality and a breath of nature in your home. This handmade item is long-lasting, nature-friendly, and looks better and better with age and every wash.
+    
+    * 100% natural stonewashed linen
+    * antibacterial and anti-allergic
+    * anti-static
+    * breathable
+    * light, very durable and strong
+    * easy to wash
+    * OEKO-TEX® Standard 100 certified
+    
+    Density: 200 g/m2 - medium weight linen
+    ",
+    price: 8199,
+    name: "Wide Light Grey Linen Curtain, Gray Linen Window Drape, Stonewashed Linen Curtain, Extra Long Curtain, Custom Size Linen Curtain",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home9.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home9/home9-#{n+1}.png"), filename: "home9-#{n+1}.png")
+end
+
+home9.save!
+
+home8= Product.new(
+    description: "Looking for a big contemporary black ceramic platter as your farmhouse countertop decor? Byu large serving plate and get free shipping worldwide. This decorative table centerpiece could be a rustic housewarming gift.
+
+    Features of your large serving plate:
+    ✔ modern ceramic plate 2.7inches (10 cm), Ø 13.4-13.8 inches (34-36 cm)
+    ✔ 1 piece in total
+    ✔ we use an ecofriendly package because we do care ☘️
+    ✔ lead and cadmium free
+    ✔ dishes color in pic. is speckled black
+    ✔ dimensions are approximate and may vary up to 0.39inches ( 1 cm) because we make every piece by hand and it is one of a kind
+    ✔ some color variations should be taken into account because some magic always appears in the kiln
+    ✔ every piece slightly differs in color and shape from each other as they were made by human hands ♥
+    ",
+    price: 26747,
+    name: "Big contemporary black ceramic platter farmhouse countertop decor, Large serving plate Decorative table centerpiece Rustic housewarming gif",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home8.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home8/home8-#{n+1}.png"), filename: "home8-#{n+1}.png")
+end
+
+home8.save!
+
+
+
+home6= Product.new(
+    description: "This listing is for one, ottoman table. **This table fits a 19 inch wide ottoman.** This table will fit right over the top of your ottoman or foot stool. Featured table is created using a single slab spalted maple top with a clear satin finish.
+
+    ** We are only selling the TABLE. You can purchase the ottoman from Target. Search -Lynwood Cube. We can make this table to fit any size or shaped ottoman. **
+    
+    This product is made to order and ships out within 4-6 weeks. Choose from a number of different widths that can be easily customized.
+    
+    This table design was included in the -Etsy House - a virtual home made by Etsy for Christmas of 2021. See a screenshot picture in this listing. (See picture on listing)
+    
+    We use kiln dried spalted maple wood in the construction of this table. This table has multiple coats of protective finish.
+    ",
+    price: 24900,
+    name: "Spalted Maple Ottoman Foot Stool Table, laptop table, side table, sofa table, coffee table",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home6.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home6/home6-#{n+1}.png"), filename: "home6-#{n+1}.png")
+end
+
+home6.save!
+
+home15= Product.new(
+    description: "Retro Gradient Rug, Modern Cloud Shape Rug, Decorative, Soft, Fluffy & Non Slip.
+
+    Make your home a reflection of your personality. Try out this handmade rug for that extra touch. A colorful addition to any home, these rugs are a thoughtful gift for your friends and family. 
+    
+    
+    💗💙💚💜
+    ➤ Made of 100% polyester (artificial fleece wool). It is soft, comfortable, Skin-friendly, environmentally friendly and moisture-absorbing.
+    ➤ Non-slip design, durable and non-slip bottom to protect the floor.
+    ➤ It is easy to clean, can be washed by hand or machine.
+    ➤ Size: Multiple Sizes. (PLEASE MESSAGE US FOR BIGGER SIZE)
+    ➤ Pet Friendly 🐵🐰🐱🐶🐹
+    
+    ",
+    price: 2499,
+    name: "Retro Gradient Rug, Modern Cloud Shape Rainbow Rug, Decorative, Soft, Fluffy & Non Slip",
+    seller: demo_user,
+    category: home_living
+)
+5.times do |n|
+    home15.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home15/home15-#{n+1}.png"), filename: "home15-#{n+1}.png")
+end
+
+home15.save!
+
+
+home3= Product.new(
+    description: "Get an INSTANT MAKEOVER for your home just by changing the Curtains!!!. Velvet is BACK and Big at making a statement in any Space! This is a beautiful 11 oz Velvet it comes in a few other colors let me know if you do not see what you are looking for!
+
+
+
+        1st Photo Credit goes to My Friend Ashely Hale @ourhouse5five Her style is AMAZING! Whimsical and bright airy! Go give her a Follow on Instagram! She Chose the Pool Blue Velvet and added the Hook Header tape option and use rings to hang them for that inverted pleat look!
+        
+        
+        IF you want emerald Green Velvet shown in last pic please go to listing link below
+        
+    ",
+    price: 20000,
+    name: "Luxury Velvet Curtains, Emerald Green Velvet, Window Treatments-Drape-Velvet Window Treatments-Curtains, Cafe Curtains, Valanes",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home3.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home3/home3-#{n+1}.png"), filename: "home3-#{n+1}.png")
+end
+
+home3.save!
+
+
+
+home14= Product.new(
+    description: "Girls Don't Cry Rug
+
+    Make your home a reflection of your personality. Try out this soft and fluffy handmade rug for that extra touch. A colorful addition to any home, these hand tufted rugs are also a thoughtful gift for your friends and family. 
+    
+    💓🌸💟
+    ➤Made of 100% polyester (artificial fleece wool). It is soft, comfortable, Skin-friendly, environmentally friendly and moisture-absorbing.
+    ➤ Non-slip design, durable and non-slip bottom to protect the floor.
+    ➤ It is easy to clean, can be washed by hand or machine.
+    ➤ Size: 90x98cm / 35.43x38.58 inch
+    ➤ Pet Friendly 🐵🐰🐱🐶🐹
+    ",
+    price: 7999,
+    name: "Tufted Girls Don't Cry Rug 98x90cm Decorative, Soft, Fluffy & Non Slip",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home14.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home14/home14-#{n+1}.png"), filename: "home14-#{n+1}.png")
+end
+
+home14.save!
+
+
+home13= Product.new(
+    description: "💜 Please understand that shipping for this item usually takes 2 - 4 weeks to be delivered 💜
+
+    💜 Dreamy Tulip Side Table
+    💜 Small : 13 x 13 x 17.5 Inch Approx.
+    
+    Each order will be ready to ship out within 3-5 business days. Some products ship from out of the country, and it usually takes at least 2 - 4 weeks to be delivered. It depends on the carrier's situation, sometimes it will be delivered earlier than 2 weeks.
+    ",
+    price: 39999,
+    name: "Tulip Side Table - Dreamy Aesthetic Flower Coffee Drink Bedside End Table Furniture Home Decor Cute Fun Unique Colorful Daisy Kawaii Gift",
+    seller: demo_user,
+    category: home_living
+)
+5.times do |n|
+    home13.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home13/home13-#{n+1}.png"), filename: "home13-#{n+1}.png")
+end
+
+home13.save!
+
+
+
+home11= Product.new(
+    description: "This set features my hand-carved, block printed Palm Sunset pattern in blue + orange ink on a beautiful rose blush pink linen. Every piece has been hand-printed in non-toxic fabric inks with my original illustrations.
+
+    Linen is a great, eco-friendly material that softens & becomes better with age. This larger size is perfect as a luxuriously oversized napkin, or can be used as a placemat in your tablescape.
+    These turn even the most boring Tuesday night dinner into a classy affair - and are packaged in sets to make a perfect hostess/housewarming gift!
+    
+    ",
+    price: 2800,
+    name: "block printed linen napkins. palm sunset on pink. placemats / tea towels. boho home decor. palm beach. coastal. pink. tropical. preppy.",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home11.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home11/home11-#{n+1}.png"), filename: "home11-#{n+1}.png")
+end
+
+home11.save!
+
+
+home12= Product.new(
+    description: "Dreams of another world are already contained in this one. Just look at the moon and the tall grass and see your way through. Hang these above your bed, in a hallway, or wherever you want that extra touch of the unusual.
+
+    The Night Sky shelf uses soothing color combos to transport your wall and hold a sweet object or two. I designed them with ease in mind: the hanging spaces on the back of the shelf work with nails or even simple thumbtacks. And if you’re like me, and you never get around to hanging things, I made the bottom flat enough that they also sit well on any shelf or table space too and look just as cute.
+    
+    I've tested them up to 4 pounds and haven't had one break on me yet. I would feel safe with almost any small object that isn't an actual lead brick (I recommend the small wiggle cups or the bud vase in my shop of course). Exercise caution if trying to put a lit candle on this though, the object is made of plastic and there is real risk of it melting or catching. The wall hanging section of the piece measures 10 inches tall by 7 inches wide. The shelf extends out 5 inches and is 5.5 inches wide, it has a small lip to make sure your objects don't fall off of it!
+    ",
+    price: 5250,
+    name: "Night Sky Shelf - Hanging Wall Decor - Night Sky Portal",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home12.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home12/home12-#{n+1}.png"), filename: "home12-#{n+1}.png")
+end
+
+home12.save!
+
+home1= Product.new(
+    description: "Wavy squiggle mirror, blob, kid-friendly, unbreakable, sturdy sustainable bio-derived PLA.
+
+    Designed and fabricated by Zicwa in our Copenhagen based design studio.
+    
+    We strive to make computationally designed homeware displaying playful and intriguing features using sustainable bioderived materials.
+    
+    All items are meticulously hand-made. With our production process we can minimize material waste and use bioderived recycled materials that we turn into long-lasting sustainable collectibles.
+    
+    We ship worldwide. Simply select your country at checkout to see shipment cost.
+    
+    Zicwa is founded by an Architect and Computational designer holding a Master’s Degree in Computational design from the Royal Danish Academy of Fine Arts turning trendy items into sustainable collectibles.
+    ",
+    price: 3500,
+    name: "Squiggle Mirror | Funky Mirror | Wavy Mirror | Danish Pastel Aesthetic Mirror | Funky Decor | Funky Frame | Cute Birthday Gift |Kawaii Decor",
+    seller: demo_user,
+    category: home_living
+)
+6.times do |n|
+    home1.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/home/home1/home1-#{n+1}.png"), filename: "home1-#{n+1}.png")
+end
+
+home1.save!
+
+
+
+
+
+
 
 
 
@@ -1105,7 +1501,39 @@ end
         review.rating = 4
         review.product = jewelry14
         review.save!
-    end
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product = jewelry18
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product = jewelry19
+    review.save!
+end
+
+3.times do
+        review = Review.new(body: Faker::Quote.matz)
+        review.user = User.first
+        review.rating = 4
+        review.product = jewelry20
+        review.save!
+end
+
+3.times do
+        review = Review.new(body: Faker::Quote.matz)
+        review.user = User.first
+        review.rating = 4
+        review.product = jewelry21
+        review.save!
+end
 
 3.times do
         review = Review.new(body: Faker::Quote.matz)
@@ -1226,6 +1654,88 @@ end
     review.product = party5
     review.save!
 end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 3
+    review.product = home1
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 3
+    review.product = home5
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 3
+    review.product = home6
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product = home9
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 4
+    review.product = home11
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product = home13
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 4
+    review.product = home12
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 3
+    review.product = home10
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product = home4
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product = home14
+    review.save!
+end
+
+
 
 puts 'done'
 
