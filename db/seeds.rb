@@ -28,7 +28,7 @@
     Category.create!(name:"clothing_shoes", label: "Clothing & Shoes")
     Category.create!(name:"home_living", label: "Home & Living")
     Category.create!(name: "wedding_party", label: "Wedding & Party")
-    Category.create!(name: "toys", label: "Toys")
+    toys= Category.create!(name: "toys", label: "Toys")
     art= Category.create!(name: "art", label: "Art & Collectibles")
     # jewelry = Category.find_by(name: 'jewelry')
 
@@ -621,6 +621,107 @@ end
 holiday10.save!
 
 
+toys1= Product.new(
+    description: "PLEASE NOTE: My processing times are currently around 2 weeks as I have just given birth, however my team is working on processing orders as fast as they can, so it may be sooner. If you really need a gift by a certain date, I do offer a, “Rush My Order” option, but please message me prior to adding this on to ensure I can accommodate your request :)
+
+        If any issues arise with your order, either myself or my team will be reaching out + please feel free to do the same. Thank you for your patience + understanding! 🤍
+    ",
+    price: 9090,
+    name: "Baby Gift Box, Gender Neutral Baby Gift Set, Baby Shower Gift Box, Newborn Gift Box, Welcome Baby Gift Set, Baby Gift, Neutral Baby Gift",
+    seller: demo_user,
+    category: toys
+)
+6.times do |n|
+    toys1.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/toys/toys1/toys1-#{n+1}.png"), filename: "toys1-#{n+1}.png")
+end
+
+toys1.save!
+
+toys2= Product.new(
+    description: "Busy Board from Busy Puzzle is the best gift for a baby for Christmas, birthday, baptism and any other holiday.
+    This is the best educational toy for toddlers.
+    Our Montessori board contains many different details that contribute to the development of fine motor skills of the child.
+    A toy that develops logical thinking, memory and perseverance of the baby.
+    
+    ",
+    price: 18990,
+    name: "Large Busy Board, Custom Activity Busy Board, Baby Girl Birthday Gift, Personalized Christmas Gifts For Kids, Montessori Toy For Toddlers",
+    seller: demo_user,
+    category: toys
+)
+6.times do |n|
+    toys2.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/toys/toys2/toys2-#{n+1}.png"), filename: "toys2-#{n+1}.png")
+end
+
+toys2.save!
+
+
+toys3= Product.new(
+    description: "Montessori Toys ·
+
+    Toys that will be a great gift for your baby.
+    
+    A wooden pyramid and a rainbow pile will introduce the baby to concepts such as shape and color, teach you how to distribute objects according to certain criteria, and help develop coordination and logical thinking.
+    It also promotes the development of motor skills. The toy is a successful combination of entertainment and the Montessori educational method.
+    You can also add a wooden account to the set, which will become an assistant in learning the account.
+    ",
+    price: 2990,
+    name: "Baby Girl Nursery Decor - Pastel Pink Rainbow - Wooden Rainbow Toy - Boho Rainbow Decor - Montessori Toys -Wooden Ring Stacker",
+    seller: demo_user,
+    category: toys
+)
+4.times do |n|
+    toys3.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/toys/toys3/toys3-#{n+1}.png"), filename: "toys3-#{n+1}.png")
+end
+
+toys3.save!
+
+toys5= Product.new(
+    description: " Wooden Bow And Arrows Set ·
+
+    Archery for kids offers benefits to their physical and mental development.
+    
+    · COUPON ·
+    When buying 2 or more Baby Toys or Christmas Decor, we have an additional coupon discount: BUSYPUZZLE
+    Just add it to your shopping cart.
+    
+    Setting goals and knowing how to set goals is very important for personal growth. It allows you to realize what needs to improve and then set goals to hit those new targets. Archery helps our kids to learn how to set these goals, a skill they can adapt into their day to day life.
+    
+    Learning how to become an archer is very much a step by step method, IE nocking the arrow, drawing the bow, aiming and finally shooting. Kids that are interested in archery soon learn that by focusing on each task at a time, they will hit the target more often.
+    
+    Archery helps to train kids to be more focused, as they improve one of these steps at a time.
+    ",
+    price: 2500,
+    name: "Personalized Archery Set, Bow And Arrows, Outdoor Games For Kids, Montessori Lawn Games, Quiver And Target at Extra Charge, Waldorf Toys",
+    seller: demo_user,
+    category: toys
+)
+4.times do |n|
+    toys5.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/toys/toys5/toys5-#{n+1}.png"), filename: "toys5-#{n+1}.png")
+end
+
+toys5.save!
+
+
+toys4= Product.new(
+    description: "♥Rocky Shore Abacus- Offered in two colors: (Pinks-Sunset) (Blues-Seaside).
+    Bring your baby's nursery to life with this beach inspired abacus! The perfect touch of summer!
+    ONLY at Ev&Potique!!!
+    
+    ♥Dimensions: 7in wide x 6in tall
+    
+    ♥SAFETY: Use is intended for decor. As with any handmade accessory, this product should not be used without proper adult supervision. Do not leave an infant or child unattended with this product. This product contains small parts and the customer and user assumes full responsibility for ensuring that the product is used in a safe manner. By purchasing this product the customer agrees that use and purchase of the product is entirely at the customer’s own risk. Ev&Potique, nor any of its agents or affiliates shall be liable in any way for any direct, indirect, incidental, special, or consequential damages arising out of use of the products. Use at own discretion. Please inspect regularly.
+    ",
+    price: 2900,
+    name: "Rocky Shore Abacus- Rainbow Abacus, Bohemian Decor, Bohemian Baby, Sage Nursery, Wooden, Montessori, Natural Wood, Organic Baby, Ev&Potique",
+    seller: demo_user,
+    category: toys
+)
+5.times do |n|
+    toys4.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/toys/toys4/toys4-#{n+1}.png"), filename: "toys4-#{n+1}.png")
+end
+
+toys4.save!
 
 
 
