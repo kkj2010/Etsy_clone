@@ -25,9 +25,9 @@
 
     holiday_shop= Category.create!(name:"holiday_shop", label: "Holiday Shop")
     jewelry= Category.create!(name:"jewelry", label: "Jewelry & Accessories")
-    Category.create!(name:"clothing_shoes", label: "Clothing & Shoes")
-    Category.create!(name:"home_living", label: "Home & Living")
-    Category.create!(name: "wedding_party", label: "Wedding & Party")
+    clothing_shoes= Category.create!(name:"clothing_shoes", label: "Clothing & Shoes")
+    home_living= Category.create!(name:"home_living", label: "Home & Living")
+    wedding_party= Category.create!(name: "wedding_party", label: "Wedding & Party")
     toys= Category.create!(name: "toys", label: "Toys")
     art= Category.create!(name: "art", label: "Art & Collectibles")
     # jewelry = Category.find_by(name: 'jewelry')
@@ -724,6 +724,315 @@ end
 toys4.save!
 
 
+clothing1= Product.new(
+    description: "Details
+
+    Go-to LBD for the hardcore minimalist, this shirt dress is perfect for the warmer seasons, featuring mandarin collar, 1/2 grown-on sleeve, shirt placket with concealed buttons fastenings running all the way down, self-tie belt,and side slits for ease of movement. Fully lined.
+    
+    
+    *Lead time is 2.5 weeks.
+    
+    Color/Couleur:Black
+    Material/Composition: 60 %viscose 40 %cotton (lining: silk cotton blend)
+    
+    Size/Taille: Made to measure. Please provide BUST/ WAIST/ HIPS size and HEIGHT during checkout. Please note that waist is measured at the thinnest point whereas hips/bust are measured at the fullest/widest point.
+    
+    
+    Default length /Longueur par défaut:110cm(adjustable based on height)
+    
+    ",
+    price: 18500,
+    name: "W Dress - black minimalist shirt dress with mandarin collar",
+    seller: demo_user,
+    category: clothing_shoes
+)
+5.times do |n|
+    clothing1.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/clothing/clothing1/clothing1-#{n+1}.png"), filename: "clothing1-#{n+1}.png")
+end
+
+clothing1.save!
+
+clothing2= Product.new(
+    description: "Details:
+
+    Double-faced open-front wool cashmere blend jacket with curved lapel, dropped shoulder seams, cocoon sleeves and seam pockets. 100% handsewn. Not lined. Crop fit. Made to order. Ships in 18-21 days.
+    
+    Colour: ivory ( heathered) , more colours available.
+    
+    Material/Composition: Double-faced 90% wool /10%cashmere
+    
+    Size/Taille:Made to measure.Please provide your BUST,WAIST,HIPS SIZE & HEIGHT during checkout.Note that bust and hips are measured at the widest/fullest point whereas waist is measured at the thinnest point.
+    
+    Length /Longueur:56cm
+    ",
+    price: 33900,
+    name: "Jules Jacket {more colours available}",
+    seller: demo_user,
+    category: clothing_shoes
+)
+4.times do |n|
+    clothing2.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/clothing/clothing2/clothing2-#{n+1}.png"), filename: "clothing2-#{n+1}.png")
+end
+
+clothing2.save!
+
+
+
+clothing3= Product.new(
+    description: "Details
+
+    Suit up this spring & summer with this retro suit set composed of a suit jacket and a wrap skort with a semi-elasticated waist.Lined with breathable silk & cotton blend to ensure maximum comfort. Lead-time is 18 days.
+    
+    Simone Blouse,Tomi Dress
+    
+    Color/Couleur: sand/tan (Please refer to the fabric swatch and convo us for stock availability)
+    
+    Material/Composition:80% rayon + 20% wool (lining: silk/cotton blend)
+    
+    Size/Taille:Made-to-measure. Please provide bust,waist,hips size and height during check-out. Note that waist is measured at the thinnest point whereas hips and bust are measured at the widest point.
+    ",
+    price: 14500,
+    name: "Soho suit set - 2 piece jacket wrap skort set in light khaki (more colours available)",
+    seller: demo_user,
+    category: clothing_shoes
+)
+5.times do |n|
+    clothing3.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/clothing/clothing3/clothing3-#{n+1}.png"), filename: "clothing3-#{n+1}.png")
+end
+
+clothing3.save!
+
+clothing4= Product.new(
+    description: "Details
+
+
+    *Twisted-detailing on the back
+    *Front and back V-neck design
+    *front slit pockets
+    *beautiful drapes on the side of the dress
+    *fully-lined
+    
+    *Lead-time is 18 days, excluding int’l shipping timeframe
+    
+    Color/Couleur: model is seen wearing diamond white(Please convo for more colour options.)
+    
+    Material/Composition:100% tencel (lining:silk/cotton)
+    Size/Taille:Made to measure. Customer will need to provide shoulder width, bust/waist/hip measurement and height details during checkout.Waist measurement is taken at the thinnest part whereas hip/bust measurement is taken at the fullest/widest part
+    ",
+    price: 20500,
+    name: "Tencel v-neck dress with back twist detailing",
+    seller: demo_user,
+    category: clothing_shoes
+)
+4.times do |n|
+    clothing4.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/clothing/clothing4/clothing4-#{n+1}.png"), filename: "clothing4-#{n+1}.png")
+end
+
+clothing4.save!
+
+
+clothing5= Product.new(
+    description: "Details
+
+    Made from lightweight cashmere/ cotton blend, this minimalist dress is perfect for the warmer months ahead. Featuring dropped shoulder seams and short sleeves. Relaxed- fit. Perfect for transitional months.
+    
+    Lead-time is 18 days.
+    
+    Color/Couleur: Mid-grey( please convo for more options.)
+    
+    
+    Material/Composition: 70% cashmere 30 % cotton
+    
+    Size/Taille: S/M/L
+    ",
+    price: 20500,
+    name: "Andrea Dress",
+    seller: demo_user,
+    category: clothing_shoes
+)
+6.times do |n|
+    clothing5.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/clothing/clothing5/clothing5-#{n+1}.png"), filename: "clothing5-#{n+1}.png")
+end
+
+clothing5.save!
+
+
+clothing6= Product.new(
+    description: "Details
+
+    *Relaxed rolled neck design
+    *Center back zip closure
+    *Can be worn as a dress or as a long vest top
+    *Midi-length
+    *Lead-time is 18 days, excluding int’l shipping timeframe
+    
+    worn with:Maud Jacket
+    
+    Color/Couleur:Beige(Other colours are available, please refer to the fabric swatch on our website)
+    ",
+    price: 28000,
+    name: "Neutral dress - vintage-inspired sleeveless rolled neck cashmere knit dress/long vest top (new batch)",
+    seller: demo_user,
+    category: clothing_shoes
+)
+4.times do |n|
+    clothing6.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/clothing/clothing6/clothing6-#{n+1}.png"), filename: "clothing6-#{n+1}.png")
+end
+
+clothing6.save!
+
+
+party1= Product.new(
+    description: "Contemporary style confectionery individually wrapped with a stylish heart design for romantic occasions.
+
+    Storage: Store in a cool, dry place away from direct sunlight
+    Country of Origin: UK
+    Manufacturers Address: Italian Options, Unit 8 Stretton Business Park 1, Brunel Drive, Stretton, Burton-on-Trent. DE13 0BY
+    INGREDIENTS: Sugar, Cocoa Butter, Whole Milk Powder, Cocoa Mass, Lactose (Milk), Whey Powder (Milk), Emulsifier: Soya Lecithin. Cocoa Solids: 32% minimum. Milk Solids 14% minimum. Also contains traces of Nuts. Nutritional Information - Typical values per 100g; Energy: 2290kJ/547kcal; Fat: 31.4g; of which Saturates: 17.8g; Carbohydrate: 59.3g; of which Sugars: 53.4g; Fibre: 1.8g; Protein: 5g; Salt: 0.1g.
+    
+    ALLERGY ADVICE: For allergens see ingredients in bold.
+    
+    *Ingredients are subject to change, always check the packaging
+    
+    All other decorations are for photo purpose only.
+    
+    ",
+    price: 524,
+    name: "Thank You Gold Heart Chocolates Italian Wedding favours Gifts Table Setting Treats Bachelorette sweets Hen Party Romantic Valentines boho",
+    seller: demo_user,
+    category: wedding_party
+)
+6.times do |n|
+    party1.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/party/party1/party1-#{n+1}.png"), filename: "party1-#{n+1}.png")
+end
+
+party1.save!
+
+
+party4= Product.new(
+    description: "Personalized bridesmaid proposal candles make a perfect gift for inviting your friends and loved ones to be your bridesmaids and thank them for being there for you. This bridesmaid gift also makes a great addition to your proposal box.
+
+    Our candles are made in Arts District of Los Angeles. We use natural coconut wax blend, lead-free cotton wicks, and premium fragrance oils infused with essential oils. They are 100% Vegan, Phthalate Free, Toxin Free, and Paraben Free.
+    
+    ",
+    price: 699,
+    name: "Bridesmaid Candle, Bridesmaid Gifts, I Can't Say I Do Without You, Bridesmaid Proposal, Will You Be My Bridesmaid Candle Gifts Proposals W6",
+    seller: demo_user,
+    category: wedding_party
+)
+4.times do |n|
+    party4.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/party/party4/party4-#{n+1}.png"), filename: "party4-#{n+1}.png")
+end
+
+party4.save!
+
+
+party2= Product.new(
+    description: "Materials: 110lbs White cardstock paper, hand dyed silk ribbon, sold as a set or separate.
+
+    Size: A2 (4.25inches x 5.5inches)
+    
+    We strive to make our colors as accurate as possible, but please bear in mind that photo may slightly different from actual item in terms of color due to the lighting during photo shooting or the monitor's display.
+    
+    Delivery time is an estimate and not a guarantee so please make sure you order at least 2 weeks prior to the event.
+    
+    ",
+    price: 2000,
+    name: "Wedding Vow Books, Custom Made Vow Booklet, Vows, Hand Torn, Personalized Vows, Hand Dyed Silk Ribbon, Bridal Gift, Engaged, Calligraphy",
+    seller: demo_user,
+    category: wedding_party
+)
+6.times do |n|
+    party2.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/party/party2/party2-#{n+1}.png"), filename: "party2-#{n+1}.png")
+end
+
+party2.save!
+
+party3= Product.new(
+    description: "Hand dyed silk ribbon on spool (You can find different color options from the drop down list.)
+
+    • 100% silk (Habotai silk)
+    • Seamless
+    • Soft feathered edges
+    • Smooth, delicate, flows beautifully
+    • Light and very nice to touch
+    • Good for gift wrapping, packaging and other projects.
+    
+    
+    Ribbon size
+    WIDTH: approx. 1 inch (approx. 2.5 cm)
+    LENGTH: approx. 5 yards (approx. 455 cm)
+    
+    
+    We strive to make our colors as accurate as possible, but please bear in mind that photo may slightly different from actual item in terms of color due to the lighting during photo shooting or the monitor's display.
+    
+    Delivery time is an estimate and not a guarantee so please make sure you order at least 4 weeks prior to the event.
+    
+    
+    ",
+    price: 800,
+    name: "Hand Dyed Silk Ribbon - 1 inch x 5 yards - 100% silk - Wedding Decor Ribbon - Gift favors wrap - Many Colors - Silk Ribbon on Wood Spool",
+    seller: demo_user,
+    category: wedding_party
+)
+6.times do |n|
+    party3.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/party/party3/party3-#{n+1}.png"), filename: "party3-#{n+1}.png")
+end
+
+party3.save!
+
+
+party5= Product.new(
+    description: "Over 40,000 sales, over 6,000 5 star reviews. We’re one of Etsy’s biggest wedding brands.
+
+    Regency Floral Wedding Guest Book.
+    
+    Make the memories of your big day even more special with our Regency Floral Wedding Guest Book. The illustration features an array greenery with lovely lilac, blue and peach flowers that curve up each side of the cover. Tying all of your wedding styling together, the hardback cover also features the couple’s names and wedding details before opening onto crisp luxe paper.
+    
+    One of the most valuable keepsakes from your wedding day is without doubt the wedding guest book. With all that's going on, it can sometimes be difficult to spend enough time with each of your wedding guests, so having a guest book can give your friends and family a chance to congratulate, wish you well and share treasured memories on your special day.
+    
+    Our premium books are filled with 80 pages (40 sheets) of luxuriously thick 180gsm white paper. The hardback front and back covers are matt laminated for a smooth finish with your chosen design expertly printed onto the cover. The book is finished with a bronzed wire for a luxe look.
+    
+    Size:
+    A4 - 210 x 297 mm (large)
+    A5 - 148 x 210 mm (small)
+    ",
+    price: 4148,
+    name: "Regency Floral Wedding Guest Book",
+    seller: demo_user,
+    category: wedding_party
+)
+3.times do |n|
+    party5.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/party/party5/party5-#{n+1}.png"), filename: "party5-#{n+1}.png")
+end
+
+party5.save!
+
+
+party6= Product.new(
+    description: "NCLUDES ONE CHAMPAGNE FLUTE
+    SELECT DESIRED COLOR SCHEME, PERSONALIZATION, & QUANTITY AT CHECKOUT
+    ---------------------------------------------
+    ITEM DETAILS:
+    ---------------------------------------------
+    • 6 fl oz. capacity
+    • Material: Glass
+    • Individually personalized using high quality, permanent, 'outdoor grade' adhesive vinyl
+    • Optional luxurious satin bow tied to the stem of each flute
+    
+    ",
+    price: 1020,
+    name: "Personalized Glass Champagne Flutes | Custom Birthday Gift | Bachelorette Party Favor | Bridal Shower Wine Glass | Mother's Day | Bridesmaid",
+    seller: demo_user,
+    category: wedding_party
+)
+3.times do |n|
+    party6.photos.attach(io: URI.open("https://shoppy-s3-seeds.s3.amazonaws.com/AWS/party/party6/party6-#{n+1}.png"), filename: "party6-#{n+1}.png")
+end
+
+party6.save!
+
+
 
 
 
@@ -846,7 +1155,77 @@ end
     review.save!
 end
 
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 3
+    review.product = clothing3
+    review.save!
+end
 
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product =clothing5
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 4
+    review.product = clothing1
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 4
+    review.product = clothing2
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 4
+    review.product = party1
+    review.save!
+end
+
+3.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 4
+    review.product = party2
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 5
+    review.product = party3
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 3
+    review.product = party4
+    review.save!
+end
+
+2.times do
+    review = Review.new(body: Faker::Quote.matz)
+    review.user = User.first
+    review.rating = 3
+    review.product = party5
+    review.save!
+end
 
 puts 'done'
 
