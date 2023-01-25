@@ -117,6 +117,15 @@ export const selectSubTotalPrice = (state) => {
   );
 };
 
+// export const selectTotalQuatity = (state) => {
+//   const items = Object.values(state.cart?.items ?? {});
+//   return items.reduce(
+//     (acc, current) => acc + current.quantity,
+//     // current.quantity,
+//     0
+//   );
+// };  
+
 export const selectTotalQuatity = (state) => {
   const items = Object.values(state.cart?.items ?? {});
   return items.reduce(
@@ -124,4 +133,4 @@ export const selectTotalQuatity = (state) => {
     // current.quantity,
     0
   );
-};
+};  

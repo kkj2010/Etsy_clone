@@ -92,6 +92,7 @@ video {
   font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
+
 }
 a {
   text-decoration: none;
@@ -123,6 +124,7 @@ section {
 }
 body {
   line-height: 1;
+  /* position: relative; */
 }
 ol,
 ul {
@@ -144,11 +146,18 @@ table {
   border-spacing: 0;
 }
 
-#root {
-  height: 100%;
-  /* position: relative; */
+/* #root {
+display: flex;
+flex-direction: column;
 }
 
 .App {
+display: flex;
+flex-flow: column nowrap;
+min-height: 100vh;
 
 }
+
+.main{
+flex-grow: 1;
+} */

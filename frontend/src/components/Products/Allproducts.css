@@ -25,7 +25,6 @@
   font-size: 28px;
   letter-spacing: 1px;
   margin-left: 14px;
-  /* font-family: "Playfair Display", serif; */
   font-family: "Cormorant", serif;
 }
 
@@ -79,7 +78,6 @@
   font-size: 25px;
   letter-spacing: 0.5px;
   font-family: "Cormorant", serif;
-  /* font-family: "Playfair Display", serif; */
   margin-left: 10px;
 }
 
@@ -128,8 +126,6 @@
 .productLists {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
-  /* justify-content: center; */
   padding-top: 10px;
 }
 

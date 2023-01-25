@@ -16,6 +16,8 @@ export default function Reviews({ reviews }) {
   const [content, setContent] = useState("");
   const [rating, setRating] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const [allowEdit, setAllowEdit]= useState(false)
+  const [notice, setNotice]= useState(false)
 
   const handleToggleModal = (e) => {
     e?.preventDefault();
@@ -29,10 +31,13 @@ export default function Reviews({ reviews }) {
     } else if (rating === 0) {
       setErrMessage("Please rate the product");
     } else {
-      const review = { body: content, rating };
+      const review = { body: content, rating } 
+      // && allowEdit;
       dispatch(createReview(product.id, review));
       setContent("");
       setErrMessage("");
+      // setAllowEdit(true)
+      // setNotice(true)
     }
   };
 
@@ -45,7 +50,7 @@ export default function Reviews({ reviews }) {
           <span className="reviewLine2"></span>
         </div>
       </div>
-      {errMessage && <div className="errorMessage">{errMessage}</div>}
+      {!notice && errMessage && <div className="errorMessage">{errMessage}</div>}
       <form
         className="reviewForm"
         onSubmit={user ? handleSubmit : handleToggleModal}
@@ -88,6 +93,7 @@ export default function Reviews({ reviews }) {
           <ReviewCard review={review} key={review.id} />
         ))}
       </div>
+      {notice  && <div className='review-notice'>You have already left comment for this product</div>}
       {modalOpen && (
         <AuthModal onClose={handleToggleModal} onSuccess={handleToggleModal} />
       )}

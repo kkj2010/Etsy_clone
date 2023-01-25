@@ -17,6 +17,8 @@ export default function CartItem({ item }) {
   const handleClick = (e) => {
     dispatch(removeItemFromCart(item.id));
   };
+
+  console.log(item.id)
   return (
     <>
       {/* <div className="cartContainer"> */}
@@ -29,7 +31,7 @@ export default function CartItem({ item }) {
           </Link>
           <ul className="cartItemDetails">
             <li className="cartProductName">
-              <Link to={`/products/jewelry/${item.id}`}>
+              <Link to={`/products/${item.category.name}/${item.id}`}>
                 <span className="pdName">{item.product.name}</span>
               </Link>
               <span onClick={handleClick} className="removeCart">
