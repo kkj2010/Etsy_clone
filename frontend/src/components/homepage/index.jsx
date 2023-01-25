@@ -25,13 +25,13 @@ export default function HomePage() {
             <div className="item2" onClick={() => handleNavigate("home_living", 53)}>
               <img src="/img/item2.png" />
             </div>
-            <div className="item3" onClick={() => handleNavigate("home_living", 51)}>
+            <div className="item3" onClick={() => handleNavigate("home_living", 55)}>
               <img src="/img/item3.png" />
             </div>
             <div className="item4" onClick={() => handleNavigate("home_living", 52)}>
               <img src="/img/item4.png" />
             </div>
-            <div className="item2" onClick={() => handleNavigate("home_living", 55)}>
+            <div className="item2" onClick={() => handleNavigate("home_living", 51)}>
               <img src="/img/item5.png" />
             </div>
             <div className="item3" onClick={() => handleNavigate("home_living", 49)}>
@@ -43,22 +43,22 @@ export default function HomePage() {
       case "eclectic":
         panel = (
           <div className="tabPanel2">
-            <div className="item5" onClick={handleClick}>
+            <div className="item5" onClick={() => handleNavigate("home_living", 56)}>
               <img src="/img/item10.png" />
             </div>
-            <div className="item6" onClick={handleClick}>
+            <div className="item6" onClick={() => handleNavigate("home_living", 59)}>
               <img src="/img/item8.png" />
             </div>
-            <div className="item7" onClick={handleClick}>
+            <div className="item7" onClick={() => handleNavigate("home_living", 58)}>
               <img src="/img/item7.png" />
             </div>
-            <div className="item8" onClick={handleClick}>
+            <div className="item8" onClick={() => handleNavigate("home_living", 54)}>
               <img src="/img/item11.png" />
             </div>
-            <div className="item6" onClick={handleClick}>
+            <div className="item6" onClick={() => handleNavigate("home_living", 57)}>
               <img src="/img/item9.png" />
             </div>
-            <div className="item7" onClick={handleClick}>
+            <div className="item7" onClick={() => handleNavigate("home_living", 60)}>
               <img src="/img/item12.png" />
             </div>
           </div>
@@ -67,22 +67,22 @@ export default function HomePage() {
       case "minimal":
         panel = (
           <div className="tabPanel1">
-            <div className="item9" onClick={handleClick}>
+            <div className="item9" onClick={() => handleNavigate("jewelry", 6)}>
               <img src="/img/item13.png" />
             </div>
-            <div className="item10" onClick={handleClick}>
+            <div className="item10" onClick={() => handleNavigate("jewelry", 5)}>
               <img src="/img/item14.png" />
             </div>
-            <div className="item11" onClick={handleClick}>
+            <div className="item11" onClick={() => handleNavigate("jewelry", 12)}>
               <img src="/img/item16.png" />
             </div>
-            <div className="item12" onClick={handleClick}>
+            <div className="item12"onClick={() => handleNavigate("clothing_shoes", 36)}> 
               <img src="/img/item15.png" />
             </div>
-            <div className="item10" onClick={handleClick}>
+            <div className="item10" onClick={() => handleNavigate("jewelry", 11)}>
               <img src="/img/item17.png" />
             </div>
-            <div className="item11" onClick={handleClick}>
+            <div className="item11" onClick={() => handleNavigate("jewelry", 13)}>
               <img src="/img/item18.png" />
             </div>
           </div>
@@ -91,22 +91,22 @@ export default function HomePage() {
       case "holiday":
         panel = (
           <div className="tabPanel3">
-            <div className="item13" onClick={handleClick}>
+            <div className="item13" onClick={() => handleNavigate("holiday_shop", 22)}>
               <img src="/img/item19.png" />
             </div>
-            <div className="item14" onClick={handleClick}>
+            <div className="item14" onClick={() => handleNavigate("holiday_shop", 25)}>
               <img src="/img/item20.png" />
             </div>
-            <div className="item15" onClick={handleClick}>
+            <div className="item15" onClick={() => handleNavigate("holiday_shop", 27)}>
               <img src="/img/item21.png" />
             </div>
-            <div className="item16" onClick={handleClick}>
+            <div className="item16" onClick={() => handleNavigate("holiday_shop", 28)}>
               <img src="/img/item22.png" />
             </div>
-            <div className="item14" onClick={handleClick}>
+            <div className="item14" onClick={() => handleNavigate("holiday_shop", 24)}>
               <img src="/img/item23.png" />
             </div>
-            <div className="item15" onClick={handleClick}>
+            <div className="item15" onClick={() => handleNavigate("holiday_shop", 26)}>
               <img src="/img/item24.png" />
             </div>
           </div>
