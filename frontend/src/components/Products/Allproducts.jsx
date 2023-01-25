@@ -59,18 +59,6 @@ export default function AllProducts() {
     )
   );
 
-  // const handleClick = () => {
-  //   history.push(`/products/jewelry/1`);
-  // };
-
-  // const handleClick1 = () => {
-  //   history.push(`/products/jewelry/3`);
-  // };
-
-  // const handleClick2 = () => {
-  //   history.push(`/products/jewelry/4`);
-  // };
-
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);

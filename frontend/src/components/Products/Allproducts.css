@@ -44,6 +44,8 @@
 
 .headerImagesNew:hover {
   text-decoration: underline;
+  transform: scale(1.1);
+  transition: transform ease-in 200ms;
 }
 
 .headerImagesNew > img {
@@ -64,40 +66,6 @@
   margin-left: 14px;
   letter-spacing: 0.5px;
   width: 280px;
-}
-
-.headerNewText:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.headerText1,
-.headerText2,
-.headerText3,
-.headerText4,
-.headerText5,
-.headerText6 {
-  font-family: "Yantramanav", sans-serif;
-}
-
-.headerText1,
-.headerText4 {
-  padding-left: 46px;
-}
-
-.headerText2 {
-  padding: 41px;
-}
-.headerText3 {
-  padding: 55px;
-}
-
-.headerText5 {
-  padding: 30px;
-}
-
-.headerText6 {
-  padding: 38px;
 }
 
 .itemDisplayContainer {
