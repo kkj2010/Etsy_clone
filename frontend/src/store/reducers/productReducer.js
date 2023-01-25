@@ -95,13 +95,12 @@ export const createReview = (productId, review) => async (dispatch) => {
 
 export const editReview = (review) => async (dispatch) => {
   // dispatch(updateReview(review));
-  const res= await csrfFetch(`/api/reviews/${review.id}`, {
+  const res = await csrfFetch(`/api/reviews/${review.id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ review }),
   });
   if (res.ok) {
-    
     const data = await res.json();
     dispatch(updateReview(data));
   }
@@ -135,7 +134,7 @@ const productReducer = (state = {}, action) => {
         ...state,
         [action.review.productId]: {
           ...state[action.review.productId],
-          reviews: state[action.review.productId].reviews.map((review) =>
+          reviews: state[action.review.productId]?.reviews?.map((review) =>
             review.id === action.review.id ? action.review : review
           ),
         },

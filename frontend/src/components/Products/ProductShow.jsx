@@ -41,6 +41,7 @@ export default function ProductShow() {
   const [selected, setSelected] = useState(options && options[0]);
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {
+    console.log(productId)
     if (userId) {
       dispatch(addItemToCart(productId, parseInt(selected))).then(() => {
         history.push("/cart");

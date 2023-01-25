@@ -18,20 +18,19 @@ export default function CartItem({ item }) {
     dispatch(removeItemFromCart(item.id));
   };
 
-  console.log(item.id)
   return (
     <>
       {/* <div className="cartContainer"> */}
       <section className="cartItemsContainer">
         <div className="r">
-          <Link to={`/products/${item.category.name}/${item.id}`}>
+          <Link to={`/products/${item.category.name}/${item.product.id}`}>
             <li className="cartItemImage">
               <img src={item.photos[0].url} />
             </li>
           </Link>
           <ul className="cartItemDetails">
             <li className="cartProductName">
-              <Link to={`/products/${item.category.name}/${item.id}`}>
+              <Link to={`/products/${item.category.name}/${item.product.id}`}>
                 <span className="pdName">{item.product.name}</span>
               </Link>
               <span onClick={handleClick} className="removeCart">

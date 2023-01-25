@@ -12,12 +12,15 @@ export default function Reviews({ reviews }) {
   const dispatch = useDispatch();
   const { productId } = useParams();
   const product = useSelector((state) => state.products[productId]);
+  const userHasAlreadyReviewed = !!product?.reviews?.find(
+    (review) => review.user.id === user.id
+  );
   const [errMessage, setErrMessage] = useState("");
   const [content, setContent] = useState("");
   const [rating, setRating] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [allowEdit, setAllowEdit]= useState(false)
-  const [notice, setNotice]= useState(false)
+ 
+
 
   const handleToggleModal = (e) => {
     e?.preventDefault();
@@ -31,7 +34,7 @@ export default function Reviews({ reviews }) {
     } else if (rating === 0) {
       setErrMessage("Please rate the product");
     } else {
-      const review = { body: content, rating } 
+      const review = { body: content, rating };
       // && allowEdit;
       dispatch(createReview(product.id, review));
       setContent("");
@@ -50,50 +53,58 @@ export default function Reviews({ reviews }) {
           <span className="reviewLine2"></span>
         </div>
       </div>
-      {!notice && errMessage && <div className="errorMessage">{errMessage}</div>}
-      <form
-        className="reviewForm"
-        onSubmit={user ? handleSubmit : handleToggleModal}
-      >
-        <div className="reviewFormLeft">
-          <textarea
-            className="reviewTextArea"
-            placeholder="Type comment here"
-            value={content}
-            // required
-            onChange={(e) => setContent(e.target.value)}
-          />
+      {errMessage && (
+        <div className="errorMessage">{errMessage}</div>
+      )}
+      {userHasAlreadyReviewed ? (
+        <div className="review-notice">
+          You have already left comment for this product
         </div>
-        <div className="reviewFormRight">
-          <p className="askReviewTitle">Rate features</p>
-          <ul>
-            <li className="suggestedReview">The quality of item</li>
-            <li className="suggestedReview">
-              If the item matched the description
-            </li>
-            <li className="suggestedReview">
-              If the item met your expectations
-            </li>
-            <li className="rateItem">Overall rating</li>
-            <li className="starRating">
-              <UpdateRating rating={rating} onClick={setRating} />
-            </li>
-          </ul>
-          <div>
-            {/* {submitButton} */}
-
-            <button className="reviewSubmitButton" type="submit" >
-              Submit my reveiw
-            </button>
+      ) : (
+        <form
+          className="reviewForm"
+          onSubmit={user ? handleSubmit : handleToggleModal}
+        >
+          <div className="reviewFormLeft">
+            <textarea
+              className="reviewTextArea"
+              placeholder="Type comment here"
+              value={content}
+              // required
+              onChange={(e) => setContent(e.target.value)}
+            />
           </div>
-        </div>
-      </form>
+          <div className="reviewFormRight">
+            <p className="askReviewTitle">Rate features</p>
+            <ul>
+              <li className="suggestedReview">The quality of item</li>
+              <li className="suggestedReview">
+                If the item matched the description
+              </li>
+              <li className="suggestedReview">
+                If the item met your expectations
+              </li>
+              <li className="rateItem">Overall rating</li>
+              <li className="starRating">
+                <UpdateRating rating={rating} onClick={setRating} />
+              </li>
+            </ul>
+            <div>
+              {/* {submitButton} */}
+
+              <button className="reviewSubmitButton" type="submit">
+                Submit my reveiw
+              </button>
+            </div>
+          </div>
+        </form>
+      )}
       <div className="reviewSection">
         {reviews.map((review) => (
           <ReviewCard review={review} key={review.id} />
         ))}
       </div>
-      {notice  && <div className='review-notice'>You have already left comment for this product</div>}
+    
       {modalOpen && (
         <AuthModal onClose={handleToggleModal} onSuccess={handleToggleModal} />
       )}
