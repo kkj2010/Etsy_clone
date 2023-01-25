@@ -22,19 +22,19 @@ export default function HomePage() {
             <div className="item1" onClick={() => handleNavigate("home_living", 48)}>
               <img src="/img/item1.png" />
             </div>
-            <div className="item2" onClick={handleClick}>
+            <div className="item2" onClick={() => handleNavigate("home_living", 53)}>
               <img src="/img/item2.png" />
             </div>
-            <div className="item3" onClick={handleClick}>
+            <div className="item3" onClick={() => handleNavigate("home_living", 51)}>
               <img src="/img/item3.png" />
             </div>
-            <div className="item4" onClick={handleClick}>
+            <div className="item4" onClick={() => handleNavigate("home_living", 52)}>
               <img src="/img/item4.png" />
             </div>
-            <div className="item2" onClick={handleClick}>
+            <div className="item2" onClick={() => handleNavigate("home_living", 55)}>
               <img src="/img/item5.png" />
             </div>
-            <div className="item3" onClick={handleClick}>
+            <div className="item3" onClick={() => handleNavigate("home_living", 49)}>
               <img src="/img/item6.png" />
             </div>
           </div>
