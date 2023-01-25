@@ -77,7 +77,7 @@ export default function AllProducts() {
 
   return (
     <div className="homepage">
-      <HeaderCategory category={category} />
+      <HeaderCategory category={category}/>
 
       <div className="itemDisplayContainer">
         <div className="itemDisplayTitle">
@@ -103,7 +103,7 @@ function HeaderCategory({ category }) {
     jewelry: [
       { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
       {
-        id: 2,
+        id: 7,
         label: "Necklaces",
         imageURL: "/img/jewelry12-1.png",
       },
@@ -111,57 +111,57 @@ function HeaderCategory({ category }) {
       { id: 4, label: "Bracelets", imageURL: "/img/bracelet.png" },
     ],
     holiday_shop: [
-      { id: 1, label: "Holiday Stockings", imageURL: "/img/holiday9-1.png" },
+      { id: 28, label: "Holiday Stockings", imageURL: "/img/holiday9-1.png" },
       {
-        id: 3,
+        id: 27,
         label: "Holiday Cards",
         imageURL: "/img/holiday6-1.png",
       },
       {
-        id: 2,
+        id: 26,
         label: "Holiday Decor",
         imageURL: "/img/item24.png",
       },
     
     ],
     clothing_shoes: [
-      { id: 1, label: "Dresses", imageURL: "/img/item15.png" },
+      { id: 36, label: "Dresses", imageURL: "/img/item15.png" },
       {
-        id: 2,
+        id: 38,
         label: "Jackets",
         imageURL: "/img/clothing3-1.png",
       },
     ],
     home_living: [
-      { id: 1, label: "Kitchen & Dining", imageURL: "/img/item6.png" },
+      { id: 49, label: "Kitchen & Dining", imageURL: "/img/item6.png" },
       {
-        id: 2,
+        id: 48,
         label: "Lighting",
         imageURL: "/img/item1.png",
       },
-      { id: 3, label: "Home Decor", imageURL: "/img/deco11.png" },
-      { id: 4, label: "Furniture", imageURL: "/img/deco7.png" },
+      { id: 50, label: "Home Decor", imageURL: "/img/deco11.png" },
+      { id: 55, label: "Furniture", imageURL: "/img/deco7.png" },
     ],
     wedding_party: [
-      { id: 1, label: "Party Supplies", imageURL: "/img/party6-1.png" },
+      { id: 47, label: "Party Supplies", imageURL: "/img/party6-1.png" },
       {
-        id: 2,
+        id: 44,
         label: "Invitations & Paper",
         imageURL: "/img/deco4.png",
       },
     ],
     toys: [
-      { id: 1, label: "Toys & Games", imageURL: "/img/toys5-1.png" },
+      { id: 34, label: "Toys & Games", imageURL: "/img/toys5-1.png" },
       {
-        id: 2,
+        id: 31,
         label: "Gifts",
         imageURL: "/img/deco5.png",
       },
     ],
     art: [
-      { id: 1, label: "Candle", imageURL: "/img/deco6.png" },
+      { id: 18, label: "Candle", imageURL: "/img/deco6.png" },
       {
-        id: 2,
+        id: 19,
         label: "Sculpture",
         imageURL: "/img/love.png",
       },
