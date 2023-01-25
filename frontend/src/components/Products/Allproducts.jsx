@@ -59,17 +59,17 @@ export default function AllProducts() {
     )
   );
 
-  const handleClick = () => {
-    history.push(`/products/jewelry/1`);
-  };
+  // const handleClick = () => {
+  //   history.push(`/products/jewelry/1`);
+  // };
 
-  const handleClick1 = () => {
-    history.push(`/products/jewelry/3`);
-  };
+  // const handleClick1 = () => {
+  //   history.push(`/products/jewelry/3`);
+  // };
 
-  const handleClick2 = () => {
-    history.push(`/products/jewelry/4`);
-  };
+  // const handleClick2 = () => {
+  //   history.push(`/products/jewelry/4`);
+  // };
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -78,7 +78,7 @@ export default function AllProducts() {
   return (
     <div className="homepage">
       <HeaderCategory category={category} />
-     
+
       <div className="itemDisplayContainer">
         <div className="itemDisplayTitle">
           <h1 className="displayLogoTitle">Find Something you love</h1>
@@ -91,12 +91,6 @@ export default function AllProducts() {
             All Filters
           </button>
         </div>
-
-        {/* <ul className="productLists">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </ul> */}
         <ProductGrid products={products} />
       </div>
       {/* <Footer /> */}
@@ -111,55 +105,65 @@ function HeaderCategory({ category }) {
       {
         id: 2,
         label: "Necklaces",
-        imageURL: "/img/necklace1.png",
+        imageURL: "/img/jewelry12-1.png",
       },
       { id: 3, label: "Rings", imageURL: "/img/ring1.png" },
       { id: 4, label: "Bracelets", imageURL: "/img/bracelet.png" },
     ],
     holiday_shop: [
-      { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
+      { id: 1, label: "Holiday Stockings", imageURL: "/img/holiday9-1.png" },
       {
-        id: 2,
-        label: "Necklaces",
-        imageURL: "/img/necklace1.png",
+        id: 3,
+        label: "Holiday Cards",
+        imageURL: "/img/holiday6-1.png",
       },
-    ],
-   clothing_shoes: [
-      { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
       {
         id: 2,
-        label: "Necklaces",
-        imageURL: "/img/necklace1.png",
+        label: "Holiday Decor",
+        imageURL: "/img/item24.png",
+      },
+    
+    ],
+    clothing_shoes: [
+      { id: 1, label: "Dresses", imageURL: "/img/item15.png" },
+      {
+        id: 2,
+        label: "Jackets",
+        imageURL: "/img/clothing3-1.png",
       },
     ],
     home_living: [
-      { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
+      { id: 1, label: "Kitchen & Dining", imageURL: "/img/item6.png" },
       {
         id: 2,
-        label: "Necklaces",
-        imageURL: "/img/necklace1.png",
+        label: "Lighting",
+        imageURL: "/img/item1.png",
       },
+      { id: 3, label: "Home Decor", imageURL: "/img/deco11.png" },
+      { id: 4, label: "Furniture", imageURL: "/img/deco7.png" },
     ],
     wedding_party: [
-      { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
+      { id: 1, label: "Party Supplies", imageURL: "/img/party6-1.png" },
       {
         id: 2,
-        label: "Necklaces",
-        imageURL: "/img/necklace1.png",
+        label: "Invitations & Paper",
+        imageURL: "/img/deco4.png",
       },
-    ], toys: [
-      { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
+    ],
+    toys: [
+      { id: 1, label: "Toys & Games", imageURL: "/img/toys5-1.png" },
       {
         id: 2,
-        label: "Necklaces",
-        imageURL: "/img/necklace1.png",
+        label: "Gifts",
+        imageURL: "/img/deco5.png",
       },
-    ], art: [
-      { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
+    ],
+    art: [
+      { id: 1, label: "Candle", imageURL: "/img/deco6.png" },
       {
         id: 2,
-        label: "Necklaces",
-        imageURL: "/img/necklace1.png",
+        label: "Sculpture",
+        imageURL: "/img/love.png",
       },
     ],
   };
