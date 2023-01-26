@@ -12,9 +12,10 @@ export default function Reviews({ reviews }) {
   const dispatch = useDispatch();
   const { productId } = useParams();
   const product = useSelector((state) => state.products[productId]);
-  const userHasAlreadyReviewed = !!product?.reviews?.find(
-    (review) => review.user.id === user.id
-  );
+  const userHasAlreadyReviewed = product?.reviews?.find(
+    (review) => review.user.id === user?.id
+  ); 
+  console.log(userHasAlreadyReviewed)
   const [errMessage, setErrMessage] = useState("");
   const [content, setContent] = useState("");
   const [rating, setRating] = useState(0);
@@ -39,8 +40,6 @@ export default function Reviews({ reviews }) {
       dispatch(createReview(product.id, review));
       setContent("");
       setErrMessage("");
-      // setAllowEdit(true)
-      // setNotice(true)
     }
   };
 
@@ -90,8 +89,6 @@ export default function Reviews({ reviews }) {
               </li>
             </ul>
             <div>
-              {/* {submitButton} */}
-
               <button className="reviewSubmitButton" type="submit">
                 Submit my reveiw
               </button>
