@@ -58,7 +58,7 @@ export default function Reviews({ reviews }) {
       )}
       {userHasAlreadyReviewed ? (
         <div className="review-notice">
-          You have already left comment for this product
+         ** You have already left comment for this product **
         </div>
       ) : (
         <form
