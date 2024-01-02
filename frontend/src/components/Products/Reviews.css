@@ -2,6 +2,13 @@
   display: flex;
 }
 
+.review-notice{
+margin:7px 0 12px 0;
+letter-spacing: 0.5px;
+color: grey;
+text-align: center;
+
+}
 
 .reviewTitle{
   font-size: 30px;

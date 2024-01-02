@@ -2,6 +2,7 @@
   width: 1200px;
   margin: 0 auto;
   margin-top: 30px;
+  min-height: 1000px;
 }
 
 .cartHeader {
@@ -81,6 +82,7 @@
 
 .giftCheckboxText {
   font-family: "Yantramanav", sans-serif;
+  margin-top: 10px;
 }
 
 .giftTextarea > textarea {
@@ -159,7 +161,7 @@
   margin-bottom: 20px;
   cursor: pointer;
   box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
-  padding-left: 6px;
+  padding-left: 9px;
   -moz-appearance: none; 
   -webkit-appearance: none; 
   appearance: none; 

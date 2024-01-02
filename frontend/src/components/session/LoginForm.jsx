@@ -98,7 +98,7 @@ export default function LoginForm({ onSuccess }) {
           <div className="privacyPolicy">
             <p>
               By clicking Sign in, you agree to Shoppy's Terms of Use and
-              Privacy Policy. Etsy may send you communications; you may change
+              Privacy Policy. Shoppy may send you communications; you may change
               your preferences in your account settings. We'll never post
               without your permission.
             </p>

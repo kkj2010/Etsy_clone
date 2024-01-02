@@ -28,23 +28,36 @@ function headerTitle(category) {
   }
 }
 
+function subTitle(category) {
+  switch (category) {
+    case "jewelry":
+      return "Necklaces, bracelets, earrings, and rings to complete your look or wow them with a perfect gift";
+    case "holiday_shop":
+      return "Gift of all kinds, for all kinds. Find something magical for every meaningful person on your list.";
+    case "clothing_shoes":
+      return "All things wonderful and wearable for men, women, kids, and even little bitty babies";
+    case "home_living":
+      return "Kitchen and dining, storage solutions, rugs, lighting, wall decor, and furniture—everything you need to make your home yours";
+    case "wedding_party":
+      return "From thoughtful invitations to unique decorations—find everything you need for an unforgettable occasion";
+    case "toys":
+      return "Toys, puzzles, games, and more fun-filled finds for kids of all age";
+    case "art":
+      return "Custom artwork, portraits, and totally original paintings and prints to turn your home into a gallery";
+    default:
+      return;
+  }
+}
+
 export default function AllProducts() {
   const { category } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
-  const products = useSelector((state) => Object.values(state.products));
-
-  const handleClick = () => {
-    history.push(`/products/jewelry/1`);
-  };
-
-  const handleClick1 = () => {
-    history.push(`/products/jewelry/3`);
-  };
-
-  const handleClick2 = () => {
-    history.push(`/products/jewelry/4`);
-  };
+  const products = useSelector((state) =>
+    Object.values(state.products).filter(
+      (product) => product.category.name === category
+    )
+  );
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -52,42 +65,7 @@ export default function AllProducts() {
 
   return (
     <div className="homepage">
-      <div className="productHeaderContainer">
-        <ul className="header">
-          <div className="headerText">
-            <h1 className="headerTitle">{headerTitle(category)}</h1>
-            <p className="headerDescription">
-              Necklaces, bracelets, earrings, and rings to complete your look or
-              wow them with a perfect gift
-            </p>
-          </div>
-
-          <li className="headerImages" onClick={handleClick}>
-            <img src="/img/earring.png" />
-            <span className="headerText1">Earrings</span>
-          </li>
-          <li className="headerImages" onClick={handleClick1}>
-            <img src="/img/necklace1.png" />
-            <span className="headerText2">Necklaces</span>
-          </li>
-          <li className="headerImages" onClick={handleClick1}>
-            <img src="/img/ring1.png" />
-            <span className="headerText3">Rings</span>
-          </li>
-          <li className="headerImages" onClick={handleClick2}>
-            <img src="/img/bracelet.png" />
-            <span className="headerText4">Bracelets</span>
-          </li>
-          <li className="headerImages" onClick={handleClick1}>
-            <img src="/img/bag.png" />
-            <span className="headerText5">Bags & Purses</span>
-          </li>
-          <li className="headerImages" onClick={handleClick1}>
-            <img src="/img/acc.png" />
-            <span className="headerText6">Accessories</span>
-          </li>
-        </ul>
-      </div>
+      <HeaderCategory category={category}/>
 
       <div className="itemDisplayContainer">
         <div className="itemDisplayTitle">
@@ -101,15 +79,108 @@ export default function AllProducts() {
             All Filters
           </button>
         </div>
-
-        {/* <ul className="productLists">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </ul> */}
-        <ProductGrid products={products}/>
+        <ProductGrid products={products} />
       </div>
-      <Footer />
+      {/* <Footer /> */}
+    </div>
+  );
+}
+
+function HeaderCategory({ category }) {
+  const products = {
+    jewelry: [
+      { id: 1, label: "Earrings", imageURL: "/img/earring.png" },
+      {
+        id: 7,
+        label: "Necklaces",
+        imageURL: "/img/jewelry12-1.png",
+      },
+      { id: 3, label: "Rings", imageURL: "/img/ring1.png" },
+      { id: 4, label: "Bracelets", imageURL: "/img/bracelet.png" },
+    ],
+    holiday_shop: [
+      { id: 28, label: "Holiday Stockings", imageURL: "/img/holiday9-1.png" },
+      {
+        id: 27,
+        label: "Holiday Cards",
+        imageURL: "/img/holiday6-1.png",
+      },
+      {
+        id: 26,
+        label: "Holiday Decor",
+        imageURL: "/img/item24.png",
+      },
+    
+    ],
+    clothing_shoes: [
+      { id: 36, label: "Dresses", imageURL: "/img/item15.png" },
+      {
+        id: 38,
+        label: "Jackets",
+        imageURL: "/img/clothing3-1.png",
+      },
+    ],
+    home_living: [
+      { id: 49, label: "Kitchen & Dining", imageURL: "/img/item6.png" },
+      {
+        id: 48,
+        label: "Lighting",
+        imageURL: "/img/item1.png",
+      },
+      { id: 50, label: "Home Decor", imageURL: "/img/deco11.png" },
+      { id: 55, label: "Furniture", imageURL: "/img/deco7.png" },
+    ],
+    wedding_party: [
+      { id: 47, label: "Party Supplies", imageURL: "/img/party6-1.png" },
+      {
+        id: 44,
+        label: "Invitations & Paper",
+        imageURL: "/img/deco4.png",
+      },
+    ],
+    toys: [
+      { id: 34, label: "Toys & Games", imageURL: "/img/toys5-1.png" },
+      {
+        id: 31,
+        label: "Gifts",
+        imageURL: "/img/deco5.png",
+      },
+    ],
+    art: [
+      { id: 18, label: "Candle", imageURL: "/img/deco6.png" },
+      {
+        id: 19,
+        label: "Sculpture",
+        imageURL: "/img/love.png",
+      },
+    ],
+  };
+
+  const history = useHistory();
+  const handleClick = (category, productId) => {
+    history.push(`/products/${category}/${productId}`);
+  };
+
+  return (
+    <div className="productHeaderContainer">
+      <ul className="header">
+        <div className="headerText">
+          <h1 className="headerTitle">{headerTitle(category)}</h1>
+          <p className="headerDescription">{subTitle(category)}</p>
+        </div>
+        {products[category].map((product) => (
+          <li
+            key={product.id}
+            className="headerImagesNew"
+            onClick={() => {
+              handleClick(category, product.id);
+            }}
+          >
+            <img src={product.imageURL} alt={product.label} />
+            <span className="headerNewText">{product.label}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

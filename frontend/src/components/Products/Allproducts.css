@@ -25,13 +25,36 @@
   font-size: 28px;
   letter-spacing: 1px;
   margin-left: 14px;
-  /* font-family: "Playfair Display", serif; */
   font-family: "Cormorant", serif;
 }
 
 .headerText {
   width: 300px;
   padding-top: 25px;
+}
+
+.headerNewText {
+  width: 100%;
+  font-family: "Yantramanav", sans-serif;
+  text-align: center;
+  display: block;
+  padding: 0;
+}
+
+.headerImagesNew:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+  transition: transform ease-in 200ms;
+}
+
+.headerImagesNew > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 20px;
+  display: block;
+  cursor: pointer;
+  /* margin-right: 3px; */
 }
 
 .headerDescription {
@@ -42,44 +65,6 @@
   margin-left: 14px;
   letter-spacing: 0.5px;
   width: 280px;
-}
-
-.headerText1:hover,
-.headerText2:hover,
-.headerText3:hover,
-.headerText4:hover,
-.headerText5:hover,
-.headerText6:hover {
-  text-decoration: underline;
-}
-
-.headerText1,
-.headerText2,
-.headerText3,
-.headerText4,
-.headerText5,
-.headerText6 {
-  font-family: "Yantramanav", sans-serif;
-}
-
-.headerText1,
-.headerText4 {
-  padding-left: 46px;
-}
-
-.headerText2 {
-  padding: 41px;
-}
-.headerText3 {
-  padding: 55px;
-}
-
-.headerText5 {
-  padding: 30px;
-}
-
-.headerText6 {
-  padding: 38px;
 }
 
 .itemDisplayContainer {
@@ -93,9 +78,7 @@
   font-size: 25px;
   letter-spacing: 0.5px;
   font-family: "Cormorant", serif;
-  /* font-family: "Playfair Display", serif; */
   margin-left: 10px;
-  
 }
 
 .arrivalButton {
@@ -136,15 +119,13 @@
   height: 210px;
   display: block;
   padding-left: 8px;
-  padding-right:7px;
+  padding-right: 7px;
   border-radius: 3px;
 }
 
 .productLists {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
-  /* justify-content: center; */
   padding-top: 10px;
 }
 
@@ -202,7 +183,7 @@
   color: #595959;
 }
 
-.productLink{
+.productLink {
   text-decoration: none;
-  color:black
+  color: black;
 }

@@ -27,7 +27,6 @@
   padding-bottom: 12px;
   font-size: 32px;
   letter-spacing: 1px;
-  /* font-family: "Playfair Display", serif; */
   font-family: "Cormorant", serif;
 }
 
@@ -38,11 +37,6 @@
   gap: 15px;
   padding-bottom: 4px;
 }
-
-/* .suggestion1 {
-  display: block;
-  position: relative; 
-} */
 
 .list > img {
   width: 230px;

@@ -119,7 +119,7 @@ export default function ProductForm() {
           </form>
         </section>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

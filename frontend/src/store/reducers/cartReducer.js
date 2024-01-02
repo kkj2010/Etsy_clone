@@ -31,21 +31,38 @@ export const fetchCart = () => async (dispatch) => {
   dispatch(receiveCart(data));
 };
 
-export const addItemToCart = (product_id, quantity) => async (dispatch) => {
-  const res = await csrfFetch("/api/cart", {
-    method: "POST",
-    body: JSON.stringify({ product: product_id, quantity }),
-    // body: JSON.stringify({ cart: { cart_id, product_id, quantity } }),
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-  if (res.ok) {
-    const data = await res.json();
-    dispatch(addItem(data));
-  }
-  return res;
-};
+export const addItemToCart =
+  (product_id, quantity) => async (dispatch, getState) => {
+    const state = getState();
+    const itemInCart = Object.values(state.cart.items ?? {}).find(
+      (item) => item.product.id === +product_id //+ change string to number
+    );
+    if (!itemInCart) {
+      const res = await csrfFetch("/api/cart", {
+        method: "POST",
+        body: JSON.stringify({ product: product_id, quantity }),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        dispatch(addItem(data));
+      }
+      return res;
+    }
+    const res = await csrfFetch(`/api/cart_items/${itemInCart.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ quantity: itemInCart.quantity + quantity }),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    if (res.ok) {
+      const data = await res.json();
+      dispatch(addItem(data));
+    }
+  };
 
 export const updateCart =
   ({ id, quantity }) =>
@@ -117,11 +134,14 @@ export const selectSubTotalPrice = (state) => {
   );
 };
 
-export const selectTotalQuatity = (state) => {
-  const items = Object.values(state.cart?.items ?? {});
-  return items.reduce(
-    (acc, current) => acc + current.quantity,
-    // current.quantity,
-    0
-  );
-};
+// export const selectTotalQuatity = (state) => {
+//   const items = Object.values(state.cart?.items ?? {});
+//   return items.reduce(
+//     (acc, current) => acc + current.quantity,
+//     // current.quantity,
+//     0
+//   );
+// };
+
+export const selectTotalQuatity = (state) =>
+  Object.keys(state.cart.items ?? {}).length; //cart is empty/null shows {}

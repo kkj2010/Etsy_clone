@@ -65,7 +65,7 @@ export default function Cart() {
             >
               {total}
             </span>{" "}
-            Items in your cart
+            {total === 1 ? "Item" : "Items"} in your cart
           </span>
           <span className="header2">
             <Link style={{ color: "black" }} to="/">
